@@ -171,6 +171,7 @@ VENUE = {
     'cake': ('photo_14_2026-11-07_17-03-40.jpg', (130, 170, 880, 860), (420, 750)),
     'reserved': ('photo_9_2026-11-07_17-03-40.jpg', (0, 62, 1280, 960), (640, 1000)),
     'funcoza': ('photo_11_2026-11-07_17-03-40.jpg', (130, 620, 950, 1200), (480, 820)),
+    'promo-tempura': ('photo_6_2026-11-07_17-03-40.jpg', (190, 640, 960, 1010), (480, 770)),
     'poke': ('photo_8_2026-11-07_17-03-40.jpg', (110, 600, 760, 1250), (420, 650)),
 }
 
@@ -197,6 +198,8 @@ if __name__ == '__main__':
     if mode == 'dish':
         dish(sys.argv[2], sys.argv[3])
         print('done', sys.argv[3])
+    elif mode == 'venue':
+        venue_photos(sys.argv[2])
     elif mode == 'all':
         menu_dir, imgmap_path, venue = sys.argv[2:5]
         imgmap = json.load(open(imgmap_path, encoding='utf-8'))

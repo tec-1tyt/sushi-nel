@@ -7,6 +7,8 @@ import { issueCsrf, limits, sameOrigin, verifyCsrf, verifyTurnstile } from './se
 
 const DAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 const pragueNow = () => new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Prague' }));
+// Replaceable so tests don't depend on the time they run at
+export const clock = { now: pragueNow };
 const ymd = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 const money = (n) => `${n.toLocaleString('cs-CZ').replace(/ /g, ' ')} Kč`;
 
@@ -40,9 +42,22 @@ function endpoint(schema, handler) {
   };
 }
 
+// Same-day orders only: asap while open, or a later time within today's hours
+function orderTimeError(hours, when) {
+  const now = clock.now();
+  const today = hours[DAYS[now.getDay()]];
+  const hhmm = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+  if (!today) return { when: 'closedToday' };
+  if (when === 'asap') return hhmm >= today[0] && hhmm < today[1] ? null : { when: 'closedNow' };
+  return when >= today[0] && when < today[1] && when >= hhmm ? null : { time: 'time' };
+}
+
 async function handleOrder(d) {
-  const { dishes, promos } = content();
+  const { dishes, promos, site } = content();
+  const timeError = orderTimeError(site.hours, d.when);
+  if (timeError) return { errors: timeError };
   const lines = [];
+  const rows = [];
   let total = 0;
   let hasAlcohol = false;
   for (const row of d.items) {
@@ -51,13 +66,15 @@ async function handleOrder(d) {
     const p = priceOf(dish, row.variant);
     if (!p) return { errors: { items: 'items' } };
     total += p.price * row.qty;
+    rows.push({ category: dish.category, amount: p.price * row.qty });
     if (dish.alcohol) hasAlcohol = true;
     const label = p.variant ? ` (${p.variant.label.cs})` : '';
     lines.push(`${row.qty} × ${dish.name.cs}${label}: ${money(p.price * row.qty)}`);
   }
   if (hasAlcohol && !d.adult) return { errors: { adult: 'adult' } };
 
-  const gift = livePromotions(promos.promotions).find((p) => p.threshold && p.gift && total >= p.threshold);
+  const gift = livePromotions(promos.promotions).find((p) => p.threshold && p.gift
+    && rows.filter((r) => !(p.thresholdExcludes || []).includes(r.category)).reduce((a, r) => a + r.amount, 0) >= p.threshold);
   const giftDish = gift ? dishes.get(gift.gift) : null;
 
   await notify('🍣 Nová objednávka', [

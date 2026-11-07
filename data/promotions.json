@@ -9,6 +9,7 @@
       "validTo": null,
       "source": "Instagram, 2026-09-03",
       "threshold": 1000,
+      "thresholdExcludes": ["napoje", "omacky", "poukazy"],
       "gift": "tempura-roll",
       "title": {
         "cs": "Tempura rolka zdarma",

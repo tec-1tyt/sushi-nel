@@ -74,6 +74,7 @@ export const promotionsSchema = z.object({
     validTo: z.string().nullable().optional(),
     source: z.string().optional(),
     threshold: z.number().optional(),
+    thresholdExcludes: z.array(z.string()).optional(),
     gift: z.string().optional(),
     title: localized,
     text: localized,

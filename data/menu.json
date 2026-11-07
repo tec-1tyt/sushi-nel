@@ -19,9 +19,9 @@
             "en": "Phila Set"
           },
           "desc": {
-            "cs": "Phila Sake, Phila Ebi, Phila Sesame, Phila Grilled, Phila Unagi",
-            "uk": "Phila Sake, Phila Ebi, Phila Sesame, Phila Grilled, Phila Unagi",
-            "en": "Phila Sake, Phila Ebi, Phila Sesame, Phila Grilled, Phila Unagi"
+            "cs": "Philadelphia Sake, Philadelphia Ebi, Philadelphia Sesame, Philadelphia Grilled, Philadelphia Unagi",
+            "uk": "Philadelphia Sake, Philadelphia Ebi, Philadelphia Sesame, Philadelphia Grilled, Philadelphia Unagi",
+            "en": "Philadelphia Sake, Philadelphia Ebi, Philadelphia Sesame, Philadelphia Grilled, Philadelphia Unagi"
           },
           "price": 1150,
           "allergens": [
@@ -41,8 +41,8 @@
             "en": "Dragons Set"
           },
           "desc": {
-            "cs": "Red Dragon, Green Dragon, Dragon Eye",
-            "uk": "Red Dragon, Green Dragon, Dragon Eye",
+            "cs": "Červený drak, Zelený drak, Dračí Oko",
+            "uk": "Червоний Дракон, Зелений Дракон, Око Дракона",
             "en": "Red Dragon, Green Dragon, Dragon Eye"
           },
           "price": 800,
@@ -63,9 +63,9 @@
             "en": "Set Dragons 2.0"
           },
           "desc": {
-            "cs": "Red, Green, Yellow Dragons, Dragon Eye",
-            "uk": "Red, Green, Yellow Dragons, Dragon Eye",
-            "en": "Red, Green, Yellow Dragons, Dragon Eye"
+            "cs": "Červený drak, Zelený drak, Žlutý drak, Dračí Oko",
+            "uk": "Червоний Дракон, Зелений Дракон, Жовтий Дракон, Око Дракона",
+            "en": "Red Dragon, Green Dragon, Yellow Dragon, Dragon Eye"
           },
           "price": 1050,
           "pieces": 32,
@@ -87,9 +87,9 @@
             "en": "Mix Set"
           },
           "desc": {
-            "cs": "Tempura, California Sake, Volcano Sesame, Tender Ebi, Light Ebi, Futomaki Sake",
-            "uk": "Tempura, California Sake, Volcano Sesame, Tender Ebi, Light Ebi, Futomaki Sake",
-            "en": "Tempura, California Sake, Volcano Sesame, Tender Ebi, Light Ebi, Futomaki Sake"
+            "cs": "Tempura rolka, California Sake, Sopka Sezam, Jemný Ebi, Lehký Ebi, Futomaki Sake",
+            "uk": "Темпура Рол, California Sake, Вулкан Сезам, Ніжний Ebi, Легкий Ebi, Футомакі Саке",
+            "en": "Tempura Roll, California Sake, Volcano Sesame, Tender Ebi, Light Ebi, Futomaki Sake"
           },
           "price": 1450,
           "allergens": [
@@ -109,9 +109,9 @@
             "en": "New Nel"
           },
           "desc": {
-            "cs": "Phila Sake, Futomaki Sake, Tender Ebi, Light Ebi, Volcano Sesame",
-            "uk": "Phila Sake, Futomaki Sake, Tender Ebi, Light Ebi, Volcano Sesame",
-            "en": "Phila Sake, Futomaki Sake, Tender Ebi, Light Ebi, Volcano Sesame"
+            "cs": "Philadelphia Sake, Futomaki Sake, Jemný Ebi, Lehký Ebi, Sopka Sezam",
+            "uk": "Philadelphia Sake, Футомакі Саке, Ніжний Ebi, Легкий Ebi, Вулкан Сезам",
+            "en": "Philadelphia Sake, Futomaki Sake, Tender Ebi, Light Ebi, Volcano Sesame"
           },
           "price": 1250,
           "allergens": [
@@ -131,9 +131,9 @@
             "en": "Rainbow Set"
           },
           "desc": {
-            "cs": "Ukraine Roll, California Sake, California Hot Ebi, Dragon Eye",
-            "uk": "Ukraine Roll, California Sake, California Hot Ebi, Dragon Eye",
-            "en": "Ukraine Roll, California Sake, California Hot Ebi, Dragon Eye"
+            "cs": "Ukrajinská rolka, California Sake, California Horký Ebi, Dračí Oko",
+            "uk": "Український Рол, California Sake, Каліфорнія Гарячий Ебі, Око Дракона",
+            "en": "Ukrainian Roll, California Sake, California Hot Ebi, Dragon Eye"
           },
           "price": 1050,
           "allergens": [
@@ -153,9 +153,9 @@
             "en": "Wow Set"
           },
           "desc": {
-            "cs": "Tempura Sake, Tempura Ebi, 12 krevet, hranolky",
-            "uk": "Tempura Sake, Tempura Ebi, 12 креветок, картопля фрі",
-            "en": "Tempura Sake, Tempura Ebi, 12 prawns, French fries"
+            "cs": "Tempura rolka (losos), Tempura rolka (kreveta), 12 krevet, hranolky",
+            "uk": "Темпура Рол (лосось), Темпура Рол (креветка), 12 креветок, картопля фрі",
+            "en": "Tempura Roll (salmon), Tempura Roll (shrimp), 12 prawns, French fries"
           },
           "price": 1250,
           "allergens": [
@@ -174,9 +174,9 @@
             "en": "Imperial Maxi Set"
           },
           "desc": {
-            "cs": "Phila Sake, Cheese Roll, Samurai, Green Dragon, Tender Ebi, Volcano Sesame, Light Ebi, Futomaki Sake, Phila Sesame",
-            "uk": "Phila Sake, Cheese Roll, Samurai, Green Dragon, Tender Ebi, Volcano Sesame, Light Ebi, Futomaki Sake, Phila Sesame",
-            "en": "Phila Sake, Cheese Roll, Samurai, Green Dragon, Tender Ebi, Volcano Sesame, Light Ebi, Futomaki Sake, Phila Sesame"
+            "cs": "Philadelphia Sake, Sýrová rolka, Samurajská rolka, Zelený drak, Jemný Ebi, Sopka Sezam, Lehký Ebi, Futomaki Sake, Philadelphia Sesame",
+            "uk": "Philadelphia Sake, Рол з сиром, Samurai Roll, Зелений Дракон, Ніжний Ebi, Вулкан Сезам, Легкий Ebi, Футомакі Саке, Philadelphia Sesame",
+            "en": "Philadelphia Sake, Cheese Roll, Samurai Roll, Green Dragon, Tender Ebi, Volcano Sesame, Light Ebi, Futomaki Sake, Philadelphia Sesame"
           },
           "price": 2250,
           "allergens": [
@@ -196,8 +196,8 @@
             "en": "Black Flame"
           },
           "desc": {
-            "cs": "California Sake Black, California Ebi Black, Phila Sake Black, California Hot Ebi",
-            "uk": "California Sake Black, California Ebi Black, Phila Sake Black, California Hot Ebi",
+            "cs": "California Sake Black, California Ebi Black, Phila Sake Black, California Horký Ebi",
+            "uk": "California Sake Black, California Ebi Black, Phila Sake Black, Каліфорнія Гарячий Ебі",
             "en": "California Sake Black, California Ebi Black, Phila Sake Black, California Hot Ebi"
           },
           "price": 1050,
@@ -216,8 +216,8 @@
             "en": "Perfect Mix"
           },
           "desc": {
-            "cs": "Black Ocean, Salmon Avocado Lux, Cheddar Ebi, Black Pearl",
-            "uk": "Black Ocean, Salmon Avocado Lux, Cheddar Ebi, Black Pearl",
+            "cs": "Černý Oceán, Losos Avokádo Lux, Cheddar Ebi, Černá Perla",
+            "uk": "Чорний Океан, Лосось Авокадо Люкс, Чеддар Ебі, Чорна Перлина",
             "en": "Black Ocean, Salmon Avocado Lux, Cheddar Ebi, Black Pearl"
           },
           "price": 1250,
@@ -262,9 +262,9 @@
             "en": "Set Mini Nel"
           },
           "desc": {
-            "cs": "Volcano Sesame, Samurai, Red Dragon, Maki Salmon",
-            "uk": "Volcano Sesame, Samurai, Red Dragon, Maki Salmon",
-            "en": "Volcano Sesame, Samurai, Red Dragon, Maki Salmon"
+            "cs": "Sopka Sezam, Samurajská rolka, Červený drak, Maki Salmon",
+            "uk": "Вулкан Сезам, Samurai Roll, Червоний Дракон, Макі Саке",
+            "en": "Volcano Sesame, Samurai Roll, Red Dragon, Maki Sake"
           },
           "price": 950,
           "allergens": [
@@ -284,9 +284,9 @@
             "en": "Set Shrimp"
           },
           "desc": {
-            "cs": "Phila Ebi, California Ebi, California Hot Ebi, Light Ebi",
-            "uk": "Phila Ebi, California Ebi, California Hot Ebi, Light Ebi",
-            "en": "Phila Ebi, California Ebi, California Hot Ebi, Light Ebi"
+            "cs": "Philadelphia Ebi, California Ebi, California Horký Ebi, Lehký Ebi",
+            "uk": "Philadelphia Ebi, California Ebi, Каліфорнія Гарячий Ебі, Легкий Ebi",
+            "en": "Philadelphia Ebi, California Ebi, California Hot Ebi, Light Ebi"
           },
           "price": 1150,
           "allergens": [
@@ -304,9 +304,9 @@
             "en": "Maxi Set"
           },
           "desc": {
-            "cs": "Tako Sesame, Light Ebi, Phila Sesame, Tender Ebi, Samurai, Phila Sake, Green Dragon, Cheese Roll",
-            "uk": "Tako Sesame, Light Ebi, Phila Sesame, Tender Ebi, Samurai, Phila Sake, Green Dragon, Cheese Roll",
-            "en": "Tako Sesame, Light Ebi, Phila Sesame, Tender Ebi, Samurai, Phila Sake, Green Dragon, Cheese Roll"
+            "cs": "Tako Sezam, Lehký Ebi, Philadelphia Sesame, Jemný Ebi, Samurajská rolka, Philadelphia Sake, Zelený drak, Sýrová rolka",
+            "uk": "Тако Сезам, Легкий Ebi, Philadelphia Sesame, Ніжний Ebi, Samurai Roll, Philadelphia Sake, Зелений Дракон, Рол з сиром",
+            "en": "Tako Sesame, Light Ebi, Philadelphia Sesame, Tender Ebi, Samurai Roll, Philadelphia Sake, Green Dragon, Cheese Roll"
           },
           "price": 2050,
           "allergens": [
@@ -327,9 +327,9 @@
             "en": "Baked Set"
           },
           "desc": {
-            "cs": "Phila Sesame, Phila Unagi, California Ebi, California Unagi, Futomaki Sake, Futomaki Choice",
-            "uk": "Phila Sesame, Phila Unagi, California Ebi, California Unagi, Futomaki Sake, Futomaki Choice",
-            "en": "Phila Sesame, Phila Unagi, California Ebi, California Unagi, Futomaki Sake, Futomaki Choice"
+            "cs": "Philadelphia Sesame, Philadelphia Unagi, California Ebi, California Unagi, Futomaki Sake, Futomaki Choice",
+            "uk": "Philadelphia Sesame, Philadelphia Unagi, California Ebi, California Unagi, Футомакі Саке, Футомакі Вибір",
+            "en": "Philadelphia Sesame, Philadelphia Unagi, California Ebi, California Unagi, Futomaki Sake, Futomaki Choice"
           },
           "price": 1650,
           "allergens": [
@@ -350,9 +350,9 @@
             "en": "Salmon Set"
           },
           "desc": {
-            "cs": "Volcano Sesame, Maki Sake, Samurai, Red Dragon",
-            "uk": "Volcano Sesame, Maki Sake, Samurai, Red Dragon",
-            "en": "Volcano Sesame, Maki Sake, Samurai, Red Dragon"
+            "cs": "Sopka Sezam, Maki Salmon, Samurajská rolka, Červený drak",
+            "uk": "Вулкан Сезам, Макі Саке, Samurai Roll, Червоний Дракон",
+            "en": "Volcano Sesame, Maki Sake, Samurai Roll, Red Dragon"
           },
           "price": 950,
           "allergens": [

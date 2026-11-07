@@ -1,6 +1,7 @@
 // Backend tests: npm test. No extra packages, runs on node:test against a real server instance.
 import assert from 'node:assert/strict';
 import { after, before, test } from 'node:test';
+import { clock } from '../server/api.js';
 import { createApp } from '../server/index.js';
 
 let server, base, cookie, token;
@@ -31,6 +32,7 @@ const order = (over = {}) => ({
 });
 
 before(async () => {
+  clock.now = () => new Date(2030, 0, 1, 12, 0);   // a Tuesday at noon: open
   server = createApp().listen(0);
   await new Promise((r) => server.once('listening', r));
   base = `http://127.0.0.1:${server.address().port}`;
@@ -60,17 +62,17 @@ test('page has no inline style attributes and carries structured data', async ()
 });
 
 test('POST without a CSRF token is refused', async () => {
-  const r = await fetch(`${base}/api/order`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(order()) });
+  const r = await fetch(`${base}/api/reservation`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(order()) });
   assert.equal(r.status, 403);
 });
 
 test('POST with a forged token is refused', async () => {
-  const r = await post('/api/order', order(), { 'x-csrf-token': `${Date.now() - 5000}.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA` });
+  const r = await post('/api/reservation', order(), { 'x-csrf-token': `${Date.now() - 5000}.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA` });
   assert.equal(r.status, 403);
 });
 
 test('cross-site origin is refused even with a valid token', async () => {
-  const r = await post('/api/order', order(), { origin: 'https://evil.example' });
+  const r = await post('/api/contact', order(), { origin: 'https://evil.example' });
   assert.equal(r.status, 403);
 });
 
@@ -84,6 +86,24 @@ test('the server sets the price, the browser cannot', async () => {
 test('an order over the threshold reports the gift', async () => {
   const j = await (await post('/api/order', order({ lang: 'uk' }))).json();
   assert.ok(j.gift, 'gift should be named');
+});
+
+test('drinks and vouchers do not count toward the gift', async () => {
+  const voucher = await (await post('/api/order', order({ items: [{ id: 'gift-voucher-1-000-kc', qty: 2 }] }))).json();
+  assert.equal(voucher.ok, true);
+  assert.equal(voucher.gift, null);
+});
+
+test('orders respect opening hours', async () => {
+  const at = (d, h, m = 0) => { clock.now = () => new Date(2030, 0, d, h, m); };
+  try {
+    at(7, 12);     // Monday: closed all day
+    assert.equal((await (await post('/api/order', order())).json()).errors.when, 'closedToday');
+    at(1, 23);     // Tuesday after closing
+    assert.equal((await (await post('/api/order', order())).json()).errors.when, 'closedNow');
+    at(1, 12);     // Tuesday noon, but asking for a time past closing
+    assert.equal((await (await post('/api/order', order({ when: '22:30' }))).json()).errors.time, 'time');
+  } finally { at(1, 12); }
 });
 
 test('unknown dish and wrong variant are refused', async () => {

@@ -42,10 +42,10 @@ export function initCart({ data, fmt, scrollTo, lenis }) {
       if (row.variant) {
         const v = c.querySelector(`input[value="${CSS.escape(row.variant)}"]`);
         if (!v) return null;
-        return { ...row, name: c.dataset.name, label: v.dataset.label, price: Number(v.dataset.price), alcohol: 'alcohol' in c.dataset };
+        return { ...row, name: c.dataset.name, label: v.dataset.label, price: Number(v.dataset.price), alcohol: 'alcohol' in c.dataset, cat: c.closest('[data-cat]')?.dataset.cat };
       }
       if (!c.dataset.price) return null;
-      return { ...row, name: c.dataset.name, label: '', price: Number(c.dataset.price), alcohol: 'alcohol' in c.dataset };
+      return { ...row, name: c.dataset.name, label: '', price: Number(c.dataset.price), alcohol: 'alcohol' in c.dataset, cat: c.closest('[data-cat]')?.dataset.cat };
     }).filter(Boolean);
   }
 
@@ -99,10 +99,12 @@ export function initCart({ data, fmt, scrollTo, lenis }) {
     });
 
     if (giftBox && data.gift) {
-      const left = data.gift.threshold - total;
+      // Drinks, sauces and vouchers don't count toward the gift
+      const eligible = rows.filter((r) => !data.gift.exclude.includes(r.cat)).reduce((a, r) => a + r.qty * r.price, 0);
+      const left = data.gift.threshold - eligible;
       giftBox.hidden = empty;
       giftText.textContent = left > 0 ? fill(T.giftLeft, { n: left.toLocaleString('cs-CZ').replace(/[  ]/g, ' ') }) : T.giftDone;
-      giftBar.style.transform = `scaleX(${Math.min(1, total / data.gift.threshold)})`;
+      giftBar.style.transform = `scaleX(${Math.min(1, eligible / data.gift.threshold)})`;
     }
 
     const hasAlcohol = rows.some((r) => r.alcohol);
@@ -141,6 +143,12 @@ export function initCart({ data, fmt, scrollTo, lenis }) {
       const wide = innerWidth >= 1000;
       window.gsap.fromTo(panel, wide ? { xPercent: 100 } : { yPercent: 100 }, { xPercent: 0, yPercent: 0, duration: .7, ease: 'expo.out' });
       window.gsap.fromTo('.cart__scrim', { opacity: 0 }, { opacity: 1, duration: .4 });
+    }
+    const st = document.querySelector('[data-status]');
+    const closedBox = root.querySelector('[data-cart-closed]');
+    if (closedBox && st) {
+      closedBox.textContent = st.textContent;
+      closedBox.hidden = !st.classList.contains('is-closed');
     }
     panel.focus({ preventScroll: true });
     primeToken().catch(() => {});

@@ -6,7 +6,8 @@ import { page } from './layout.js';
 import { branch } from './ornaments.js';
 import { esc, exists, fill, kanji, money, picture, placeholder } from './util.js';
 
-const NO_WEIGHT_NEEDED = new Set(['napoje', 'omacky', 'poukazy', 'dort']);
+// These read better as a plain list: their photos have loud backgrounds of their own
+const LIST_CATEGORIES = new Set(['napoje', 'omacky', 'poukazy']);
 const EXCLUDES = ['crustaceans', 'fish', 'milk', 'gluten', 'sesame', 'nuts', 'molluscs'];
 const DAY_KEYS = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
@@ -26,24 +27,24 @@ function dishImage(d, lang, large) {
 }
 
 function dishCard(d, cat, lang, t, i) {
-  const large = i % 5 === 0;
-  const flip = i % 10 === 5;
+  const compact = LIST_CATEGORIES.has(cat.id);
+  const large = !compact && i % 5 === 0;
+  const flip = !compact && i % 10 === 5;
   const allergens = (d.allergens || []).filter((a) => a !== 'alcohol');
   const sizeBits = [
     d.pieces ? `${d.pieces} ${t.menu.pcs}` : '',
     d.weight ? d.weight.replace(/\s*g$/i, ' g') : '',
     d.volume || '',
   ].filter(Boolean);
-  const showWeightTodo = !d.pieces && !d.weight && !d.variants && !NO_WEIGHT_NEEDED.has(cat.id);
   const first = d.variants ? d.variants[0] : null;
   const search = [...new Set(['cs', 'uk', 'en'].filter((l) => l !== lang).map((l) => d.name[l]))].filter((n) => n !== d.name[lang]).join(' ');
   const attrs = `data-dish="${esc(d.id)}" data-allergens="${esc((d.allergens || []).join(' '))}" ${search ? `data-alt="${esc(search)}" ` : ''}data-name="${esc(d.name[lang])}"${d.alcohol ? ' data-alcohol' : ''}${first ? '' : ` data-price="${d.price}"`}`;
-  return `<article class="dish${large ? ' dish--large' : ''}${flip ? ' dish--flip' : ''}" ${attrs} data-grab-card>
-  ${dishImage(d, lang, large)}
+  return `<article class="dish${large ? ' dish--large' : ''}${flip ? ' dish--flip' : ''}${compact ? ' dish--row' : ''}" ${attrs} data-grab-card>
+  ${compact ? '' : dishImage(d, lang, large)}
   <div class="dish__body">
     <h4 class="dish__name">${esc(d.name[lang])}${d.badge === 'new' ? ` <span class="tag">${esc(t.menu.new)}</span>` : ''}${d.alcohol ? ` <span class="tag tag--age">${esc(t.menu.adult)}</span>` : ''}</h4>
     ${d.desc?.[lang] ? `<p class="dish__desc">${esc(d.desc[lang])}</p>` : ''}
-    ${sizeBits.length || showWeightTodo ? `<p class="dish__size">${esc(sizeBits.join(' · '))}${showWeightTodo ? placeholder(t.menu.weightMissing) : ''}</p>` : ''}
+    ${sizeBits.length ? `<p class="dish__size">${esc(sizeBits.join(' · '))}</p>` : ''}
     ${d.variants ? `<fieldset class="dish__variants"><legend class="sr">${esc(t.menu.variant)}</legend>${d.variants.map((v, k) => `<label class="chip"><input type="radio" name="v-${esc(d.id)}" value="${esc(v.id)}" data-price="${v.price}" data-label="${esc(v.label[lang])}"${k === 0 ? ' checked' : ''}><span>${esc(v.label[lang])}</span><b class="nojs-price">${money(v.price, lang)}</b></label>`).join('')}</fieldset>` : ''}
     <div class="dish__buy">
       <p class="dish__price" data-price-out>${money(first ? first.price : d.price, lang)}</p>
@@ -98,8 +99,9 @@ function promoSection(c, lang, t) {
   const gift = main?.gift ? c.dishes.get(main.gift) : null;
   const newCustomers = c.promos.promotions.find((p) => p.id === 'new-customers');
   const hasFuncoza = c.dishes.has('funchoza-with-vegetables');
-  const giftPic = gift && exists(`/img/menu/${gift.id}-480.webp`)
-    ? picture({ base: `/img/menu/${gift.id}`, widths: [240, 480], alt: gift.name[lang], width: 480, height: 480, sizes: '(min-width: 900px) 30vw, 70vw', cls: 'offer__pic' })
+  // A real photo from the restaurant, not the studio shot used in the menu
+  const giftPic = gift
+    ? picture({ base: '/img/venue/promo-tempura', widths: [480, 770], alt: gift.name[lang], width: 770, height: 370, sizes: '(min-width: 1000px) 34vw, 86vw', cls: 'offer__pic' })
     : '';
   const mainHtml = main ? `<div class="offer">
       <p class="offer__num">${main.threshold ? money(main.threshold, lang) : esc(main.title[lang])}</p>
@@ -194,6 +196,7 @@ function aboutSection(c, lang, t) {
         <h2 class="h-sec" id="about-h">${esc(t.about.title)}</h2>
         ${kanji('物語', 'kanji--v')}
         <p class="about__lead">${esc(t.about.lead)}</p>
+        <p class="about__bar">${esc(t.about.bar)}</p>
         ${story ? `<p class="about__story">${esc(story)}</p>` : `<p class="about__story">${placeholder(t.about.storyMissing)}</p>`}
         <p class="about__hint" aria-hidden="true">${esc(t.about.hint)} ${icons.arrow()}</p>
       </div>
@@ -327,6 +330,7 @@ function cartPanel(c, lang, t) {
     <div class="cart__gift" data-cart-gift hidden>${icons.gift()}<p data-cart-gift-text></p><span class="cart__bar"><i data-cart-gift-bar></i></span></div>
     <p class="cart__total" data-cart-total-row hidden><span>${esc(t.cart.total)}</span><strong data-cart-total>0</strong></p>
     <p class="cart__note" data-cart-note hidden>${esc(t.cart.deliveryNote)}</p>
+    <p class="cart__closed" data-cart-closed hidden></p>
     <form class="form form--cart" data-form="order" novalidate hidden>
       ${formField({ id: 'o-name', label: t.form.name, name: 'name', auto: 'name' })}
       ${formField({ id: 'o-phone', label: t.form.phone, name: 'phone', type: 'tel', ph: t.form.phonePh, auto: 'tel' })}

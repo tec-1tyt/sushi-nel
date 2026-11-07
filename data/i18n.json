@@ -5,9 +5,28 @@
       "description": "Sushi v Chomutově, Vršovců 26. Rolky, sety, poke bowly a funčoza. Objednejte s doručením nebo si zarezervujte stůl. Úterý až neděle od 9 hodin.",
       "keywords": "sushi Chomutov, rozvoz sushi Chomutov, suši Chomutov, sushi bar Chomutov, суші Хомутов"
     },
-    "nav": { "menu": "Menu", "promo": "Akce", "delivery": "Doručení", "about": "O nás", "visit": "Kde jsme", "order": "Objednat", "call": "Zavolat", "route": "Trasa", "skip": "Přeskočit na obsah", "open": "Otevřít navigaci", "close": "Zavřít navigaci", "lang": "Jazyk", "main": "Hlavní navigace", "home": "sushiNEL, na začátek stránky" },
+    "nav": {
+      "menu": "Menu",
+      "promo": "Akce",
+      "delivery": "Doručení",
+      "about": "O nás",
+      "visit": "Kde jsme",
+      "order": "Objednat",
+      "call": "Zavolat",
+      "route": "Trasa",
+      "skip": "Přeskočit na obsah",
+      "open": "Otevřít navigaci",
+      "close": "Zavřít navigaci",
+      "lang": "Jazyk",
+      "main": "Hlavní navigace",
+      "home": "sushiNEL, na začátek stránky"
+    },
     "hero": {
-      "h1": ["Nejlepší", "sushi", "v Chomutově"],
+      "h1": [
+        "Nejlepší",
+        "sushi",
+        "v Chomutově"
+      ],
       "other": "Найкращі суші в Хомутові",
       "otherLang": "uk",
       "slogan": "Sakura kvete na talíři.",
@@ -15,7 +34,21 @@
       "plateAlt": "Rolky nakrájené do srdcí a složené do květu sakury, bílý talíř, kresba z omáčky unagi",
       "seal": "Pečeť se znakem sakury"
     },
-    "status": { "open": "Otevřeno do {t}", "closed": "Teď zavřeno, otevíráme {d} v {t}", "days": { "mon": "v pondělí", "tue": "v úterý", "wed": "ve středu", "thu": "ve čtvrtek", "fri": "v pátek", "sat": "v sobotu", "sun": "v neděli", "today": "dnes", "tomorrow": "zítra" } },
+    "status": {
+      "open": "Otevřeno do {t}",
+      "closed": "Teď zavřeno, otevíráme {d} v {t}",
+      "days": {
+        "mon": "v pondělí",
+        "tue": "v úterý",
+        "wed": "ve středu",
+        "thu": "ve čtvrtek",
+        "fri": "v pátek",
+        "sat": "v sobotu",
+        "sun": "v neděli",
+        "today": "dnes",
+        "tomorrow": "zítra"
+      }
+    },
     "menu": {
       "title": "Menu",
       "search": "Hledat v menu",
@@ -37,8 +70,36 @@
       "from": "od",
       "noPhoto": "Bez fotky"
     },
-    "exclude": { "crustaceans": "krevet", "fish": "ryb", "milk": "mléka", "gluten": "lepku", "sesame": "sezamu", "nuts": "ořechů", "molluscs": "měkkýšů" },
-    "allergen": { "gluten": "lepek", "crustaceans": "korýši", "eggs": "vejce", "fish": "ryby", "peanuts": "arašídy", "soybeans": "sója", "milk": "mléko", "nuts": "ořechy", "sesame": "sezam", "molluscs": "měkkýši", "sulphites": "siřičitany", "lupin": "vlčí bob", "celery": "celer", "mustard": "hořčice", "chicken": "kuřecí", "onion": "cibule", "kiwi": "kiwi", "mango": "mango", "alcohol": "alkohol" },
+    "exclude": {
+      "crustaceans": "krevet",
+      "fish": "ryb",
+      "milk": "mléka",
+      "gluten": "lepku",
+      "sesame": "sezamu",
+      "nuts": "ořechů",
+      "molluscs": "měkkýšů"
+    },
+    "allergen": {
+      "gluten": "lepek",
+      "crustaceans": "korýši",
+      "eggs": "vejce",
+      "fish": "ryby",
+      "peanuts": "arašídy",
+      "soybeans": "sója",
+      "milk": "mléko",
+      "nuts": "ořechy",
+      "sesame": "sezam",
+      "molluscs": "měkkýši",
+      "sulphites": "siřičitany",
+      "lupin": "vlčí bob",
+      "celery": "celer",
+      "mustard": "hořčice",
+      "chicken": "kuřecí",
+      "onion": "cibule",
+      "kiwi": "kiwi",
+      "mango": "mango",
+      "alcohol": "alkohol"
+    },
     "promo": {
       "title": "Akce",
       "from": "od",
@@ -89,7 +150,8 @@
         "tempura": "Rolky v tempuře na černém talíři, za nimi růžová sakura",
         "box": "Rolky v průhledném patrovém boxu",
         "cake": "Dort s logem sushiNEL"
-      }
+      },
+      "bar": "Kavárna a bar: k rolkám víno, sekt, pivo nebo whisky."
     },
     "visit": {
       "title": "Kde nás najdete",
@@ -101,7 +163,15 @@
       "mapLoad": "Zobrazit interaktivní mapu",
       "mapNote": "Mapa se načítá z OpenStreetMap až po vašem kliknutí.",
       "mapAlt": "Mapa okolí ulice Vršovců v Chomutově",
-      "days": { "mon": "Pondělí", "tue": "Úterý", "wed": "Středa", "thu": "Čtvrtek", "fri": "Pátek", "sat": "Sobota", "sun": "Neděle" },
+      "days": {
+        "mon": "Pondělí",
+        "tue": "Úterý",
+        "wed": "Středa",
+        "thu": "Čtvrtek",
+        "fri": "Pátek",
+        "sat": "Sobota",
+        "sun": "Neděle"
+      },
       "reserveTitle": "Rezervace stolu",
       "reserveAlt": "Prostřený stůl s cedulkou Reserved a dvěma talíři rolek",
       "contactTitle": "Napište nám"
@@ -155,7 +225,9 @@
       "rate": "Příliš mnoho pokusů. Zkuste to za chvíli, nebo zavolejte.",
       "network": "Spojení selhalo. Zkuste to znovu, nebo zavolejte.",
       "server": "Odeslání se nepovedlo. Zavolejte nám prosím.",
-      "csrf": "Stránka byla otevřená moc dlouho. Zkuste to znovu."
+      "csrf": "Stránka byla otevřená moc dlouho. Zkuste to znovu.",
+      "closedNow": "Teď máme zavřeno. Vyberte čas během dnešní otevírací doby.",
+      "closedToday": "Dnes máme zavřeno, objednávku přijmeme zítra."
     },
     "cart": {
       "title": "Košík",
@@ -190,7 +262,11 @@
       "deny": "Jen nutné",
       "more": "Podrobnosti"
     },
-    "notFound": { "title": "Tady nic není", "text": "Stránka neexistuje. Menu ale ano.", "cta": "Zpět na úvod" }
+    "notFound": {
+      "title": "Tady nic není",
+      "text": "Stránka neexistuje. Menu ale ano.",
+      "cta": "Zpět na úvod"
+    }
   },
   "uk": {
     "meta": {
@@ -198,9 +274,28 @@
       "description": "Суші в Хомутові, Vršovců 26. Роли, сети, поке-боули та фунчоза. Замовляйте доставку або бронюйте стіл. Вівторок–неділя від 9:00.",
       "keywords": "суші Хомутов, доставка суші Хомутов, суші-бар Хомутов, роли Хомутов, sushi Chomutov"
     },
-    "nav": { "menu": "Меню", "promo": "Акції", "delivery": "Доставка", "about": "Про нас", "visit": "Де ми", "order": "Замовити", "call": "Подзвонити", "route": "Маршрут", "skip": "Перейти до змісту", "open": "Відкрити меню навігації", "close": "Закрити меню навігації", "lang": "Мова", "main": "Головна навігація", "home": "sushiNEL, на початок сторінки" },
+    "nav": {
+      "menu": "Меню",
+      "promo": "Акції",
+      "delivery": "Доставка",
+      "about": "Про нас",
+      "visit": "Де ми",
+      "order": "Замовити",
+      "call": "Подзвонити",
+      "route": "Маршрут",
+      "skip": "Перейти до змісту",
+      "open": "Відкрити меню навігації",
+      "close": "Закрити меню навігації",
+      "lang": "Мова",
+      "main": "Головна навігація",
+      "home": "sushiNEL, на початок сторінки"
+    },
     "hero": {
-      "h1": ["Найкращі", "суші", "в Хомутові"],
+      "h1": [
+        "Найкращі",
+        "суші",
+        "в Хомутові"
+      ],
       "other": "Nejlepší sushi v Chomutově",
       "otherLang": "cs",
       "slogan": "Сакура цвіте на тарілці.",
@@ -208,7 +303,21 @@
       "plateAlt": "Роли, нарізані сердечками й складені у квітку сакури, біла тарілка, малюнок соусом унагі",
       "seal": "Печатка зі знаком сакури"
     },
-    "status": { "open": "Відчинено до {t}", "closed": "Зараз зачинено, відчиняємо {d} о {t}", "days": { "mon": "у понеділок", "tue": "у вівторок", "wed": "у середу", "thu": "у четвер", "fri": "у п'ятницю", "sat": "у суботу", "sun": "у неділю", "today": "сьогодні", "tomorrow": "завтра" } },
+    "status": {
+      "open": "Відчинено до {t}",
+      "closed": "Зараз зачинено, відчиняємо {d} о {t}",
+      "days": {
+        "mon": "у понеділок",
+        "tue": "у вівторок",
+        "wed": "у середу",
+        "thu": "у четвер",
+        "fri": "у п'ятницю",
+        "sat": "у суботу",
+        "sun": "у неділю",
+        "today": "сьогодні",
+        "tomorrow": "завтра"
+      }
+    },
     "menu": {
       "title": "Меню",
       "search": "Пошук у меню",
@@ -230,8 +339,36 @@
       "from": "від",
       "noPhoto": "Без фото"
     },
-    "exclude": { "crustaceans": "креветок", "fish": "риби", "milk": "молока", "gluten": "глютену", "sesame": "кунжуту", "nuts": "горіхів", "molluscs": "молюсків" },
-    "allergen": { "gluten": "глютен", "crustaceans": "ракоподібні", "eggs": "яйця", "fish": "риба", "peanuts": "арахіс", "soybeans": "соя", "milk": "молоко", "nuts": "горіхи", "sesame": "кунжут", "molluscs": "молюски", "sulphites": "сульфіти", "lupin": "люпин", "celery": "селера", "mustard": "гірчиця", "chicken": "курка", "onion": "цибуля", "kiwi": "ківі", "mango": "манго", "alcohol": "алкоголь" },
+    "exclude": {
+      "crustaceans": "креветок",
+      "fish": "риби",
+      "milk": "молока",
+      "gluten": "глютену",
+      "sesame": "кунжуту",
+      "nuts": "горіхів",
+      "molluscs": "молюсків"
+    },
+    "allergen": {
+      "gluten": "глютен",
+      "crustaceans": "ракоподібні",
+      "eggs": "яйця",
+      "fish": "риба",
+      "peanuts": "арахіс",
+      "soybeans": "соя",
+      "milk": "молоко",
+      "nuts": "горіхи",
+      "sesame": "кунжут",
+      "molluscs": "молюски",
+      "sulphites": "сульфіти",
+      "lupin": "люпин",
+      "celery": "селера",
+      "mustard": "гірчиця",
+      "chicken": "курка",
+      "onion": "цибуля",
+      "kiwi": "ківі",
+      "mango": "манго",
+      "alcohol": "алкоголь"
+    },
     "promo": {
       "title": "Акції",
       "from": "від",
@@ -282,7 +419,8 @@
         "tempura": "Роли в темпурі на чорній тарілці, за ними рожева сакура",
         "box": "Роли в прозорому багатоярусному боксі",
         "cake": "Торт із логотипом sushiNEL"
-      }
+      },
+      "bar": "Кафе-бар: до ролів вино, ігристе, пиво чи віскі."
     },
     "visit": {
       "title": "Як нас знайти",
@@ -294,7 +432,15 @@
       "mapLoad": "Показати інтерактивну карту",
       "mapNote": "Карта завантажується з OpenStreetMap лише після вашого кліку.",
       "mapAlt": "Карта околиць вулиці Vršovců у Хомутові",
-      "days": { "mon": "Понеділок", "tue": "Вівторок", "wed": "Середа", "thu": "Четвер", "fri": "П'ятниця", "sat": "Субота", "sun": "Неділя" },
+      "days": {
+        "mon": "Понеділок",
+        "tue": "Вівторок",
+        "wed": "Середа",
+        "thu": "Четвер",
+        "fri": "П'ятниця",
+        "sat": "Субота",
+        "sun": "Неділя"
+      },
       "reserveTitle": "Бронювання столу",
       "reserveAlt": "Сервірований стіл із табличкою Reserved і двома тарілками ролів",
       "contactTitle": "Напишіть нам"
@@ -348,7 +494,9 @@
       "rate": "Забагато спроб. Спробуйте пізніше або подзвоніть.",
       "network": "Немає зв'язку. Спробуйте ще раз або подзвоніть.",
       "server": "Не вдалося надіслати. Будь ласка, подзвоніть нам.",
-      "csrf": "Сторінка була відкрита надто довго. Спробуйте ще раз."
+      "csrf": "Сторінка була відкрита надто довго. Спробуйте ще раз.",
+      "closedNow": "Зараз ми зачинені. Оберіть час у межах сьогоднішнього графіка.",
+      "closedToday": "Сьогодні ми зачинені, замовлення приймемо завтра."
     },
     "cart": {
       "title": "Кошик",
@@ -383,7 +531,11 @@
       "deny": "Лише необхідні",
       "more": "Детальніше"
     },
-    "notFound": { "title": "Тут нічого немає", "text": "Такої сторінки немає. А меню є.", "cta": "На головну" }
+    "notFound": {
+      "title": "Тут нічого немає",
+      "text": "Такої сторінки немає. А меню є.",
+      "cta": "На головну"
+    }
   },
   "en": {
     "meta": {
@@ -391,9 +543,28 @@
       "description": "Sushi in Chomutov, Vršovců 26. Rolls, sets, poke bowls and funchoza. Order for delivery or book a table. Tuesday to Sunday from 9 am.",
       "keywords": "sushi Chomutov, sushi delivery Chomutov, sushi bar Chomutov, sushi restaurant Chomutov"
     },
-    "nav": { "menu": "Menu", "promo": "Offers", "delivery": "Delivery", "about": "About", "visit": "Find us", "order": "Order", "call": "Call", "route": "Route", "skip": "Skip to content", "open": "Open navigation", "close": "Close navigation", "lang": "Language", "main": "Main navigation", "home": "sushiNEL, back to top" },
+    "nav": {
+      "menu": "Menu",
+      "promo": "Offers",
+      "delivery": "Delivery",
+      "about": "About",
+      "visit": "Find us",
+      "order": "Order",
+      "call": "Call",
+      "route": "Route",
+      "skip": "Skip to content",
+      "open": "Open navigation",
+      "close": "Close navigation",
+      "lang": "Language",
+      "main": "Main navigation",
+      "home": "sushiNEL, back to top"
+    },
     "hero": {
-      "h1": ["The best", "sushi", "in Chomutov"],
+      "h1": [
+        "The best",
+        "sushi",
+        "in Chomutov"
+      ],
       "other": "Nejlepší sushi v Chomutově · Найкращі суші в Хомутові",
       "otherLang": "cs",
       "slogan": "Sakura blooms on the plate.",
@@ -401,7 +572,21 @@
       "plateAlt": "Rolls cut into hearts and arranged as a sakura flower, white plate, unagi sauce drawing",
       "seal": "Seal with the sakura character"
     },
-    "status": { "open": "Open until {t}", "closed": "Closed now, we open {d} at {t}", "days": { "mon": "on Monday", "tue": "on Tuesday", "wed": "on Wednesday", "thu": "on Thursday", "fri": "on Friday", "sat": "on Saturday", "sun": "on Sunday", "today": "today", "tomorrow": "tomorrow" } },
+    "status": {
+      "open": "Open until {t}",
+      "closed": "Closed now, we open {d} at {t}",
+      "days": {
+        "mon": "on Monday",
+        "tue": "on Tuesday",
+        "wed": "on Wednesday",
+        "thu": "on Thursday",
+        "fri": "on Friday",
+        "sat": "on Saturday",
+        "sun": "on Sunday",
+        "today": "today",
+        "tomorrow": "tomorrow"
+      }
+    },
     "menu": {
       "title": "Menu",
       "search": "Search the menu",
@@ -423,8 +608,36 @@
       "from": "from",
       "noPhoto": "No photo"
     },
-    "exclude": { "crustaceans": "shrimp", "fish": "fish", "milk": "milk", "gluten": "gluten", "sesame": "sesame", "nuts": "nuts", "molluscs": "molluscs" },
-    "allergen": { "gluten": "gluten", "crustaceans": "crustaceans", "eggs": "eggs", "fish": "fish", "peanuts": "peanuts", "soybeans": "soy", "milk": "milk", "nuts": "nuts", "sesame": "sesame", "molluscs": "molluscs", "sulphites": "sulphites", "lupin": "lupin", "celery": "celery", "mustard": "mustard", "chicken": "chicken", "onion": "onion", "kiwi": "kiwi", "mango": "mango", "alcohol": "alcohol" },
+    "exclude": {
+      "crustaceans": "shrimp",
+      "fish": "fish",
+      "milk": "milk",
+      "gluten": "gluten",
+      "sesame": "sesame",
+      "nuts": "nuts",
+      "molluscs": "molluscs"
+    },
+    "allergen": {
+      "gluten": "gluten",
+      "crustaceans": "crustaceans",
+      "eggs": "eggs",
+      "fish": "fish",
+      "peanuts": "peanuts",
+      "soybeans": "soy",
+      "milk": "milk",
+      "nuts": "nuts",
+      "sesame": "sesame",
+      "molluscs": "molluscs",
+      "sulphites": "sulphites",
+      "lupin": "lupin",
+      "celery": "celery",
+      "mustard": "mustard",
+      "chicken": "chicken",
+      "onion": "onion",
+      "kiwi": "kiwi",
+      "mango": "mango",
+      "alcohol": "alcohol"
+    },
     "promo": {
       "title": "Offers",
       "from": "from",
@@ -475,7 +688,8 @@
         "tempura": "Tempura rolls on a black plate, pink sakura behind",
         "box": "Rolls in a clear tiered box",
         "cake": "Cake with the sushiNEL logo"
-      }
+      },
+      "bar": "A café-bar: wine, sparkling, beer or whisky with your rolls."
     },
     "visit": {
       "title": "Find us",
@@ -487,7 +701,15 @@
       "mapLoad": "Show the interactive map",
       "mapNote": "The map loads from OpenStreetMap only after you click.",
       "mapAlt": "Map of the area around Vršovců street in Chomutov",
-      "days": { "mon": "Monday", "tue": "Tuesday", "wed": "Wednesday", "thu": "Thursday", "fri": "Friday", "sat": "Saturday", "sun": "Sunday" },
+      "days": {
+        "mon": "Monday",
+        "tue": "Tuesday",
+        "wed": "Wednesday",
+        "thu": "Thursday",
+        "fri": "Friday",
+        "sat": "Saturday",
+        "sun": "Sunday"
+      },
       "reserveTitle": "Book a table",
       "reserveAlt": "A laid table with a Reserved sign and two plates of rolls",
       "contactTitle": "Write to us"
@@ -541,7 +763,9 @@
       "rate": "Too many attempts. Try later or give us a call.",
       "network": "Connection failed. Try again or give us a call.",
       "server": "Sending failed. Please call us.",
-      "csrf": "The page was open too long. Please try again."
+      "csrf": "The page was open too long. Please try again.",
+      "closedNow": "We are closed right now. Please choose a time within today's hours.",
+      "closedToday": "We are closed today. We take orders again tomorrow."
     },
     "cart": {
       "title": "Cart",
@@ -576,6 +800,10 @@
       "deny": "Necessary only",
       "more": "Details"
     },
-    "notFound": { "title": "Nothing here", "text": "This page doesn't exist. The menu does.", "cta": "Back to the start" }
+    "notFound": {
+      "title": "Nothing here",
+      "text": "This page doesn't exist. The menu does.",
+      "cta": "Back to the start"
+    }
   }
 }

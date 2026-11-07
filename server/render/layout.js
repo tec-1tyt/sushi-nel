@@ -138,7 +138,7 @@ function clientData({ lang, c, t, home }) {
     menu: { add: t.menu.add, addAria: t.menu.addAria, from: t.menu.from },
     hours: c.site.hours,
     geo: c.site.geo,
-    gift: gift ? { threshold: gift.threshold } : null,
+    gift: gift ? { threshold: gift.threshold, exclude: gift.thresholdExcludes || [] } : null,
     mapAttr: '© OpenStreetMap contributors',
     placeName: `${c.site.name}, ${c.site.address.street}`,
   }).replace(/</g, '\\u003c');
