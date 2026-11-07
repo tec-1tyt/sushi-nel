@@ -139,6 +139,7 @@
       "noscript": "Formuláře potřebují JavaScript. Zavolejte nám nebo napište na Instagram."
     },
     "errors": {
+      "demo": "Toto je ukázka webu, formulář zatím nic neodesílá. Zavolejte nám prosím.",
       "required": "Vyplňte prosím.",
       "phone": "Zkontrolujte telefonní číslo.",
       "date": "Vyberte budoucí datum.",
@@ -331,6 +332,7 @@
       "noscript": "Для форм потрібен JavaScript. Подзвоніть нам або напишіть в Instagram."
     },
     "errors": {
+      "demo": "Це демоверсія сайту, форма поки нічого не надсилає. Будь ласка, подзвоніть нам.",
       "required": "Заповніть, будь ласка.",
       "phone": "Перевірте номер телефону.",
       "date": "Оберіть дату в майбутньому.",
@@ -523,6 +525,7 @@
       "noscript": "Forms need JavaScript. Please call us or message us on Instagram."
     },
     "errors": {
+      "demo": "This is a preview of the site, the form does not send anything yet. Please call us.",
       "required": "Please fill this in.",
       "phone": "Please check the phone number.",
       "date": "Please choose a future date.",

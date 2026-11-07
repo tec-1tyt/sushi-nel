@@ -12,7 +12,8 @@
     "dev": "node --env-file-if-exists=.env --watch server/index.js",
     "check:data": "node server/check-data.js",
     "test": "node --test tests/",
-    "vendor": "node tools/vendor.mjs"
+    "vendor": "node tools/vendor.mjs",
+    "build:static": "node tools/build-static.mjs"
   },
   "dependencies": {
     "compression": "1.8.2",

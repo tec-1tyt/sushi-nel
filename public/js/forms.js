@@ -1,6 +1,7 @@
 // Shared form sending: CSRF token, field errors, retries, optional Turnstile. The server re-checks everything.
 
 const tokenState = { value: null, at: 0, siteKey: null, pending: null };
+const isStatic = 'static' in document.documentElement.dataset;
 
 async function fetchToken() {
   const r = await fetch('/api/csrf', { credentials: 'same-origin', cache: 'no-store' });
@@ -13,6 +14,7 @@ async function fetchToken() {
 }
 
 export function primeToken() {
+  if (isStatic) return Promise.resolve(null);
   if (tokenState.value && Date.now() - tokenState.at < 3 * 3600e3) return Promise.resolve(tokenState.value);
   if (!tokenState.pending) tokenState.pending = fetchToken().finally(() => { tokenState.pending = null; });
   return tokenState.pending;
@@ -21,6 +23,7 @@ export function primeToken() {
 const wait = (ms) => new Promise((r) => setTimeout(r, ms));
 
 export async function postJson(url, body) {
+  if (isStatic) return { status: 200, json: { ok: false, error: 'demo' } };
   await primeToken();
   const send = () => fetch(url, {
     method: 'POST',
