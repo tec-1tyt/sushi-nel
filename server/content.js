@@ -49,11 +49,3 @@ export function livePromotions(all, today = new Date().toISOString().slice(0, 10
   return all.filter((p) => p.active && (!p.validFrom || p.validFrom <= today) && (!p.validTo || p.validTo >= today));
 }
 
-// Authoritative price lookup. Prices sent by a browser are never trusted.
-export function priceOf(dish, variantId) {
-  if (dish.variants) {
-    const v = variantId ? dish.variants.find((x) => x.id === variantId) : null;
-    return v ? { price: v.price, variant: v } : null;
-  }
-  return variantId ? null : { price: dish.price, variant: null };
-}

@@ -102,25 +102,6 @@ const common = {
   turnstile: z.string().max(4096).optional(),
 };
 
-export const orderSchema = z.object({
-  ...common,
-  name,
-  phone,
-  mode: z.enum(['delivery', 'pickup']),
-  address: clean(200).optional().default(''),
-  when: z.union([z.literal('asap'), hhmm]),
-  note,
-  adult: z.boolean().optional().default(false),
-  consent,
-  items: z.array(z.object({
-    id: z.string().regex(/^[a-z0-9-]+$/).max(64),
-    variant: z.string().max(64).optional(),
-    qty: z.number().int().min(1).max(30),
-  })).min(1, 'items').max(60, 'items'),
-}).superRefine((d, ctx) => {
-  if (d.mode === 'delivery' && d.address.length < 5) ctx.addIssue({ code: 'custom', path: ['address'], message: 'address' });
-});
-
 export const reservationSchema = z.object({
   ...common,
   name,

@@ -65,7 +65,6 @@ function nav({ lang, c, t, path, home }) {
   <div class="nav__tools">
     ${langSwitch(lang, path, t)}
     <a class="nav__phone" href="tel:${esc(c.site.phone)}">${icons.phone()}<span>${esc(c.site.phoneDisplay)}</span></a>
-    ${home ? `<button class="nav__cart js-only" type="button" data-cart-open aria-label="${esc(t.cart.open)}" data-grab>${icons.bag()}<span class="nav__count" data-cart-count hidden>0</span></button>` : ''}
     <button class="burger js-only" type="button" data-burger aria-expanded="false" aria-controls="overlay" aria-label="${esc(t.nav.open)}" data-label-open="${esc(t.nav.open)}" data-label-close="${esc(t.nav.close)}"><i></i><i></i></button>
   </div>
 </header>
@@ -127,18 +126,14 @@ function cookieBanner(lang, t) {
 
 // Shared values the browser needs. Lives in a JSON data block, which a strict CSP allows.
 function clientData({ lang, c, t, home }) {
-  const gift = c.promos.promotions.find((p) => p.active && p.threshold && p.gift);
   return JSON.stringify({
     lang,
     home,
     errors: t.errors,
     form: t.form,
-    cart: t.cart,
     status: t.status,
-    menu: { add: t.menu.add, addAria: t.menu.addAria, from: t.menu.from },
     hours: c.site.hours,
     geo: c.site.geo,
-    gift: gift ? { threshold: gift.threshold, exclude: gift.thresholdExcludes || [] } : null,
     mapAttr: '© OpenStreetMap contributors',
     placeName: `${c.site.name}, ${c.site.address.street}`,
   }).replace(/</g, '\\u003c');

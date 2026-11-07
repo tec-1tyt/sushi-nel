@@ -84,7 +84,6 @@ const limiter = (windowMs, limit) => rateLimit({
 });
 
 export const limits = {
-  order: limiter(10 * 60 * 1000, 8),
   reservation: limiter(10 * 60 * 1000, 6),
   contact: limiter(10 * 60 * 1000, 5),
   csrf: limiter(60 * 1000, 40),

@@ -1,7 +1,6 @@
 // Backend tests: npm test. No extra packages, runs on node:test against a real server instance.
 import assert from 'node:assert/strict';
 import { after, before, test } from 'node:test';
-import { clock } from '../server/api.js';
 import { createApp } from '../server/index.js';
 
 let server, base, cookie, token;
@@ -32,7 +31,6 @@ const order = (over = {}) => ({
 });
 
 before(async () => {
-  clock.now = () => new Date(2030, 0, 1, 12, 0);   // a Tuesday at noon: open
   server = createApp().listen(0);
   await new Promise((r) => server.once('listening', r));
   base = `http://127.0.0.1:${server.address().port}`;
@@ -61,6 +59,10 @@ test('page has no inline style attributes and carries structured data', async ()
   assert.match(html, /Nejlepší sushi v Chomutově/);
 });
 
+test('the order endpoint is gone: ordering is by phone or MenuForma', async () => {
+  assert.equal((await post('/api/order', order())).status, 404);
+});
+
 test('POST without a CSRF token is refused', async () => {
   const r = await fetch(`${base}/api/reservation`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(order()) });
   assert.equal(r.status, 403);
@@ -74,41 +76,6 @@ test('POST with a forged token is refused', async () => {
 test('cross-site origin is refused even with a valid token', async () => {
   const r = await post('/api/contact', order(), { origin: 'https://evil.example' });
   assert.equal(r.status, 403);
-});
-
-test('the server sets the price, the browser cannot', async () => {
-  const r = await post('/api/order', order({ items: [{ id: 'phila-set', qty: 2, price: 1 }] }));
-  const j = await r.json();
-  assert.equal(r.status, 200);
-  assert.equal(j.total, 2300);
-});
-
-test('an order over the threshold reports the gift', async () => {
-  const j = await (await post('/api/order', order({ lang: 'uk' }))).json();
-  assert.ok(j.gift, 'gift should be named');
-});
-
-test('drinks and vouchers do not count toward the gift', async () => {
-  const voucher = await (await post('/api/order', order({ items: [{ id: 'gift-voucher-1-000-kc', qty: 2 }] }))).json();
-  assert.equal(voucher.ok, true);
-  assert.equal(voucher.gift, null);
-});
-
-test('orders respect opening hours', async () => {
-  const at = (d, h, m = 0) => { clock.now = () => new Date(2030, 0, d, h, m); };
-  try {
-    at(7, 12);     // Monday: closed all day
-    assert.equal((await (await post('/api/order', order())).json()).errors.when, 'closedToday');
-    at(1, 23);     // Tuesday after closing
-    assert.equal((await (await post('/api/order', order())).json()).errors.when, 'closedNow');
-    at(1, 12);     // Tuesday noon, but asking for a time past closing
-    assert.equal((await (await post('/api/order', order({ when: '22:30' }))).json()).errors.time, 'time');
-  } finally { at(1, 12); }
-});
-
-test('unknown dish and wrong variant are refused', async () => {
-  assert.equal((await post('/api/order', order({ items: [{ id: 'does-not-exist', qty: 1 }] }))).status, 422);
-  assert.equal((await post('/api/order', order({ items: [{ id: 'poke-bowl-tuna', variant: '999-g', qty: 1 }] }))).status, 422);
 });
 
 test('invalid input returns field errors', async () => {

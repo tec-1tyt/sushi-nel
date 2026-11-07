@@ -48,7 +48,6 @@ function dishCard(d, cat, lang, t, i) {
     ${d.variants ? `<fieldset class="dish__variants"><legend class="sr">${esc(t.menu.variant)}</legend>${d.variants.map((v, k) => `<label class="chip"><input type="radio" name="v-${esc(d.id)}" value="${esc(v.id)}" data-price="${v.price}" data-label="${esc(v.label[lang])}"${k === 0 ? ' checked' : ''}><span>${esc(v.label[lang])}</span><b class="nojs-price">${money(v.price, lang)}</b></label>`).join('')}</fieldset>` : ''}
     <div class="dish__buy">
       <p class="dish__price" data-price-out>${money(first ? first.price : d.price, lang)}</p>
-      <button class="add js-only" type="button" data-add aria-label="${esc(fill(t.menu.addAria, { n: d.name[lang] }))}" data-grab><span class="add__ico">${icons.plus()}</span><span class="add__txt">${esc(t.menu.add)}</span></button>
     </div>
     ${allergens.length ? `<p class="dish__al"><span class="dish__al-k">${esc(t.menu.allergens)}:</span> ${esc(allergens.map((a) => t.allergen[a] || a).join(', '))}</p>` : ''}
   </div>
@@ -171,7 +170,6 @@ function deliverySection(c, lang, t) {
   <div class="channels">
     <h3 class="channels__h">${esc(t.delivery.channelsTitle)}</h3>
     <ul>
-      ${channel(`<button class="chan js-only" type="button" data-cart-open data-grab>${icons.bag()}<span class="chan__t">${esc(t.delivery.siteOrder)}<small>${esc(t.delivery.siteOrderNote)}</small></span>${icons.arrow()}</button>`)}
       ${channel(row(`tel:${c.site.phone}`, icons.phone(), `${t.delivery.phone} ${c.site.phoneDisplay}`))}
       ${o.menuforma ? channel(row(o.menuforma, icons.globe(), t.delivery.menuforma, t.delivery.menuformaNote, true)) : ''}
       ${s.instagram ? channel(row(s.instagram, icons.instagram(), t.delivery.instagram, '', true)) : ''}
@@ -309,7 +307,7 @@ function heroSection(c, lang, t) {
     <p class="hero__other" lang="${esc(h.otherLang)}">${esc(h.other)}</p>
     <p class="hero__slogan">${esc(h.slogan)}</p>
     <div class="hero__cta">
-      <a class="btn btn--primary btn--xl" href="#menu" data-morph data-order-cta data-grab><span>${esc(t.nav.order)}</span></a>
+      ${orderLink(c, t, 'btn btn--primary btn--xl', `<span>${esc(t.nav.order)}</span>`, 'data-morph data-grab')}
       <a class="tlink tlink--light hero__call" href="tel:${esc(c.site.phone)}">${icons.phone()}${esc(c.site.phoneDisplay)}</a>
     </div>
     <p class="status js-only" data-status></p>
@@ -319,45 +317,19 @@ function heroSection(c, lang, t) {
 </section>`;
 }
 
-function cartPanel(c, lang, t) {
+// "Order" always means the MenuForma online menu, or a phone call if that link is ever removed
+function orderLink(c, t, cls, inner, attrs = '') {
+  const url = c.site.ordering.menuforma;
+  return url
+    ? `<a class="${cls}" href="${esc(url)}" rel="noopener" target="_blank" ${attrs}>${inner}</a>`
+    : `<a class="${cls}" href="tel:${esc(c.site.phone)}" ${attrs}>${inner}</a>`;
+}
+
+function dockAndPreloader(c, lang, t) {
   const s = c.site;
-  return `<aside class="cart js-only" data-cart hidden aria-labelledby="cart-h" role="dialog" aria-modal="true" data-lenis-prevent>
-  <div class="cart__scrim" data-cart-close></div>
-  <div class="cart__panel" data-cart-panel tabindex="-1">
-    <header class="cart__head"><h2 id="cart-h">${esc(t.cart.title)}</h2><button class="iconbtn" type="button" data-cart-close aria-label="${esc(t.cart.close)}" data-grab>${icons.close()}</button></header>
-    <div class="cart__empty" data-cart-empty><p>${esc(t.cart.empty)}</p><a class="tlink tlink--light" href="#menu" data-cart-close>${esc(t.cart.emptyCta)}${icons.arrow()}</a></div>
-    <ul class="cart__lines" data-cart-lines></ul>
-    <div class="cart__gift" data-cart-gift hidden>${icons.gift()}<p data-cart-gift-text></p><span class="cart__bar"><i data-cart-gift-bar></i></span></div>
-    <p class="cart__total" data-cart-total-row hidden><span>${esc(t.cart.total)}</span><strong data-cart-total>0</strong></p>
-    <p class="cart__note" data-cart-note hidden>${esc(t.cart.deliveryNote)}</p>
-    <p class="cart__closed" data-cart-closed hidden></p>
-    <form class="form form--cart" data-form="order" novalidate hidden>
-      ${formField({ id: 'o-name', label: t.form.name, name: 'name', auto: 'name' })}
-      ${formField({ id: 'o-phone', label: t.form.phone, name: 'phone', type: 'tel', ph: t.form.phonePh, auto: 'tel' })}
-      <fieldset class="seg" data-field="mode"><legend>${esc(t.form.mode)}</legend>
-        <label><input type="radio" name="mode" value="delivery" checked><span>${esc(t.form.modeDelivery)}</span></label>
-        ${s.delivery.pickup ? `<label><input type="radio" name="mode" value="pickup"><span>${esc(t.form.modePickup)}</span></label>` : ''}
-      </fieldset>
-      <div data-address-wrap>${formField({ id: 'o-address', label: t.form.address, name: 'address', ph: t.form.addressPh, auto: 'street-address' })}</div>
-      <fieldset class="seg" data-field="when"><legend>${esc(t.form.when)}</legend>
-        <label><input type="radio" name="whenMode" value="asap" checked><span>${esc(t.form.whenAsap)}</span></label>
-        <label><input type="radio" name="whenMode" value="time"><span>${esc(t.form.whenTime)}</span></label>
-      </fieldset>
-      <div data-time-wrap hidden>${formField({ id: 'o-time', label: t.form.time, name: 'time', type: 'time', required: false, attrs: 'step="300"' })}</div>
-      ${formField({ id: 'o-note', label: t.form.note, name: 'note', required: false, ph: t.form.notePh })}
-      <div class="field field--check" data-field="adult" data-adult-wrap hidden><label for="o-adult"><input id="o-adult" type="checkbox" name="adult"><span>${esc(t.form.adult)}</span></label><p class="field__err" data-err hidden></p></div>
-      ${honeypot('o-hp', t)}
-      ${consentField('o-consent', lang, t)}
-      <div class="form__turnstile" data-turnstile hidden></div>
-      <p class="field__err" data-err-form hidden></p>
-      <button class="btn btn--primary btn--full" type="submit" data-morph data-grab><span>${esc(t.form.sendOrder)}</span></button>
-    </form>
-    <p class="form__msg form__msg--ok" data-cart-done role="status" hidden></p>
-  </div>
-</aside>
-<nav class="dock js-only" aria-label="${esc(t.nav.order)}">
+  return `<nav class="dock js-only" aria-label="${esc(t.nav.order)}">
   <a href="tel:${esc(s.phone)}" class="dock__b">${icons.phone()}<span>${esc(t.nav.call)}</span></a>
-  <a href="#menu" class="dock__b dock__b--main" data-dock-order><span data-dock-label data-default="${esc(t.nav.order)}">${esc(t.nav.order)}</span></a>
+  ${orderLink(c, t, 'dock__b dock__b--main', `<span>${esc(t.nav.order)}</span>`)}
   <a href="#visit" class="dock__b">${icons.pin()}<span>${esc(t.nav.route)}</span></a>
 </nav>
 <div class="pre" data-pre aria-hidden="true"><svg viewBox="0 0 100 100" class="pre__svg"><defs><radialGradient id="pre-soy" cx=".38" cy=".3" r=".9"><stop offset="0" stop-color="#b56a35"/><stop offset=".35" stop-color="#5c2810"/><stop offset="1" stop-color="#1b0a04"/></radialGradient></defs><circle class="pre__ring" cx="50" cy="52" r="14"/><path data-pre-path fill="url(#pre-soy)"/></svg></div>`;
@@ -366,5 +338,5 @@ function cartPanel(c, lang, t) {
 export function renderHome(c, lang) {
   const t = c.i18n[lang];
   const body = [heroSection(c, lang, t), menuSection(c, lang, t), promoSection(c, lang, t), deliverySection(c, lang, t), aboutSection(c, lang, t), visitSection(c, lang, t)].join('\n');
-  return page({ lang, c, t, title: t.meta.title, description: t.meta.description, path: '/', body, home: true, extra: cartPanel(c, lang, t) });
+  return page({ lang, c, t, title: t.meta.title, description: t.meta.description, path: '/', body, home: true, extra: dockAndPreloader(c, lang, t) });
 }
