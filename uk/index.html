@@ -26,7 +26,7 @@
 <link rel="manifest" href="/sushi-nel/site.webmanifest">
 <link rel="preload" as="font" type="font/woff2" href="/sushi-nel/fonts/display-cyrillic.woff2" crossorigin>
 <link rel="preload" as="image" type="image/avif" href="/sushi-nel/img/hero/plate-1100.avif" imagesrcset="/sushi-nel/img/hero/plate-720.avif 720w, /sushi-nel/img/hero/plate-1100.avif 1100w, /sushi-nel/img/hero/plate-1536.avif 1536w" imagesizes="(min-width: 1000px) 60vw, 116vw" fetchpriority="high">
-<link rel="stylesheet" href="/sushi-nel/css/site.css?v=4fbdfc956d">
+<link rel="stylesheet" href="/sushi-nel/css/site.css?v=9607bad39a">
 <script>// Runs before first paint. Marks JS as available and sets up failsafes so a broken script can never hide the page.
 (function () {
   var d = document.documentElement;
@@ -55,7 +55,6 @@
   <div class="nav__tools">
     <ul class="lang " aria-label="Мова"><li><a href="/sushi-nel/" hreflang="cs" lang="cs">CS</a></li><li><a href="/sushi-nel/uk/" hreflang="uk" lang="uk" aria-current="true">UA</a></li><li><a href="/sushi-nel/en/" hreflang="en" lang="en">EN</a></li></ul>
     <a class="nav__phone" href="tel:+420770699364"><svg class="icon i-move i-ring" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.2 3.4 8.9 3a1 1 0 0 1 1.1.7l1 3.2a1 1 0 0 1-.3 1l-1.5 1.4a12.6 12.6 0 0 0 5.6 5.6l1.4-1.5a1 1 0 0 1 1-.3l3.2 1a1 1 0 0 1 .7 1.1l-.4 2.7a1.6 1.6 0 0 1-1.6 1.4C10.700 20.800 3.200 13.300 4.800 5a1.600 1.600 0 0 1 1.400-1.600Z"/></svg><span>+420 770 699 364</span></a>
-    <button class="nav__cart js-only" type="button" data-cart-open aria-label="Відкрити кошик" data-grab><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.500 8.500h13l1 11.500h-15l1-11.500Z"/><path d="M9 8.500V7a3 3 0 0 1 6 0v1.500"/></svg><span class="nav__count" data-cart-count hidden>0</span></button>
     <button class="burger js-only" type="button" data-burger aria-expanded="false" aria-controls="overlay" aria-label="Відкрити меню навігації" data-label-open="Відкрити меню навігації" data-label-close="Закрити меню навігації"><i></i><i></i></button>
   </div>
 </header>
@@ -79,7 +78,7 @@
     <p class="hero__other" lang="cs">Nejlepší sushi v Chomutově</p>
     <p class="hero__slogan">Сакура цвіте на тарілці.</p>
     <div class="hero__cta">
-      <a class="btn btn--primary btn--xl" href="#menu" data-morph data-order-cta data-grab><span>Замовити</span></a>
+      <a class="btn btn--primary btn--xl" href="https://menuforma.com/delivery/sushinel" rel="noopener" target="_blank" data-morph data-grab><span>Замовити</span></a>
       <a class="tlink tlink--light hero__call" href="tel:+420770699364"><svg class="icon i-move i-ring" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.2 3.4 8.9 3a1 1 0 0 1 1.1.7l1 3.2a1 1 0 0 1-.3 1l-1.5 1.4a12.6 12.6 0 0 0 5.6 5.6l1.4-1.5a1 1 0 0 1 1-.3l3.2 1a1 1 0 0 1 .7 1.1l-.4 2.7a1.6 1.6 0 0 1-1.6 1.4C10.700 20.800 3.200 13.300 4.800 5a1.600 1.600 0 0 1 1.400-1.600Z"/></svg>+420 770 699 364</a>
     </div>
     <p class="status js-only" data-status></p>
@@ -114,7 +113,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>1 150 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Філа Сет у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> ракоподібні, глютен, молоко, риба, кунжут</p>
   </div>
@@ -127,7 +125,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>800 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Дракони Сет у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> ківі, молоко, ракоподібні, глютен, риба</p>
   </div>
@@ -140,7 +137,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>1 050 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Сет Дракони 2.0 у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> ракоподібні, ківі, манго, глютен, риба, молоко</p>
   </div>
@@ -153,7 +149,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>1 450 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Мікс Сет у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> ракоподібні, риба, молоко, глютен, кунжут</p>
   </div>
@@ -166,7 +161,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>1 250 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Новий Нел у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, ракоподібні, кунжут, риба, молоко</p>
   </div>
@@ -179,7 +173,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>1 050 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Веселка Сет у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, ракоподібні, молоко, риба, ківі</p>
   </div>
@@ -192,7 +185,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>1 250 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Вау Сет у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> ракоподібні, риба, молоко, глютен</p>
   </div>
@@ -205,7 +197,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>2 250 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Імперіал Максі Сет у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, ракоподібні, молоко, риба, кунжут</p>
   </div>
@@ -218,7 +209,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>1 050 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Чорне Полум&#39;я у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> ракоподібні, молоко, риба</p>
   </div>
@@ -231,7 +221,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>1 250 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Ідеальний Мікс у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> ракоподібні, молоко, глютен, риба</p>
   </div>
@@ -244,7 +233,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>1 050 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Літній сет у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> соя, глютен, яйця, молоко, люпин, ківі, риба, ракоподібні</p>
   </div>
@@ -257,7 +245,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>950 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Сет Міні Нел у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> ракоподібні, риба, молоко, кунжут, глютен</p>
   </div>
@@ -270,7 +257,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>1 150 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Сет Креветки у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> ракоподібні, молоко, глютен</p>
   </div>
@@ -283,7 +269,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>2 050 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Сет Максі у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> кунжут, ракоподібні, риба, молоко, глютен, молюски</p>
   </div>
@@ -296,7 +281,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>1 650 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Запечений Сет у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, риба, соя, ракоподібні, кунжут, молоко</p>
   </div>
@@ -309,7 +293,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>950 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Лосось Сет у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> риба, глютен, молоко, кунжут</p>
   </div>
@@ -322,7 +305,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>230 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Рол з сиром у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, риба</p>
   </div>
@@ -335,7 +317,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>300 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Samurai Roll у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, риба, ракоподібні</p>
   </div>
@@ -348,7 +329,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>260 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Легкий Ebi у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, ракоподібні, риба, соя</p>
   </div>
@@ -361,7 +341,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>270 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Ніжний Ebi у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, ракоподібні, риба, горіхи</p>
   </div>
@@ -374,7 +353,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>250 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Вулкан Сезам у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, ракоподібні, кунжут, риба</p>
   </div>
@@ -387,7 +365,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>300 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Тако Сезам у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, риба, молюски, кунжут</p>
   </div>
@@ -400,7 +377,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>370 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Тако Делюкс у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, риба, молюски, кунжут, соя</p>
   </div>
@@ -413,7 +389,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>300 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Чорний Принц у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, ракоподібні, риба, молоко, горіхи</p>
   </div>
@@ -426,7 +401,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>300 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Український Рол у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, риба</p>
   </div>
@@ -439,7 +413,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>200 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Нель Роял Гункани 5 шт у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, ракоподібні, риба</p>
   </div>
@@ -452,7 +425,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>300 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Імператор у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> ракоподібні, риба, яйця, соя</p>
   </div>
@@ -465,7 +437,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>320 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Фенікс у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> ракоподібні, риба, соя</p>
   </div>
@@ -478,7 +449,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>300 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Чеддар Ебі у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, ракоподібні, риба, соя</p>
   </div>
@@ -491,7 +461,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>320 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Чорна Перлина у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, ракоподібні, риба</p>
   </div>
@@ -504,7 +473,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>340 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Лосось Авокадо Люкс у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, ракоподібні, риба</p>
   </div>
@@ -517,7 +485,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>320 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Чорний Океан у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, ракоподібні, риба</p>
   </div>
@@ -530,7 +497,6 @@
     <fieldset class="dish__variants"><legend class="sr">Розмір</legend><label class="chip"><input type="radio" name="v-queen-s-crown" value="1-pc-salmon" data-price="150" data-label="1 шт, лосось" checked><span>1 шт, лосось</span><b class="nojs-price">150 Kč</b></label><label class="chip"><input type="radio" name="v-queen-s-crown" value="1-pc-shrimp" data-price="160" data-label="1 шт, креветка"><span>1 шт, креветка</span><b class="nojs-price">160 Kč</b></label></fieldset>
     <div class="dish__buy">
       <p class="dish__price" data-price-out>150 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Королівська Корона у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, ракоподібні, риба</p>
   </div>
@@ -543,7 +509,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>250 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Червоний Дракон у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, риба</p>
   </div>
@@ -556,7 +521,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>280 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Зелений Дракон у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, риба, кунжут, соя</p>
   </div>
@@ -569,7 +533,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>300 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Жовтий Дракон у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, ракоподібні, риба</p>
   </div>
@@ -582,7 +545,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>250 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Око Дракона у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, ракоподібні</p>
   </div>
@@ -595,7 +557,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>230 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Philadelphia Sake у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, риба</p>
   </div>
@@ -608,7 +569,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>230 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Philadelphia Ebi у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, ракоподібні</p>
   </div>
@@ -621,7 +581,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>230 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Philadelphia Grilled у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, риба</p>
   </div>
@@ -634,7 +593,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>230 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Philadelphia Unagi у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, риба, соя</p>
   </div>
@@ -647,7 +605,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>230 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Philadelphia Sesame у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, риба, кунжут</p>
   </div>
@@ -660,7 +617,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>220 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати California Sake у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, риба</p>
   </div>
@@ -673,7 +629,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>230 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати California Ebi у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, ракоподібні, риба</p>
   </div>
@@ -686,7 +641,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>250 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Каліфорнія Гарячий Ебі у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, ракоподібні, риба</p>
   </div>
@@ -699,7 +653,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>100 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Макі Саке у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> риба</p>
   </div>
@@ -712,7 +665,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>220 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Футомакі Саке у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> риба, молоко</p>
   </div>
@@ -725,7 +677,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>230 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Футомакі Вибір у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> молоко, риба, ракоподібні</p>
   </div>
@@ -738,7 +689,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>100 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Макі Ебі у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> ракоподібні</p>
   </div>
@@ -751,7 +701,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>100 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Макі Краб у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> риба</p>
   </div>
@@ -764,7 +713,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>100 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Макі Унагі у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> риба, соя</p>
   </div>
@@ -777,7 +725,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>250 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Tempura Курка у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> курка, молоко, глютен</p>
   </div>
@@ -790,7 +737,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>270 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Хрустка курка у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> курка, молоко, глютен</p>
   </div>
@@ -803,7 +749,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>250 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Темпура Рол у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, риба, ракоподібні</p>
   </div>
@@ -816,7 +761,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>300 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Футомакі Гарячий у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, риба, молюски, ракоподібні</p>
   </div>
@@ -829,7 +773,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>290 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Хрустке Золото у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, ракоподібні, риба, молоко, соя</p>
   </div>
@@ -842,7 +785,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>250 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Футомакі Запечений у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, риба</p>
   </div>
@@ -855,7 +797,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>260 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Каліфорнія Саке Запечений у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, риба</p>
   </div>
@@ -868,7 +809,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>270 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Каліфорнія Ебі Запечений у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, ракоподібні, риба</p>
   </div>
@@ -881,7 +821,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>270 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Філадельфія Сезам Запечений у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, кунжут, риба</p>
   </div>
@@ -894,7 +833,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>200 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Суші Сендвіч у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, риба, молоко</p>
   </div>
@@ -907,7 +845,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>300 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Суші Такос у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, риба, молоко, ракоподібні</p>
   </div>
@@ -920,7 +857,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>350 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Суші Бургер у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, риба, молоко</p>
   </div>
@@ -933,7 +869,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>400 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Суші Хот-Дог у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, риба, молоко, ракоподібні, яйця</p>
   </div>
@@ -946,7 +881,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>330 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Суші Піца у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, молоко, риба, ракоподібні, кунжут, соя</p>
   </div>
@@ -959,7 +893,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>250 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Ебі Темпура 6 шт у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> ракоподібні, глютен</p>
   </div>
@@ -972,7 +905,6 @@
     <fieldset class="dish__variants"><legend class="sr">Розмір</legend><label class="chip"><input type="radio" name="v-salmon-poke-bowl" value="400-g" data-price="350" data-label="400 г" checked><span>400 г</span><b class="nojs-price">350 Kč</b></label><label class="chip"><input type="radio" name="v-salmon-poke-bowl" value="600-g" data-price="450" data-label="600 г"><span>600 г</span><b class="nojs-price">450 Kč</b></label></fieldset>
     <div class="dish__buy">
       <p class="dish__price" data-price-out>350 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Поке Боул Лосось у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> риба, кунжут, соя, глютен</p>
   </div>
@@ -985,7 +917,6 @@
     <fieldset class="dish__variants"><legend class="sr">Розмір</legend><label class="chip"><input type="radio" name="v-shrimp-poke-bowl" value="400-g" data-price="350" data-label="400 г" checked><span>400 г</span><b class="nojs-price">350 Kč</b></label><label class="chip"><input type="radio" name="v-shrimp-poke-bowl" value="600-g" data-price="450" data-label="600 г"><span>600 г</span><b class="nojs-price">450 Kč</b></label></fieldset>
     <div class="dish__buy">
       <p class="dish__price" data-price-out>350 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Поке Боул Креветка у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> ракоподібні, кунжут, глютен, соя</p>
   </div>
@@ -998,7 +929,6 @@
     <fieldset class="dish__variants"><legend class="sr">Розмір</legend><label class="chip"><input type="radio" name="v-poke-bowl-tuna" value="400-g" data-price="350" data-label="400 г" checked><span>400 г</span><b class="nojs-price">350 Kč</b></label><label class="chip"><input type="radio" name="v-poke-bowl-tuna" value="600-g" data-price="450" data-label="600 г"><span>600 г</span><b class="nojs-price">450 Kč</b></label></fieldset>
     <div class="dish__buy">
       <p class="dish__price" data-price-out>350 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Поке Боул Тунець у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> риба, кунжут, соя, глютен</p>
   </div>
@@ -1011,7 +941,6 @@
     <fieldset class="dish__variants"><legend class="sr">Розмір</legend><label class="chip"><input type="radio" name="v-poke-bowl-chicken" value="400-g" data-price="350" data-label="400 г" checked><span>400 г</span><b class="nojs-price">350 Kč</b></label><label class="chip"><input type="radio" name="v-poke-bowl-chicken" value="600-g" data-price="450" data-label="600 г"><span>600 г</span><b class="nojs-price">450 Kč</b></label></fieldset>
     <div class="dish__buy">
       <p class="dish__price" data-price-out>350 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Poke Bowl Курка у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> кунжут, курка, соя, глютен</p>
   </div>
@@ -1024,7 +953,6 @@
     <fieldset class="dish__variants"><legend class="sr">Розмір</legend><label class="chip"><input type="radio" name="v-funchoza-with-vegetables" value="300-g" data-price="159" data-label="300 г" checked><span>300 г</span><b class="nojs-price">159 Kč</b></label><label class="chip"><input type="radio" name="v-funchoza-with-vegetables" value="600-g" data-price="299" data-label="600 г"><span>600 г</span><b class="nojs-price">299 Kč</b></label></fieldset>
     <div class="dish__buy">
       <p class="dish__price" data-price-out>159 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Фунчоза з овочами у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> соя, кунжут, глютен</p>
   </div>
@@ -1037,7 +965,6 @@
     <fieldset class="dish__variants"><legend class="sr">Розмір</legend><label class="chip"><input type="radio" name="v-funchoza-with-chicken-and-vegetables" value="300-g" data-price="199" data-label="300 г" checked><span>300 г</span><b class="nojs-price">199 Kč</b></label><label class="chip"><input type="radio" name="v-funchoza-with-chicken-and-vegetables" value="600-g" data-price="379" data-label="600 г"><span>600 г</span><b class="nojs-price">379 Kč</b></label></fieldset>
     <div class="dish__buy">
       <p class="dish__price" data-price-out>199 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Фунчоза з куркою та овочами у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> соя, кунжут, глютен, цибуля, курка</p>
   </div>
@@ -1050,7 +977,6 @@
     <fieldset class="dish__variants"><legend class="sr">Розмір</legend><label class="chip"><input type="radio" name="v-funchoza-with-shrimp" value="300-g" data-price="229" data-label="300 г" checked><span>300 г</span><b class="nojs-price">229 Kč</b></label><label class="chip"><input type="radio" name="v-funchoza-with-shrimp" value="600-g" data-price="429" data-label="600 г"><span>600 г</span><b class="nojs-price">429 Kč</b></label></fieldset>
     <div class="dish__buy">
       <p class="dish__price" data-price-out>229 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Фунчоза з креветками у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> кунжут, глютен, соя, ракоподібні</p>
   </div>
@@ -1063,7 +989,6 @@
     <fieldset class="dish__variants"><legend class="sr">Розмір</legend><label class="chip"><input type="radio" name="v-funchoza-with-chicken-and-shrimp" value="300-g" data-price="259" data-label="300 г" checked><span>300 г</span><b class="nojs-price">259 Kč</b></label><label class="chip"><input type="radio" name="v-funchoza-with-chicken-and-shrimp" value="600-g" data-price="489" data-label="600 г"><span>600 г</span><b class="nojs-price">489 Kč</b></label></fieldset>
     <div class="dish__buy">
       <p class="dish__price" data-price-out>259 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Фунчоза з куркою та креветками у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> глютен, соя, кунжут, ракоподібні</p>
   </div>
@@ -1076,7 +1001,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>600 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Суші Торт у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> ракоподібні, риба, молоко</p>
   </div>
@@ -1089,7 +1013,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>43 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Pepsi Zero Sugar 0,33 л у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1102,7 +1025,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>43 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Pepsi Original 0,33 л у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1115,7 +1037,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>37 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Nestea Iced Tea 0,5 л у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1128,7 +1049,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>16 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Crazy Wolf 0,25 л у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1141,7 +1061,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>20 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Газована вода 0,5 л у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1154,7 +1073,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>20 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Слабогазована вода 0,5 л у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1167,7 +1085,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>32 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Birell 0,33 л у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1180,7 +1097,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>32 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Birell 0,33 л у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1193,7 +1109,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>38 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Cool 0,5 л у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1206,7 +1121,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>39 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Kozel Nealko 0,5 л у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1219,7 +1133,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>38 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Cool 0,5 л у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1232,7 +1145,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>23 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати CapriSun 0,2 л у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1245,7 +1157,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>43 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Cola 0,33 л у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1258,7 +1169,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>36 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Relax манго, кактус 0,3 л у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1271,7 +1181,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>36 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Relax яблуко, мультивітамін 0,3 л у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1284,7 +1193,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>36 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Relax апельсин 0,3 л у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1297,7 +1205,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>87 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Borjomi 0,5 л у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1310,7 +1217,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>28 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Mirinda апельсин 0,33 л у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1323,7 +1229,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>42 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Nestea Forest Fruit / Lemon 0,5 л у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1336,7 +1241,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>40 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Coca-Cola Cherry 0,33 л у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1349,7 +1253,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>40 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Coca-Cola Zero 0,33 л у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1362,7 +1265,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>44 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Пиво Kozel (жовте) у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1375,7 +1277,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>60 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Corona Extra у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1388,7 +1289,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>42 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Пиво Velkopopovický Kozel у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1401,7 +1301,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>43 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Gambrinus Original 10 у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1414,7 +1313,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>47 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Starobrno Medium / Bitr у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1427,7 +1325,6 @@
     <fieldset class="dish__variants"><legend class="sr">Розмір</legend><label class="chip"><input type="radio" name="v-muscat-semi-sweet-white-wine" value="lahev" data-price="300" data-label="Пляшка 0,75 л" checked><span>Пляшка 0,75 л</span><b class="nojs-price">300 Kč</b></label><label class="chip"><input type="radio" name="v-muscat-semi-sweet-white-wine" value="glass-0-2-l" data-price="80" data-label="Келих 0,2 л"><span>Келих 0,2 л</span><b class="nojs-price">80 Kč</b></label></fieldset>
     <div class="dish__buy">
       <p class="dish__price" data-price-out>300 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Muscat, біле напівсолодке вино у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> сульфіти</p>
   </div>
@@ -1440,7 +1337,6 @@
     <fieldset class="dish__variants"><legend class="sr">Розмір</legend><label class="chip"><input type="radio" name="v-merlot-semi-sweet-red-wine" value="lahev" data-price="300" data-label="Пляшка 0,75 л" checked><span>Пляшка 0,75 л</span><b class="nojs-price">300 Kč</b></label><label class="chip"><input type="radio" name="v-merlot-semi-sweet-red-wine" value="glass-0-2-l" data-price="80" data-label="Келих 0,2 л"><span>Келих 0,2 л</span><b class="nojs-price">80 Kč</b></label></fieldset>
     <div class="dish__buy">
       <p class="dish__price" data-price-out>300 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Merlot, червоне напівсолодке вино у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> сульфіти</p>
   </div>
@@ -1453,7 +1349,6 @@
     <fieldset class="dish__variants"><legend class="sr">Розмір</legend><label class="chip"><input type="radio" name="v-mucha-sekt-ice-sparkling-wine" value="lahev" data-price="400" data-label="Пляшка 0,75 л" checked><span>Пляшка 0,75 л</span><b class="nojs-price">400 Kč</b></label><label class="chip"><input type="radio" name="v-mucha-sekt-ice-sparkling-wine" value="glass-0-2-l" data-price="133" data-label="Келих 0,2 л"><span>Келих 0,2 л</span><b class="nojs-price">133 Kč</b></label></fieldset>
     <div class="dish__buy">
       <p class="dish__price" data-price-out>400 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Mucha Sekt Ice, ігристе у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> сульфіти</p>
   </div>
@@ -1466,7 +1361,6 @@
     <fieldset class="dish__variants"><legend class="sr">Розмір</legend><label class="chip"><input type="radio" name="v-grant-s" value="lahev" data-price="725" data-label="Пляшка 0,7 л" checked><span>Пляшка 0,7 л</span><b class="nojs-price">725 Kč</b></label><label class="chip"><input type="radio" name="v-grant-s" value="50-g" data-price="58" data-label="50 г"><span>50 г</span><b class="nojs-price">58 Kč</b></label><label class="chip"><input type="radio" name="v-grant-s" value="100-g" data-price="105" data-label="100 г"><span>100 г</span><b class="nojs-price">105 Kč</b></label></fieldset>
     <div class="dish__buy">
       <p class="dish__price" data-price-out>725 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Grant&#39;s у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> сульфіти</p>
   </div>
@@ -1479,7 +1373,6 @@
     <fieldset class="dish__variants"><legend class="sr">Розмір</legend><label class="chip"><input type="radio" name="v-jameson" value="lahev" data-price="840" data-label="Пляшка 0,5 л" checked><span>Пляшка 0,5 л</span><b class="nojs-price">840 Kč</b></label><label class="chip"><input type="radio" name="v-jameson" value="50-g" data-price="84" data-label="50 г"><span>50 г</span><b class="nojs-price">84 Kč</b></label><label class="chip"><input type="radio" name="v-jameson" value="100-g" data-price="168" data-label="100 г"><span>100 г</span><b class="nojs-price">168 Kč</b></label></fieldset>
     <div class="dish__buy">
       <p class="dish__price" data-price-out>840 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Jameson у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> сульфіти</p>
   </div>
@@ -1492,7 +1385,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>20 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Гаряча вода у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1505,7 +1397,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>20 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Холодна вода у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1518,7 +1409,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>10 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Соєвий соус 50 мл у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> соя</p>
   </div>
@@ -1531,7 +1421,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>20 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Соєвий соус 100 мл у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> соя</p>
   </div>
@@ -1544,7 +1433,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>10 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Unagi у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> соя</p>
   </div>
@@ -1557,7 +1445,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>10 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Teriyaki у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     <p class="dish__al"><span class="dish__al-k">Алергени:</span> соя</p>
   </div>
@@ -1570,7 +1457,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>10 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Чилі солодко-кислий соус у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1583,7 +1469,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>5 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Палички для їжі у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1596,7 +1481,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>2 000 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Подарунковий сертифікат 2 000 Kč у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1609,7 +1493,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>1 500 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Подарунковий сертифікат 1 500 Kč у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1622,7 +1505,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>1 000 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Подарунковий сертифікат 1 000 Kč у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1635,7 +1517,6 @@
     
     <div class="dish__buy">
       <p class="dish__price" data-price-out>500 Kč</p>
-      <button class="add js-only" type="button" data-add aria-label="Додати Подарунковий сертифікат 500 Kč у кошик" data-grab><span class="add__ico"><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="add__txt">У кошик</span></button>
     </div>
     
   </div>
@@ -1696,7 +1577,6 @@
   <div class="channels">
     <h3 class="channels__h">Як замовити</h3>
     <ul>
-      <li><button class="chan js-only" type="button" data-cart-open data-grab><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.500 8.500h13l1 11.500h-15l1-11.500Z"/><path d="M9 8.500V7a3 3 0 0 1 6 0v1.500"/></svg><span class="chan__t">Тут на сайті<small>Кошик і форма, підтвердимо телефоном</small></span><svg class="icon i-move i-slide" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15.500M13.500 6l6 6-6 6"/></svg></button></li>
       <li><a class="chan" href="tel:+420770699364" data-grab><svg class="icon i-move i-ring" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.2 3.4 8.9 3a1 1 0 0 1 1.1.7l1 3.2a1 1 0 0 1-.3 1l-1.5 1.4a12.6 12.6 0 0 0 5.6 5.6l1.4-1.5a1 1 0 0 1 1-.3l3.2 1a1 1 0 0 1 .7 1.1l-.4 2.7a1.6 1.6 0 0 1-1.6 1.4C10.700 20.800 3.200 13.300 4.800 5a1.600 1.600 0 0 1 1.400-1.600Z"/></svg><span class="chan__t">Телефон +420 770 699 364</span><svg class="icon i-move i-slide" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15.500M13.500 6l6 6-6 6"/></svg></a></li>
       <li><a class="chan" href="https://menuforma.com/delivery/sushinel" rel="noopener" target="_blank" data-grab><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.500"/><path d="M3.500 12h17M12 3.500c2.400 2.500 3.500 5.300 3.500 8.500s-1.100 6-3.500 8.500c-2.400-2.500-3.500-5.300-3.500-8.500s1.100-6 3.500-8.500Z"/></svg><span class="chan__t">Онлайн-меню MenuForma<small>Замовлення й оплата через MenuForma</small></span><svg class="icon i-move i-slide" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15.500M13.500 6l6 6-6 6"/></svg></a></li>
       <li><a class="chan" href="https://www.instagram.com/sushinel.cv/" rel="noopener" target="_blank" data-grab><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4.500"/><circle cx="12" cy="12" r="3.600"/><circle cx="16.700" cy="7.300" r=".6" fill="currentColor" stroke="none"/></svg><span class="chan__t">Повідомлення в Instagram</span><svg class="icon i-move i-slide" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15.500M13.500 6l6 6-6 6"/></svg></a></li>
@@ -1824,43 +1704,9 @@
   </div>
   <p class="foot__copy">© 2026 sushiNEL. Усі права захищено.</p>
 </footer>
-<aside class="cart js-only" data-cart hidden aria-labelledby="cart-h" role="dialog" aria-modal="true" data-lenis-prevent>
-  <div class="cart__scrim" data-cart-close></div>
-  <div class="cart__panel" data-cart-panel tabindex="-1">
-    <header class="cart__head"><h2 id="cart-h">Кошик</h2><button class="iconbtn" type="button" data-cart-close aria-label="Закрити кошик" data-grab><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></header>
-    <div class="cart__empty" data-cart-empty><p>Поки порожньо.</p><a class="tlink tlink--light" href="#menu" data-cart-close>Обрати з меню<svg class="icon i-move i-slide" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15.500M13.500 6l6 6-6 6"/></svg></a></div>
-    <ul class="cart__lines" data-cart-lines></ul>
-    <div class="cart__gift" data-cart-gift hidden><svg class="icon " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.500 11h15v9h-15zM3.500 7.500h17V11h-17zM12 7.500V20"/><path d="M12 7.500C10 3.500 6.500 4 7 6c.3 1.200 2.500 1.500 5 1.500Zm0 0c2-4 5.500-3.500 5-1.500-.3 1.200-2.500 1.500-5 1.500Z"/></svg><p data-cart-gift-text></p><span class="cart__bar"><i data-cart-gift-bar></i></span></div>
-    <p class="cart__total" data-cart-total-row hidden><span>Разом</span><strong data-cart-total>0</strong></p>
-    <p class="cart__note" data-cart-note hidden>Без вартості доставки. Її підтвердимо під час замовлення.</p>
-    <p class="cart__closed" data-cart-closed hidden></p>
-    <form class="form form--cart" data-form="order" novalidate hidden>
-      <div class="field" data-field="name"><label for="o-name">Ім&#39;я</label><input id="o-name" name="name" type="text" required autocomplete="name" ><p class="field__err" data-err hidden></p></div>
-      <div class="field" data-field="phone"><label for="o-phone">Телефон</label><input id="o-phone" name="phone" type="tel" required placeholder="+420 …" autocomplete="tel" ><p class="field__err" data-err hidden></p></div>
-      <fieldset class="seg" data-field="mode"><legend>Спосіб</legend>
-        <label><input type="radio" name="mode" value="delivery" checked><span>Доставити</span></label>
-        <label><input type="radio" name="mode" value="pickup"><span>Заберу сам(а)</span></label>
-      </fieldset>
-      <div data-address-wrap><div class="field" data-field="address"><label for="o-address">Адреса доставки</label><input id="o-address" name="address" type="text" required placeholder="Вулиця, номер, місто" autocomplete="street-address" ><p class="field__err" data-err hidden></p></div></div>
-      <fieldset class="seg" data-field="when"><legend>Коли</legend>
-        <label><input type="radio" name="whenMode" value="asap" checked><span>Якнайшвидше</span></label>
-        <label><input type="radio" name="whenMode" value="time"><span>На час</span></label>
-      </fieldset>
-      <div data-time-wrap hidden><div class="field" data-field="time"><label for="o-time">Час</label><input id="o-time" name="time" type="time" step="300"><p class="field__err" data-err hidden></p></div></div>
-      <div class="field" data-field="note"><label for="o-note">Примітка</label><input id="o-note" name="note" type="text" placeholder="Без цибулі, код під&#39;їзду, дитячий стілець…" ><p class="field__err" data-err hidden></p></div>
-      <div class="field field--check" data-field="adult" data-adult-wrap hidden><label for="o-adult"><input id="o-adult" type="checkbox" name="adult"><span>Мені є 18 років. Алкоголь продаємо лише повнолітнім.</span></label><p class="field__err" data-err hidden></p></div>
-      <div class="hp" aria-hidden="true"><label for="o-hp">Не заповнюйте це поле</label><input id="o-hp" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-      <div class="field field--check" data-field="consent"><label for="o-consent"><input id="o-consent" type="checkbox" name="consent" required><span>Погоджуюся на обробку даних згідно з <a href="/sushi-nel/uk/soukromi" target="_blank" rel="noopener">політикою конфіденційності</a></span></label><p class="field__err" data-err hidden></p></div>
-      <div class="form__turnstile" data-turnstile hidden></div>
-      <p class="field__err" data-err-form hidden></p>
-      <button class="btn btn--primary btn--full" type="submit" data-morph data-grab><span>Надіслати замовлення</span></button>
-    </form>
-    <p class="form__msg form__msg--ok" data-cart-done role="status" hidden></p>
-  </div>
-</aside>
 <nav class="dock js-only" aria-label="Замовити">
   <a href="tel:+420770699364" class="dock__b"><svg class="icon i-move i-ring" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.2 3.4 8.9 3a1 1 0 0 1 1.1.7l1 3.2a1 1 0 0 1-.3 1l-1.5 1.4a12.6 12.6 0 0 0 5.6 5.6l1.4-1.5a1 1 0 0 1 1-.3l3.2 1a1 1 0 0 1 .7 1.1l-.4 2.7a1.6 1.6 0 0 1-1.6 1.4C10.700 20.800 3.200 13.300 4.800 5a1.600 1.600 0 0 1 1.400-1.600Z"/></svg><span>Подзвонити</span></a>
-  <a href="#menu" class="dock__b dock__b--main" data-dock-order><span data-dock-label data-default="Замовити">Замовити</span></a>
+  <a class="dock__b dock__b--main" href="https://menuforma.com/delivery/sushinel" rel="noopener" target="_blank" ><span>Замовити</span></a>
   <a href="#visit" class="dock__b"><svg class="icon i-move i-bob" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.300 7-11.500a7 7 0 1 0-14 0C5 14.700 12 21 12 21Z"/><path d="M12 12.400c-1.500-.5-2.400-1.400-2.400-2.500 0-.8.600-1.400 1.300-1.400.5 0 .9.300 1.100.700.2-.4.600-.7 1.100-.7.700 0 1.300.600 1.300 1.400 0 1.100-.9 2-2.400 2.500Z"/></svg><span>Маршрут</span></a>
 </nav>
 <div class="pre" data-pre aria-hidden="true"><svg viewBox="0 0 100 100" class="pre__svg"><defs><radialGradient id="pre-soy" cx=".38" cy=".3" r=".9"><stop offset="0" stop-color="#b56a35"/><stop offset=".35" stop-color="#5c2810"/><stop offset="1" stop-color="#1b0a04"/></radialGradient></defs><circle class="pre__ring" cx="50" cy="52" r="14"/><path data-pre-path fill="url(#pre-soy)"/></svg></div>
@@ -1877,9 +1723,9 @@
     <g data-stick="b"><path class="chop__out" d="M0 0 72 3"/><path class="chop__stick" d="M0 0 72 3"/><path class="chop__tip" d="M0 0 13 .5"/></g>
   </svg>
 </div>
-<script type="application/json" id="client-data">{"lang":"uk","home":true,"errors":{"demo":"Це демоверсія сайту, форма поки нічого не надсилає. Будь ласка, подзвоніть нам.","required":"Заповніть, будь ласка.","phone":"Перевірте номер телефону.","date":"Оберіть дату в майбутньому.","closedDay":"Цього дня ми зачинені.","time":"У цей час ми не працюємо.","guests":"Кількість гостей поза межами.","consent":"Без згоди надіслати не можемо.","adult":"Для алкоголю підтвердіть, що вам є 18.","items":"Кошик порожній або меню змінилося.","address":"Вкажіть адресу доставки.","invalid":"Перевірте це поле.","tooFast":"Занадто швидко. Зачекайте мить і спробуйте ще раз.","rate":"Забагато спроб. Спробуйте пізніше або подзвоніть.","network":"Немає зв'язку. Спробуйте ще раз або подзвоніть.","server":"Не вдалося надіслати. Будь ласка, подзвоніть нам.","csrf":"Сторінка була відкрита надто довго. Спробуйте ще раз.","closedNow":"Зараз ми зачинені. Оберіть час у межах сьогоднішнього графіка.","closedToday":"Сьогодні ми зачинені, замовлення приймемо завтра."},"form":{"name":"Ім'я","phone":"Телефон","phonePh":"+420 …","address":"Адреса доставки","addressPh":"Вулиця, номер, місто","mode":"Спосіб","modeDelivery":"Доставити","modePickup":"Заберу сам(а)","when":"Коли","whenAsap":"Якнайшвидше","whenTime":"На час","time":"Час","date":"Дата","guests":"Кількість гостей","note":"Примітка","notePh":"Без цибулі, код під'їзду, дитячий стілець…","message":"Повідомлення","contact":"Телефон або e-mail","consent":"Погоджуюся на обробку даних згідно з","consentLink":"політикою конфіденційності","adult":"Мені є 18 років. Алкоголь продаємо лише повнолітнім.","hp":"Не заповнюйте це поле","sendOrder":"Надіслати замовлення","sendReserve":"Забронювати стіл","sendContact":"Надіслати повідомлення","sending":"Надсилаю…","okOrder":"Є. Зв'яжемося за номером {phone} і підтвердимо замовлення.","okReserve":"Дякуємо, бронювання підтвердимо за номером {phone}.","okContact":"Дякуємо, повідомлення в нас.","noscript":"Для форм потрібен JavaScript. Подзвоніть нам або напишіть в Instagram."},"cart":{"title":"Кошик","open":"Відкрити кошик","close":"Закрити кошик","empty":"Поки порожньо.","emptyCta":"Обрати з меню","total":"Разом","deliveryNote":"Без вартості доставки. Її підтвердимо під час замовлення.","giftLeft":"Ще {n} Kč, і рол Темпура в подарунок","giftDone":"Рол Темпура в подарунок","remove":"Прибрати {n}","plus":"Додати","minus":"Зменшити","added":"{n} у кошику","items":"позиції"},"status":{"open":"Відчинено до {t}","closed":"Зараз зачинено, відчиняємо {d} о {t}","days":{"mon":"у понеділок","tue":"у вівторок","wed":"у середу","thu":"у четвер","fri":"у п'ятницю","sat":"у суботу","sun":"у неділю","today":"сьогодні","tomorrow":"завтра"}},"menu":{"add":"У кошик","addAria":"Додати {n} у кошик","from":"від"},"hours":{"mon":null,"tue":["09:00","22:00"],"wed":["09:00","22:00"],"thu":["09:00","22:00"],"fri":["09:00","23:00"],"sat":["09:00","23:00"],"sun":["09:00","22:00"]},"geo":{"lat":50.4585612,"lng":13.4140659},"gift":{"threshold":1000,"exclude":["napoje","omacky","poukazy"]},"mapAttr":"© OpenStreetMap contributors","placeName":"sushiNEL, Vršovců 1132/26"}</script>
+<script type="application/json" id="client-data">{"lang":"uk","home":true,"errors":{"demo":"Це демоверсія сайту, форма поки нічого не надсилає. Будь ласка, подзвоніть нам.","required":"Заповніть, будь ласка.","phone":"Перевірте номер телефону.","date":"Оберіть дату в майбутньому.","closedDay":"Цього дня ми зачинені.","time":"У цей час ми не працюємо.","guests":"Кількість гостей поза межами.","consent":"Без згоди надіслати не можемо.","invalid":"Перевірте це поле.","tooFast":"Занадто швидко. Зачекайте мить і спробуйте ще раз.","rate":"Забагато спроб. Спробуйте пізніше або подзвоніть.","network":"Немає зв'язку. Спробуйте ще раз або подзвоніть.","server":"Не вдалося надіслати. Будь ласка, подзвоніть нам.","csrf":"Сторінка була відкрита надто довго. Спробуйте ще раз."},"form":{"name":"Ім'я","phone":"Телефон","phonePh":"+420 …","time":"Час","date":"Дата","guests":"Кількість гостей","note":"Примітка","message":"Повідомлення","contact":"Телефон або e-mail","consent":"Погоджуюся на обробку даних згідно з","consentLink":"політикою конфіденційності","hp":"Не заповнюйте це поле","sendReserve":"Забронювати стіл","sendContact":"Надіслати повідомлення","sending":"Надсилаю…","okReserve":"Дякуємо, бронювання підтвердимо за номером {phone}.","okContact":"Дякуємо, повідомлення в нас.","noscript":"Для форм потрібен JavaScript. Подзвоніть нам або напишіть в Instagram."},"status":{"open":"Відчинено до {t}","closed":"Зараз зачинено, відчиняємо {d} о {t}","days":{"mon":"у понеділок","tue":"у вівторок","wed":"у середу","thu":"у четвер","fri":"у п'ятницю","sat":"у суботу","sun":"у неділю","today":"сьогодні","tomorrow":"завтра"}},"hours":{"mon":null,"tue":["09:00","22:00"],"wed":["09:00","22:00"],"thu":["09:00","22:00"],"fri":["09:00","23:00"],"sat":["09:00","23:00"],"sun":["09:00","22:00"]},"geo":{"lat":50.4585612,"lng":13.4140659},"mapAttr":"© OpenStreetMap contributors","placeName":"sushiNEL, Vršovců 1132/26"}</script>
 <script src="/sushi-nel/vendor/gsap.min.js?v=b2cff38588" defer></script>
 <script src="/sushi-nel/vendor/lenis.min.js?v=acddbf768a" defer></script>
-<script type="module" src="/sushi-nel/js/main.js?v=e515e39262"></script>
+<script type="module" src="/sushi-nel/js/main.js?v=9ede0d3cdd"></script>
 </body>
 </html>

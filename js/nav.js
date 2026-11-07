@@ -43,7 +43,7 @@ export function initNav({ scrollTo, lenis }) {
   /* in-page links go through the same scroller */
   document.addEventListener('click', (e) => {
     const a = e.target.closest('a[href^="#"]');
-    if (!a || a.matches('[data-tab], [data-jump-tab], [data-cart-close], [data-dock-order]')) return;
+    if (!a || a.matches('[data-tab], [data-jump-tab]')) return;
     const id = a.getAttribute('href').slice(1);
     const el = id ? document.getElementById(id) : null;
     if (!el) return;

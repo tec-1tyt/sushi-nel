@@ -1,6 +1,5 @@
 // Entry point. Each feature starts inside its own guard: one failure can't take down the rest,
 // and if the motion layer fails the page simply stays static and fully readable.
-import { initCart } from './cart.js';
 import { initConsent } from './consent.js';
 import { initCursor } from './cursor.js';
 import { primeToken, wireForm } from './forms.js';
@@ -38,9 +37,7 @@ guard('nav', () => initNav({ scrollTo, lenis }));
 guard('status', () => initStatus(data));
 
 if (data.home) {
-  const menu = guard('menu', () => initMenu({ scrollTo, data }));
-  const fmt = menu?.fmt || ((n) => `${n} Kč`);
-  guard('cart', () => initCart({ data, fmt, scrollTo, lenis }));
+  guard('menu', () => initMenu({ scrollTo, data }));
   guard('map', () => initMap({ data }));
 
   guard('forms', () => {
