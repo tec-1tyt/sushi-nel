@@ -1,0 +1,366 @@
+// The home page. All content comes from data/*.json, so this file holds structure only.
+import { config } from '../config.js';
+import { livePromotions } from '../content.js';
+import { icons } from './icons.js';
+import { page } from './layout.js';
+import { branch } from './ornaments.js';
+import { esc, exists, fill, kanji, money, picture, placeholder } from './util.js';
+
+const NO_WEIGHT_NEEDED = new Set(['napoje', 'omacky', 'poukazy', 'dort']);
+const EXCLUDES = ['crustaceans', 'fish', 'milk', 'gluten', 'sesame', 'nuts', 'molluscs'];
+const DAY_KEYS = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+function dishImage(d, lang, large) {
+  const base = `/img/menu/${d.id}`;
+  if (!exists(`${base}-480.webp`)) return `<div class="dish__noimg" aria-hidden="true">${kanji('巻')}</div>`;
+  return picture({
+    base,
+    widths: [240, 480],
+    alt: d.name[lang],
+    width: 480,
+    height: 480,
+    sizes: large ? '(min-width: 1000px) 34vw, 86vw' : '(min-width: 1000px) 18vw, 112px',
+    cls: 'dish__pic',
+    imgCls: 'dish__img',
+  });
+}
+
+function dishCard(d, cat, lang, t, i) {
+  const large = i % 5 === 0;
+  const flip = i % 10 === 5;
+  const allergens = (d.allergens || []).filter((a) => a !== 'alcohol');
+  const sizeBits = [
+    d.pieces ? `${d.pieces} ${t.menu.pcs}` : '',
+    d.weight ? d.weight.replace(/\s*g$/i, ' g') : '',
+    d.volume || '',
+  ].filter(Boolean);
+  const showWeightTodo = !d.pieces && !d.weight && !d.variants && !NO_WEIGHT_NEEDED.has(cat.id);
+  const first = d.variants ? d.variants[0] : null;
+  const search = [...new Set(['cs', 'uk', 'en'].filter((l) => l !== lang).map((l) => d.name[l]))].filter((n) => n !== d.name[lang]).join(' ');
+  const attrs = `data-dish="${esc(d.id)}" data-allergens="${esc((d.allergens || []).join(' '))}" ${search ? `data-alt="${esc(search)}" ` : ''}data-name="${esc(d.name[lang])}"${d.alcohol ? ' data-alcohol' : ''}${first ? '' : ` data-price="${d.price}"`}`;
+  return `<article class="dish${large ? ' dish--large' : ''}${flip ? ' dish--flip' : ''}" ${attrs} data-grab-card>
+  ${dishImage(d, lang, large)}
+  <div class="dish__body">
+    <h4 class="dish__name">${esc(d.name[lang])}${d.badge === 'new' ? ` <span class="tag">${esc(t.menu.new)}</span>` : ''}${d.alcohol ? ` <span class="tag tag--age">${esc(t.menu.adult)}</span>` : ''}</h4>
+    ${d.desc?.[lang] ? `<p class="dish__desc">${esc(d.desc[lang])}</p>` : ''}
+    ${sizeBits.length || showWeightTodo ? `<p class="dish__size">${esc(sizeBits.join(' · '))}${showWeightTodo ? placeholder(t.menu.weightMissing) : ''}</p>` : ''}
+    ${d.variants ? `<fieldset class="dish__variants"><legend class="sr">${esc(t.menu.variant)}</legend>${d.variants.map((v, k) => `<label class="chip"><input type="radio" name="v-${esc(d.id)}" value="${esc(v.id)}" data-price="${v.price}" data-label="${esc(v.label[lang])}"${k === 0 ? ' checked' : ''}><span>${esc(v.label[lang])}</span><b class="nojs-price">${money(v.price, lang)}</b></label>`).join('')}</fieldset>` : ''}
+    <div class="dish__buy">
+      <p class="dish__price" data-price-out>${money(first ? first.price : d.price, lang)}</p>
+      <button class="add js-only" type="button" data-add aria-label="${esc(fill(t.menu.addAria, { n: d.name[lang] }))}" data-grab><span class="add__ico">${icons.plus()}</span><span class="add__txt">${esc(t.menu.add)}</span></button>
+    </div>
+    ${allergens.length ? `<p class="dish__al"><span class="dish__al-k">${esc(t.menu.allergens)}:</span> ${esc(allergens.map((a) => t.allergen[a] || a).join(', '))}</p>` : ''}
+  </div>
+</article>`;
+}
+
+function menuSection(c, lang, t) {
+  const cats = c.menu.categories;
+  const tabs = cats.map((cat, i) => `<a class="tab" href="#cat-${esc(cat.id)}" data-tab="${esc(cat.id)}"${i === 0 ? ' aria-current="true"' : ''}><span>${esc(cat.name[lang])}</span><sup>${cat.items.filter((d) => d.available !== false).length}</sup></a>`).join('');
+  const body = cats.map((cat) => {
+    let group = null;
+    const rows = [];
+    cat.items.filter((d) => d.available !== false).forEach((d, i) => {
+      const g = d.group?.[lang] || null;
+      if (g !== group) { rows.push(`<h4 class="group">${esc(g || '')}</h4>`); group = g; }
+      rows.push(dishCard(d, cat, lang, t, i));
+    });
+    return `<section class="cat" id="cat-${esc(cat.id)}" data-cat="${esc(cat.id)}"><h3 class="cat__h">${esc(cat.name[lang])}</h3><div class="dishes">${rows.join('')}</div></section>`;
+  }).join('');
+  const filters = EXCLUDES.map((a) => `<label class="chip chip--x"><input type="checkbox" value="${a}" data-exclude><span>${esc(t.exclude[a])}</span></label>`).join('');
+  return `<section class="menu" id="menu" aria-labelledby="menu-h">
+  <span class="menu__drop-target" data-drop-target aria-hidden="true"></span>
+  ${branch({ seed: 11, cls: 'orn--menu', blooms: 5 })}
+  <aside class="rail">
+    <div class="rail__head">
+      <h2 class="h-sec" id="menu-h" data-lines>${esc(t.menu.title)}</h2>
+      ${kanji('品書', 'kanji--v')}
+    </div>
+    <label class="search js-only">${icons.search()}<span class="sr">${esc(t.menu.search)}</span><input type="search" data-search-input placeholder="${esc(t.menu.searchPh)}" autocomplete="off" enterkeyhint="search"></label>
+    <nav class="tabs" aria-label="${esc(t.menu.title)}" data-tabs>${tabs}</nav>
+    <details class="tools js-only" data-tools>
+      <summary>${esc(t.menu.filters)}</summary>
+      <fieldset class="excl"><legend>${esc(t.menu.without)}</legend>${filters}</fieldset>
+      <p class="tools__note">${esc(t.menu.note)}</p>
+    </details>
+  </aside>
+  <div class="menu__list" data-menu-list aria-live="polite">
+    <p class="menu__none" data-none hidden>${esc(t.menu.none)} <button class="linkbtn" type="button" data-reset>${esc(t.menu.reset)}</button></p>
+    ${body}
+  </div>
+</section>`;
+}
+
+function promoSection(c, lang, t) {
+  const live = livePromotions(c.promos.promotions);
+  const main = live.find((p) => p.main) || live[0];
+  const others = live.filter((p) => p !== main && !p.placeholder);
+  const gift = main?.gift ? c.dishes.get(main.gift) : null;
+  const newCustomers = c.promos.promotions.find((p) => p.id === 'new-customers');
+  const hasFuncoza = c.dishes.has('funchoza-with-vegetables');
+  const giftPic = gift && exists(`/img/menu/${gift.id}-480.webp`)
+    ? picture({ base: `/img/menu/${gift.id}`, widths: [240, 480], alt: gift.name[lang], width: 480, height: 480, sizes: '(min-width: 900px) 30vw, 70vw', cls: 'offer__pic' })
+    : '';
+  const mainHtml = main ? `<div class="offer">
+      <p class="offer__num">${main.threshold ? money(main.threshold, lang) : esc(main.title[lang])}</p>
+      <div class="offer__body">
+        <h3 class="offer__title">${esc(main.title[lang])}</h3>
+        ${main.text[lang] ? `<p class="offer__text">${esc(main.text[lang])}</p>` : ''}
+        ${main.terms?.[lang] ? `<p class="offer__terms">${esc(main.terms[lang])}</p>` : `<p class="offer__terms">${placeholder(t.promo.termsMissing)}</p>`}
+        <a class="btn btn--primary" href="#menu" data-morph data-grab><span>${esc(t.promo.orderNow)}</span></a>
+      </div>
+      ${giftPic}
+    </div>` : '';
+  const newCustHtml = newCustomers && !newCustomers.active && config.showPlaceholders
+    ? `<p class="promo__todo">${placeholder(t.promo.newCustomers)}</p>`
+    : (newCustomers?.active ? `<div class="offer offer--mini"><h3 class="offer__title">${esc(newCustomers.title[lang])}</h3><p class="offer__text">${esc(newCustomers.text[lang])}</p></div>` : '');
+  return `<section class="promo" id="promo" aria-labelledby="promo-h" data-promo>
+  ${branch({ seed: 23, cls: 'orn--promo', blooms: 5 })}
+  <div class="plate" data-plate>
+    <svg class="plate__bg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path data-plate-path d="M1.500 3.500 98.500 .5 100 97.500 0 100Z"/><path class="plate__bevel" data-plate-bevel/></svg>
+    <svg class="plate__sauce" viewBox="0 0 620 170" fill="none" aria-hidden="true">
+      <path pathLength="1" data-draw d="M10 42c70-30 112 26 182 12s94-50 170-26 116 40 248 8"/>
+      <path pathLength="1" data-draw d="M18 78c70-30 104 30 176 14s98-52 172-28 112 42 238 10"/>
+      <path pathLength="1" data-draw d="M28 114c68-28 100 32 170 16s100-52 172-28 108 42 226 12"/>
+    </svg>
+    <div class="plate__in">
+      <header class="plate__head">
+        <h2 class="h-sec h-sec--ink" id="promo-h">${esc(t.promo.title)}</h2>
+        ${kanji('特典', 'kanji--ink kanji--v')}
+      </header>
+      ${mainHtml}
+      ${newCustHtml}
+      ${others.map((p) => `<div class="offer offer--mini"><h3 class="offer__title">${esc(p.title[lang])}</h3><p class="offer__text">${esc(p.text[lang])}</p>${p.terms?.[lang] ? `<p class="offer__terms">${esc(p.terms[lang])}</p>` : ''}</div>`).join('')}
+      <ul class="extras">
+        ${hasFuncoza ? `<li class="extra extra--photo">${picture({ base: '/img/venue/funcoza', widths: [480, 820], alt: t.promo.newTitle, width: 820, height: 580, sizes: '(min-width: 900px) 34vw, 86vw', imgCls: 'extra__img' })}<div><h3>${esc(t.promo.newTitle)}</h3><p>${esc(t.promo.newText)}</p><p class="extra__price">${esc(t.promo.newPriceFrom)}</p><a class="tlink" href="#cat-funcoza" data-jump-tab="funcoza">${esc(t.promo.newCta)}${icons.arrow()}</a></div></li>` : ''}
+        <li class="extra"><div>${icons.gift()}<h3>${esc(t.promo.giftTitle)}</h3><p>${esc(t.promo.giftText)}</p><a class="tlink" href="#cat-poukazy" data-jump-tab="poukazy">${esc(t.promo.giftCta)}${icons.arrow()}</a></div></li>
+        <li class="extra extra--cake"><div><h3>${esc(t.promo.cakeTitle)}</h3><p>${esc(t.promo.cakeText)}</p><a class="tlink" href="#cat-dort" data-jump-tab="dort">${esc(t.promo.cakeCta)}${icons.arrow()}</a></div>${picture({ base: '/img/menu/sushi-dort', widths: [240, 480], alt: t.promo.cakeTitle, width: 480, height: 480, sizes: '(min-width: 900px) 16vw, 40vw', imgCls: 'extra__cut' })}</li>
+      </ul>
+    </div>
+  </div>
+</section>`;
+}
+
+function deliverySection(c, lang, t) {
+  const d = c.site.delivery;
+  const fact = (label, value) => `<div class="fact"><dt>${esc(label)}</dt><dd>${value ?? placeholder(t.delivery.missing)}</dd></div>`;
+  const localizedOr = (v) => (v?.[lang] ? esc(v[lang]) : null);
+  const channel = (html) => `<li>${html}</li>`;
+  const o = c.site.ordering;
+  const s = c.site.socials;
+  const row = (href, icon, title, note, ext) => `<a class="chan" href="${esc(href)}"${ext ? ' rel="noopener" target="_blank"' : ''} data-grab>${icon}<span class="chan__t">${esc(title)}${note ? `<small>${esc(note)}</small>` : ''}</span>${icons.arrow()}</a>`;
+  return `<section class="delivery" id="delivery" aria-labelledby="delivery-h">
+  ${branch({ seed: 37, cls: 'orn--delivery', blooms: 4 })}
+  <div class="delivery__head">
+    <h2 class="h-sec" id="delivery-h" data-lines>${esc(t.delivery.title)}</h2>
+    ${kanji('配達', 'kanji--v')}
+    ${d.etaMinutes ? `<p class="eta" data-lines>${esc(fill(t.delivery.eta, { n: d.etaMinutes }))}</p><p class="eta__note">${esc(t.delivery.etaNote)}</p>` : ''}
+  </div>
+  <svg class="route" viewBox="0 0 1200 160" fill="none" aria-hidden="true" data-route>
+    <path class="route__line" pathLength="1" data-draw-route d="M8 112C160 40 276 138 420 104s190-86 330-62 196 96 442 30"/>
+    <g data-rider><circle r="5" class="route__dot"/></g>
+  </svg>
+  <dl class="facts">
+    ${fact(t.delivery.zones, localizedOr(d.zones))}
+    ${fact(t.delivery.minOrder, d.minOrder ? money(d.minOrder, lang) : null)}
+    ${fact(t.delivery.fee, localizedOr(d.fee))}
+    ${fact(t.delivery.payment, localizedOr(d.payment))}
+  </dl>
+  <div class="channels">
+    <h3 class="channels__h">${esc(t.delivery.channelsTitle)}</h3>
+    <ul>
+      ${channel(`<button class="chan js-only" type="button" data-cart-open data-grab>${icons.bag()}<span class="chan__t">${esc(t.delivery.siteOrder)}<small>${esc(t.delivery.siteOrderNote)}</small></span>${icons.arrow()}</button>`)}
+      ${channel(row(`tel:${c.site.phone}`, icons.phone(), `${t.delivery.phone} ${c.site.phoneDisplay}`))}
+      ${o.menuforma ? channel(row(o.menuforma, icons.globe(), t.delivery.menuforma, t.delivery.menuformaNote, true)) : ''}
+      ${s.instagram ? channel(row(s.instagram, icons.instagram(), t.delivery.instagram, '', true)) : ''}
+      ${s.telegram ? channel(row(s.telegram, icons.telegram(), 'Telegram', '', true)) : ''}
+      ${o.wolt ? channel(row(o.wolt, icons.scooter(), 'Wolt', '', true)) : ''}
+      ${o.bolt ? channel(row(o.bolt, icons.scooter(), 'Bolt Food', '', true)) : ''}
+      ${o.foodora ? channel(row(o.foodora, icons.scooter(), 'Foodora', '', true)) : ''}
+    </ul>
+    ${d.pickup ? `<p class="channels__note">${esc(t.delivery.pickup)}</p>` : ''}
+  </div>
+</section>`;
+}
+
+function aboutSection(c, lang, t) {
+  const story = c.site.story[lang];
+  const fig = (name, widths, w, h, cls, sizes) => `<figure class="ph ${cls}" data-mask>${picture({ base: `/img/venue/${name}`, widths, alt: t.about.alt[name], width: w, height: h, sizes })}</figure>`;
+  return `<section class="about" id="about" aria-labelledby="about-h" data-makimono>
+  <div class="about__sticky">
+    <span class="rod rod--t" aria-hidden="true"></span>
+    <div class="about__track" data-track tabindex="0" role="group" aria-labelledby="about-h">
+      <div class="panel panel--text">
+        <h2 class="h-sec" id="about-h">${esc(t.about.title)}</h2>
+        ${kanji('物語', 'kanji--v')}
+        <p class="about__lead">${esc(t.about.lead)}</p>
+        ${story ? `<p class="about__story">${esc(story)}</p>` : `<p class="about__story">${placeholder(t.about.storyMissing)}</p>`}
+        <p class="about__hint" aria-hidden="true">${esc(t.about.hint)} ${icons.arrow()}</p>
+      </div>
+      ${fig('night', [520, 900], 900, 975, 'ph--tall', '(min-width: 900px) 40vw, 78vw')}
+      ${fig('lamp', [490], 490, 563, 'ph--low', '(min-width: 900px) 30vw, 70vw')}
+      <div class="panel panel--flower">
+        <h3>${esc(t.about.flowerTitle)}</h3>
+        <p>${esc(t.about.flower)}</p>
+      </div>
+      ${fig('tempura', [520, 900], 900, 1088, 'ph--tall', '(min-width: 900px) 38vw, 78vw')}
+      ${fig('triptych', [740], 740, 372, 'ph--wide', '(min-width: 900px) 46vw, 86vw')}
+      ${fig('box', [420, 560], 560, 960, 'ph--mid', '(min-width: 900px) 26vw, 66vw')}
+      ${fig('cake', [420, 750], 750, 690, 'ph--low', '(min-width: 900px) 32vw, 74vw')}
+      <div class="panel panel--end">${placeholder(t.about.kitchenMissing)}</div>
+    </div>
+    <span class="rod rod--b" aria-hidden="true"></span>
+  </div>
+</section>`;
+}
+
+function formField({ id, label, type = 'text', name, required = true, attrs = '', ph = '', auto = '' }) {
+  return `<div class="field" data-field="${esc(name)}"><label for="${id}">${esc(label)}</label><input id="${id}" name="${esc(name)}" type="${type}"${required ? ' required' : ''}${ph ? ` placeholder="${esc(ph)}"` : ''}${auto ? ` autocomplete="${auto}"` : ''} ${attrs}><p class="field__err" data-err hidden></p></div>`;
+}
+
+const honeypot = (id, t) => `<div class="hp" aria-hidden="true"><label for="${id}">${esc(t.form.hp)}</label><input id="${id}" name="website" type="text" tabindex="-1" autocomplete="off"></div>`;
+
+function consentField(id, lang, t) {
+  return `<div class="field field--check" data-field="consent"><label for="${id}"><input id="${id}" type="checkbox" name="consent" required><span>${esc(t.form.consent)} <a href="${lang === 'cs' ? '' : `/${lang}`}/soukromi" target="_blank" rel="noopener">${esc(t.form.consentLink)}</a></span></label><p class="field__err" data-err hidden></p></div>`;
+}
+
+function visitSection(c, lang, t) {
+  const s = c.site;
+  const routeUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${s.address.street}, ${s.address.zip} ${s.address.city}`)}`;
+  const hours = DAY_KEYS.map((k) => {
+    const h = s.hours[k];
+    return `<div class="hours__row" data-day="${k}"><dt>${esc(t.visit.days[k])}</dt><dd>${h ? `${esc(h[0].replace(/^0/, ''))} – ${esc(h[1])}` : esc(t.visit.closedDay)}</dd></div>`;
+  }).join('');
+  return `<section class="visit" id="visit" aria-labelledby="visit-h">
+  ${branch({ seed: 53, cls: 'orn--visit', blooms: 6 })}
+  <h2 class="h-sec" id="visit-h" data-lines>${esc(t.visit.title)}</h2>
+  ${kanji('案内', 'kanji--v')}
+  <div class="visit__grid">
+    <div class="map" data-map>
+      <div class="map__canvas" data-map-canvas></div>
+      <div class="map__poster" data-map-poster>
+        <picture><source type="image/avif" srcset="/img/venue/map-poster.avif"><img class="map__art" src="/img/venue/map-poster.webp" alt="${esc(t.visit.mapAlt)}" width="1000" height="720" loading="lazy" decoding="async"></picture>
+        <span class="map__pin" aria-hidden="true">${kanji('桜')}</span>
+        <small class="map__attr">© <a href="https://www.openstreetmap.org/copyright" rel="noopener" target="_blank">OpenStreetMap</a></small>
+        <button class="btn-plain btn-plain--on map__load js-only" type="button" data-map-load data-grab>${esc(t.visit.mapLoad)}</button>
+        <p class="map__note js-only">${esc(t.visit.mapNote)}</p>
+      </div>
+    </div>
+    <div class="info">
+      <p class="info__addr">${esc(s.address.street)}<br>${esc(s.address.zip)} ${esc(s.address.city)}</p>
+      <p class="status js-only" data-status></p>
+      <a class="btn btn--primary" href="${esc(routeUrl)}" rel="noopener" target="_blank" data-morph data-grab><span>${esc(t.visit.route)}</span></a>
+      <a class="info__tel" href="tel:${esc(s.phone)}">${icons.phone()}${esc(s.phoneDisplay)}</a>
+      <h3 class="info__h">${esc(t.visit.hours)}</h3>
+      <dl class="hours">${hours}</dl>
+    </div>
+  </div>
+  <div class="book">
+    <figure class="book__ph" data-mask>${picture({ base: '/img/venue/reserved', widths: [640, 1000], alt: t.visit.reserveAlt, width: 1000, height: 701, sizes: '(min-width: 900px) 46vw, 100vw' })}</figure>
+    <form class="form" data-form="reservation" novalidate>
+      <h3 class="form__h">${esc(t.visit.reserveTitle)}</h3>
+      <noscript><p class="form__msg">${esc(t.form.noscript)}</p></noscript>
+      <div class="form__row">
+        ${formField({ id: 'r-name', label: t.form.name, name: 'name', auto: 'name' })}
+        ${formField({ id: 'r-phone', label: t.form.phone, name: 'phone', type: 'tel', ph: t.form.phonePh, auto: 'tel' })}
+      </div>
+      <div class="form__row form__row--3">
+        ${formField({ id: 'r-date', label: t.form.date, name: 'date', type: 'date' })}
+        ${formField({ id: 'r-time', label: t.form.time, name: 'time', type: 'time', attrs: 'step="900"' })}
+        ${formField({ id: 'r-guests', label: t.form.guests, name: 'guests', type: 'number', attrs: `min="1" max="${s.reservations.maxGuests}" inputmode="numeric" value="2"` })}
+      </div>
+      ${formField({ id: 'r-note', label: t.form.note, name: 'note', required: false })}
+      ${honeypot('r-hp', t)}
+      ${consentField('r-consent', lang, t)}
+      <div class="form__turnstile" data-turnstile hidden></div>
+      <button class="btn btn--primary js-only" type="submit" data-morph data-grab><span>${esc(t.form.sendReserve)}</span></button>
+      <p class="form__msg" data-msg role="status" hidden></p>
+    </form>
+  </div>
+  <form class="form form--contact" id="contact" data-form="contact" novalidate>
+    <h3 class="form__h">${esc(t.visit.contactTitle)}</h3>
+    <noscript><p class="form__msg">${esc(t.form.noscript)}</p></noscript>
+    <div class="form__row">
+      ${formField({ id: 'c-name', label: t.form.name, name: 'name', auto: 'name' })}
+      ${formField({ id: 'c-contact', label: t.form.contact, name: 'contact', auto: 'email' })}
+    </div>
+    <div class="field" data-field="message"><label for="c-message">${esc(t.form.message)}</label><textarea id="c-message" name="message" rows="3" required></textarea><p class="field__err" data-err hidden></p></div>
+    ${honeypot('c-hp', t)}
+    ${consentField('c-consent', lang, t)}
+    <div class="form__turnstile" data-turnstile hidden></div>
+    <button class="btn-plain btn-plain--on js-only" type="submit" data-grab>${esc(t.form.sendContact)}</button>
+    <p class="form__msg" data-msg role="status" hidden></p>
+  </form>
+</section>`;
+}
+
+function heroSection(c, lang, t) {
+  const h = t.hero;
+  return `<section class="hero" id="top" aria-labelledby="hero-h">
+  <div class="hero__plate" data-hero-plate>
+    ${picture({ base: '/img/hero/plate', widths: [720, 1100, 1536], alt: h.plateAlt, width: 1536, height: 1236, sizes: '(min-width: 1000px) 60vw, 116vw', imgCls: 'hero__img', eager: true })}
+  </div>
+  <img class="hero__logo" src="/img/logo/logo-320.webp" srcset="/img/logo/logo-192.webp 192w, /img/logo/logo-320.webp 320w, /img/logo/logo-512.webp 512w" sizes="(min-width: 900px) 168px, 92px" width="320" height="320" alt="${esc(c.site.name)}" decoding="async" data-hero-logo>
+  <h1 class="hero__h1" id="hero-h" data-hero-h>${h.h1.map((l) => `<span class="ln"><span class="ln__in">${esc(l)}</span></span>`).join(' ')}</h1>
+  <div class="hero__below">
+    <p class="hero__other" lang="${esc(h.otherLang)}">${esc(h.other)}</p>
+    <p class="hero__slogan">${esc(h.slogan)}</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary btn--xl" href="#menu" data-morph data-order-cta data-grab><span>${esc(t.nav.order)}</span></a>
+      <a class="tlink tlink--light hero__call" href="tel:${esc(c.site.phone)}">${icons.phone()}${esc(c.site.phoneDisplay)}</a>
+    </div>
+    <p class="status js-only" data-status></p>
+  </div>
+  <div class="hanko" role="img" aria-label="${esc(h.seal)}"><span aria-hidden="true">桜</span></div>
+  <svg class="flowdrop" viewBox="0 0 100 100" aria-hidden="true" data-flowdrop><path fill="#3a1508" stroke="#7a3a1c" stroke-width="1" d="M50 10C66 38 78 50 78 66a28 28 0 0 1-56 0C22 50 34 38 50 10Z"/></svg>
+</section>`;
+}
+
+function cartPanel(c, lang, t) {
+  const s = c.site;
+  return `<aside class="cart js-only" data-cart hidden aria-labelledby="cart-h" role="dialog" aria-modal="true" data-lenis-prevent>
+  <div class="cart__scrim" data-cart-close></div>
+  <div class="cart__panel" data-cart-panel tabindex="-1">
+    <header class="cart__head"><h2 id="cart-h">${esc(t.cart.title)}</h2><button class="iconbtn" type="button" data-cart-close aria-label="${esc(t.cart.close)}" data-grab>${icons.close()}</button></header>
+    <div class="cart__empty" data-cart-empty><p>${esc(t.cart.empty)}</p><a class="tlink tlink--light" href="#menu" data-cart-close>${esc(t.cart.emptyCta)}${icons.arrow()}</a></div>
+    <ul class="cart__lines" data-cart-lines></ul>
+    <div class="cart__gift" data-cart-gift hidden>${icons.gift()}<p data-cart-gift-text></p><span class="cart__bar"><i data-cart-gift-bar></i></span></div>
+    <p class="cart__total" data-cart-total-row hidden><span>${esc(t.cart.total)}</span><strong data-cart-total>0</strong></p>
+    <p class="cart__note" data-cart-note hidden>${esc(t.cart.deliveryNote)}</p>
+    <form class="form form--cart" data-form="order" novalidate hidden>
+      ${formField({ id: 'o-name', label: t.form.name, name: 'name', auto: 'name' })}
+      ${formField({ id: 'o-phone', label: t.form.phone, name: 'phone', type: 'tel', ph: t.form.phonePh, auto: 'tel' })}
+      <fieldset class="seg" data-field="mode"><legend>${esc(t.form.mode)}</legend>
+        <label><input type="radio" name="mode" value="delivery" checked><span>${esc(t.form.modeDelivery)}</span></label>
+        ${s.delivery.pickup ? `<label><input type="radio" name="mode" value="pickup"><span>${esc(t.form.modePickup)}</span></label>` : ''}
+      </fieldset>
+      <div data-address-wrap>${formField({ id: 'o-address', label: t.form.address, name: 'address', ph: t.form.addressPh, auto: 'street-address' })}</div>
+      <fieldset class="seg" data-field="when"><legend>${esc(t.form.when)}</legend>
+        <label><input type="radio" name="whenMode" value="asap" checked><span>${esc(t.form.whenAsap)}</span></label>
+        <label><input type="radio" name="whenMode" value="time"><span>${esc(t.form.whenTime)}</span></label>
+      </fieldset>
+      <div data-time-wrap hidden>${formField({ id: 'o-time', label: t.form.time, name: 'time', type: 'time', required: false, attrs: 'step="300"' })}</div>
+      ${formField({ id: 'o-note', label: t.form.note, name: 'note', required: false, ph: t.form.notePh })}
+      <div class="field field--check" data-field="adult" data-adult-wrap hidden><label for="o-adult"><input id="o-adult" type="checkbox" name="adult"><span>${esc(t.form.adult)}</span></label><p class="field__err" data-err hidden></p></div>
+      ${honeypot('o-hp', t)}
+      ${consentField('o-consent', lang, t)}
+      <div class="form__turnstile" data-turnstile hidden></div>
+      <p class="field__err" data-err-form hidden></p>
+      <button class="btn btn--primary btn--full" type="submit" data-morph data-grab><span>${esc(t.form.sendOrder)}</span></button>
+    </form>
+    <p class="form__msg form__msg--ok" data-cart-done role="status" hidden></p>
+  </div>
+</aside>
+<nav class="dock js-only" aria-label="${esc(t.nav.order)}">
+  <a href="tel:${esc(s.phone)}" class="dock__b">${icons.phone()}<span>${esc(t.nav.call)}</span></a>
+  <a href="#menu" class="dock__b dock__b--main" data-dock-order><span data-dock-label data-default="${esc(t.nav.order)}">${esc(t.nav.order)}</span></a>
+  <a href="#visit" class="dock__b">${icons.pin()}<span>${esc(t.nav.route)}</span></a>
+</nav>
+<div class="pre" data-pre aria-hidden="true"><svg viewBox="0 0 100 100" class="pre__svg"><defs><radialGradient id="pre-soy" cx=".38" cy=".3" r=".9"><stop offset="0" stop-color="#b56a35"/><stop offset=".35" stop-color="#5c2810"/><stop offset="1" stop-color="#1b0a04"/></radialGradient></defs><circle class="pre__ring" cx="50" cy="52" r="14"/><path data-pre-path fill="url(#pre-soy)"/></svg></div>`;
+}
+
+export function renderHome(c, lang) {
+  const t = c.i18n[lang];
+  const body = [heroSection(c, lang, t), menuSection(c, lang, t), promoSection(c, lang, t), deliverySection(c, lang, t), aboutSection(c, lang, t), visitSection(c, lang, t)].join('\n');
+  return page({ lang, c, t, title: t.meta.title, description: t.meta.description, path: '/', body, home: true, extra: cartPanel(c, lang, t) });
+}

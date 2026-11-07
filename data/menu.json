@@ -1,0 +1,2613 @@
+{
+  "_help": "Ceny a texty menu. Po ulozeni se web sam obnovi. Popis poli je v README.md.",
+  "currency": "Kč",
+  "source": "MenuForma, 2026-11-07",
+  "categories": [
+    {
+      "id": "sety",
+      "name": {
+        "cs": "Sety",
+        "uk": "Сети",
+        "en": "Sets"
+      },
+      "items": [
+        {
+          "id": "phila-set",
+          "name": {
+            "cs": "Phila Set",
+            "uk": "Філа Сет",
+            "en": "Phila Set"
+          },
+          "desc": {
+            "cs": "Phila Sake, Phila Ebi, Phila Sesame, Phila Grilled, Phila Unagi",
+            "uk": "Phila Sake, Phila Ebi, Phila Sesame, Phila Grilled, Phila Unagi",
+            "en": "Phila Sake, Phila Ebi, Phila Sesame, Phila Grilled, Phila Unagi"
+          },
+          "price": 1150,
+          "allergens": [
+            "crustaceans",
+            "gluten",
+            "milk",
+            "fish",
+            "sesame"
+          ],
+          "available": true
+        },
+        {
+          "id": "dragons-set",
+          "name": {
+            "cs": "Dragons Set",
+            "uk": "Дракони Сет",
+            "en": "Dragons Set"
+          },
+          "desc": {
+            "cs": "Red Dragon, Green Dragon, Dragon Eye",
+            "uk": "Red Dragon, Green Dragon, Dragon Eye",
+            "en": "Red Dragon, Green Dragon, Dragon Eye"
+          },
+          "price": 800,
+          "allergens": [
+            "kiwi",
+            "milk",
+            "crustaceans",
+            "gluten",
+            "fish"
+          ],
+          "available": true
+        },
+        {
+          "id": "set-dragons-2-0",
+          "name": {
+            "cs": "Set Dragons 2.0",
+            "uk": "Сет Дракони 2.0",
+            "en": "Set Dragons 2.0"
+          },
+          "desc": {
+            "cs": "Red, Green, Yellow Dragons, Dragon Eye",
+            "uk": "Red, Green, Yellow Dragons, Dragon Eye",
+            "en": "Red, Green, Yellow Dragons, Dragon Eye"
+          },
+          "price": 1050,
+          "pieces": 32,
+          "allergens": [
+            "crustaceans",
+            "kiwi",
+            "mango",
+            "gluten",
+            "fish",
+            "milk"
+          ],
+          "available": true
+        },
+        {
+          "id": "mix-set",
+          "name": {
+            "cs": "Set Mix",
+            "uk": "Мікс Сет",
+            "en": "Mix Set"
+          },
+          "desc": {
+            "cs": "Tempura, California Sake, Volcano Sesame, Tender Ebi, Light Ebi, Futomaki Sake",
+            "uk": "Tempura, California Sake, Volcano Sesame, Tender Ebi, Light Ebi, Futomaki Sake",
+            "en": "Tempura, California Sake, Volcano Sesame, Tender Ebi, Light Ebi, Futomaki Sake"
+          },
+          "price": 1450,
+          "allergens": [
+            "crustaceans",
+            "fish",
+            "milk",
+            "gluten",
+            "sesame"
+          ],
+          "available": true
+        },
+        {
+          "id": "new-nel",
+          "name": {
+            "cs": "Nový Nel",
+            "uk": "Новий Нел",
+            "en": "New Nel"
+          },
+          "desc": {
+            "cs": "Phila Sake, Futomaki Sake, Tender Ebi, Light Ebi, Volcano Sesame",
+            "uk": "Phila Sake, Futomaki Sake, Tender Ebi, Light Ebi, Volcano Sesame",
+            "en": "Phila Sake, Futomaki Sake, Tender Ebi, Light Ebi, Volcano Sesame"
+          },
+          "price": 1250,
+          "allergens": [
+            "gluten",
+            "crustaceans",
+            "sesame",
+            "fish",
+            "milk"
+          ],
+          "available": true
+        },
+        {
+          "id": "rainbow-set",
+          "name": {
+            "cs": "Duhový Set",
+            "uk": "Веселка Сет",
+            "en": "Rainbow Set"
+          },
+          "desc": {
+            "cs": "Ukraine Roll, California Sake, California Hot Ebi, Dragon Eye",
+            "uk": "Ukraine Roll, California Sake, California Hot Ebi, Dragon Eye",
+            "en": "Ukraine Roll, California Sake, California Hot Ebi, Dragon Eye"
+          },
+          "price": 1050,
+          "allergens": [
+            "gluten",
+            "crustaceans",
+            "milk",
+            "fish",
+            "kiwi"
+          ],
+          "available": true
+        },
+        {
+          "id": "wow-set",
+          "name": {
+            "cs": "Wow Set",
+            "uk": "Вау Сет",
+            "en": "Wow Set"
+          },
+          "desc": {
+            "cs": "Tempura Sake, Tempura Ebi, 12 krevet, hranolky",
+            "uk": "Tempura Sake, Tempura Ebi, 12 креветок, картопля фрі",
+            "en": "Tempura Sake, Tempura Ebi, 12 prawns, French fries"
+          },
+          "price": 1250,
+          "allergens": [
+            "crustaceans",
+            "fish",
+            "milk",
+            "gluten"
+          ],
+          "available": true
+        },
+        {
+          "id": "imperial-maxi-set",
+          "name": {
+            "cs": "Imperial Maxi Set",
+            "uk": "Імперіал Максі Сет",
+            "en": "Imperial Maxi Set"
+          },
+          "desc": {
+            "cs": "Phila Sake, Cheese Roll, Samurai, Green Dragon, Tender Ebi, Volcano Sesame, Light Ebi, Futomaki Sake, Phila Sesame",
+            "uk": "Phila Sake, Cheese Roll, Samurai, Green Dragon, Tender Ebi, Volcano Sesame, Light Ebi, Futomaki Sake, Phila Sesame",
+            "en": "Phila Sake, Cheese Roll, Samurai, Green Dragon, Tender Ebi, Volcano Sesame, Light Ebi, Futomaki Sake, Phila Sesame"
+          },
+          "price": 2250,
+          "allergens": [
+            "gluten",
+            "crustaceans",
+            "milk",
+            "fish",
+            "sesame"
+          ],
+          "available": true
+        },
+        {
+          "id": "black-flame",
+          "name": {
+            "cs": "Černý Plamen",
+            "uk": "Чорне Полум'я",
+            "en": "Black Flame"
+          },
+          "desc": {
+            "cs": "California Sake Black, California Ebi Black, Phila Sake Black, California Hot Ebi",
+            "uk": "California Sake Black, California Ebi Black, Phila Sake Black, California Hot Ebi",
+            "en": "California Sake Black, California Ebi Black, Phila Sake Black, California Hot Ebi"
+          },
+          "price": 1050,
+          "allergens": [
+            "crustaceans",
+            "milk",
+            "fish"
+          ],
+          "available": true
+        },
+        {
+          "id": "perfect-mix",
+          "name": {
+            "cs": "Perfektní Mix",
+            "uk": "Ідеальний Мікс",
+            "en": "Perfect Mix"
+          },
+          "desc": {
+            "cs": "Black Ocean, Salmon Avocado Lux, Cheddar Ebi, Black Pearl",
+            "uk": "Black Ocean, Salmon Avocado Lux, Cheddar Ebi, Black Pearl",
+            "en": "Black Ocean, Salmon Avocado Lux, Cheddar Ebi, Black Pearl"
+          },
+          "price": 1250,
+          "allergens": [
+            "crustaceans",
+            "milk",
+            "gluten",
+            "fish"
+          ],
+          "available": true
+        },
+        {
+          "id": "summer-set",
+          "name": {
+            "cs": "Summer Set",
+            "uk": "Літній сет",
+            "en": "Summer Set"
+          },
+          "desc": {
+            "cs": "Strawberry Sake, Summer Roll, Juicy Roll",
+            "uk": "Strawberry Sake, Summer Roll, Juicy Roll",
+            "en": "Strawberry Sake, Summer Roll, Juicy Roll"
+          },
+          "price": 1050,
+          "allergens": [
+            "soybeans",
+            "gluten",
+            "eggs",
+            "milk",
+            "lupin",
+            "kiwi",
+            "fish",
+            "crustaceans"
+          ],
+          "available": true
+        },
+        {
+          "id": "set-mini-nel",
+          "name": {
+            "cs": "Set Mini Nel",
+            "uk": "Сет Міні Нел",
+            "en": "Set Mini Nel"
+          },
+          "desc": {
+            "cs": "Volcano Sesame, Samurai, Red Dragon, Maki Salmon",
+            "uk": "Volcano Sesame, Samurai, Red Dragon, Maki Salmon",
+            "en": "Volcano Sesame, Samurai, Red Dragon, Maki Salmon"
+          },
+          "price": 950,
+          "allergens": [
+            "crustaceans",
+            "fish",
+            "milk",
+            "sesame",
+            "gluten"
+          ],
+          "available": true
+        },
+        {
+          "id": "set-shrimp",
+          "name": {
+            "cs": "Set Krevety",
+            "uk": "Сет Креветки",
+            "en": "Set Shrimp"
+          },
+          "desc": {
+            "cs": "Phila Ebi, California Ebi, California Hot Ebi, Light Ebi",
+            "uk": "Phila Ebi, California Ebi, California Hot Ebi, Light Ebi",
+            "en": "Phila Ebi, California Ebi, California Hot Ebi, Light Ebi"
+          },
+          "price": 1150,
+          "allergens": [
+            "crustaceans",
+            "milk",
+            "gluten"
+          ],
+          "available": true
+        },
+        {
+          "id": "maxi-set",
+          "name": {
+            "cs": "Set Maxi",
+            "uk": "Сет Максі",
+            "en": "Maxi Set"
+          },
+          "desc": {
+            "cs": "Tako Sesame, Light Ebi, Phila Sesame, Tender Ebi, Samurai, Phila Sake, Green Dragon, Cheese Roll",
+            "uk": "Tako Sesame, Light Ebi, Phila Sesame, Tender Ebi, Samurai, Phila Sake, Green Dragon, Cheese Roll",
+            "en": "Tako Sesame, Light Ebi, Phila Sesame, Tender Ebi, Samurai, Phila Sake, Green Dragon, Cheese Roll"
+          },
+          "price": 2050,
+          "allergens": [
+            "sesame",
+            "crustaceans",
+            "fish",
+            "milk",
+            "gluten",
+            "molluscs"
+          ],
+          "available": true
+        },
+        {
+          "id": "baked-set",
+          "name": {
+            "cs": "Pečený Set",
+            "uk": "Запечений Сет",
+            "en": "Baked Set"
+          },
+          "desc": {
+            "cs": "Phila Sesame, Phila Unagi, California Ebi, California Unagi, Futomaki Sake, Futomaki Choice",
+            "uk": "Phila Sesame, Phila Unagi, California Ebi, California Unagi, Futomaki Sake, Futomaki Choice",
+            "en": "Phila Sesame, Phila Unagi, California Ebi, California Unagi, Futomaki Sake, Futomaki Choice"
+          },
+          "price": 1650,
+          "allergens": [
+            "gluten",
+            "fish",
+            "soybeans",
+            "crustaceans",
+            "sesame",
+            "milk"
+          ],
+          "available": true
+        },
+        {
+          "id": "salmon-set",
+          "name": {
+            "cs": "Salmon Set",
+            "uk": "Лосось Сет",
+            "en": "Salmon Set"
+          },
+          "desc": {
+            "cs": "Volcano Sesame, Maki Sake, Samurai, Red Dragon",
+            "uk": "Volcano Sesame, Maki Sake, Samurai, Red Dragon",
+            "en": "Volcano Sesame, Maki Sake, Samurai, Red Dragon"
+          },
+          "price": 950,
+          "allergens": [
+            "fish",
+            "gluten",
+            "milk",
+            "sesame"
+          ],
+          "available": true
+        }
+      ]
+    },
+    {
+      "id": "speciality",
+      "name": {
+        "cs": "Speciality",
+        "uk": "Спеціалітети",
+        "en": "Specials"
+      },
+      "items": [
+        {
+          "id": "cheese-roll",
+          "name": {
+            "cs": "Sýrová rolka",
+            "uk": "Рол з сиром",
+            "en": "Cheese Roll"
+          },
+          "desc": {
+            "cs": "Rýže, krémový sýr, okurka, losos, sýr Cheddar",
+            "uk": "Рис, крем сир, огірок, лосось, сир Чедер",
+            "en": "Rice, cream cheese, cucumber, salmon, Cheddar cheese"
+          },
+          "price": 230,
+          "allergens": [
+            "gluten",
+            "milk",
+            "fish"
+          ],
+          "available": true
+        },
+        {
+          "id": "samurai-roll",
+          "name": {
+            "cs": "Samurajská rolka",
+            "uk": "Samurai Roll",
+            "en": "Samurai Roll"
+          },
+          "desc": {
+            "cs": "Rýže, krémový sýr, okurka, ikra tobiko, čepička z lososa/krevety na výběr",
+            "uk": "Рис, крем сир, огірок, ікра тобіко, шапочка з лосося/креветки на вибір",
+            "en": "Rice, cream cheese, cucumber, tobiko, choice of salmon/shrimp topping"
+          },
+          "price": 300,
+          "allergens": [
+            "gluten",
+            "milk",
+            "fish",
+            "crustaceans"
+          ],
+          "available": true
+        },
+        {
+          "id": "light-ebi",
+          "name": {
+            "cs": "Lehký Ebi",
+            "uk": "Легкий Ebi",
+            "en": "Light Ebi"
+          },
+          "desc": {
+            "cs": "Rýže, krémový sýr, okurka, kreveta, omáčka Unagi",
+            "uk": "Рис, крем сир, огірок, креветка, соус Унагі",
+            "en": "Rice, cream cheese, cucumber, shrimp, Unagi sauce"
+          },
+          "price": 260,
+          "allergens": [
+            "gluten",
+            "milk",
+            "crustaceans",
+            "fish",
+            "soybeans"
+          ],
+          "available": true
+        },
+        {
+          "id": "tender-ebi",
+          "name": {
+            "cs": "Jemný Ebi",
+            "uk": "Ніжний Ebi",
+            "en": "Tender Ebi"
+          },
+          "desc": {
+            "cs": "Rýže, krémový sýr, okurka, avokádo, ikra tobiko, sýrová čepička s krevetou, mandlové plátky",
+            "uk": "Рис, крем сир, огірок, авокадо, ікра тобіко, сирна шапочка з креветкою, мигдалеві пластівці",
+            "en": "Rice, cream cheese, cucumber, avocado, tobiko, cheese topping with shrimp, almond flakes"
+          },
+          "price": 270,
+          "allergens": [
+            "gluten",
+            "milk",
+            "crustaceans",
+            "fish",
+            "nuts"
+          ],
+          "available": true
+        },
+        {
+          "id": "volcano-sesame",
+          "name": {
+            "cs": "Sopka Sezam",
+            "uk": "Вулкан Сезам",
+            "en": "Volcano Sesame"
+          },
+          "desc": {
+            "cs": "Rýže, krémový sýr, okurka, avokádo, čepička z lososa/krevety na výběr, sezam",
+            "uk": "Рис, крем сир, огірок, авокадо, шапочка з лосося/креветки на вибір, кунжут",
+            "en": "Rice, cream cheese, cucumber, avocado, choice of salmon/shrimp topping, sesame"
+          },
+          "price": 250,
+          "allergens": [
+            "gluten",
+            "milk",
+            "crustaceans",
+            "sesame",
+            "fish"
+          ],
+          "available": true
+        },
+        {
+          "id": "tako-sesame",
+          "name": {
+            "cs": "Tako Sezam",
+            "uk": "Тако Сезам",
+            "en": "Tako Sesame"
+          },
+          "desc": {
+            "cs": "Rýže, smetanový sýr, losos, okurka, sýrová čepička, mini chobotnice",
+            "uk": "Рис, кремовий сир, лосось, огірок, сирна шапочка, міні восьминіг",
+            "en": "Rice, cream cheese, salmon, cucumber, cheese topping, baby octopus"
+          },
+          "price": 300,
+          "allergens": [
+            "gluten",
+            "milk",
+            "fish",
+            "molluscs",
+            "sesame"
+          ],
+          "available": true
+        },
+        {
+          "id": "tako-deluxe",
+          "name": {
+            "cs": "Tako Deluxe",
+            "uk": "Тако Делюкс",
+            "en": "Tako Deluxe"
+          },
+          "desc": {
+            "cs": "Rýže, nori, losos, mini chobotnice, Teriyaki omáčka, sezam",
+            "uk": "Рис, норі, лосось, міні восьминіг, соус Теріякі, кунжут",
+            "en": "Rice, nori, salmon, baby octopus, Teriyaki sauce, sesame"
+          },
+          "price": 370,
+          "allergens": [
+            "gluten",
+            "fish",
+            "molluscs",
+            "sesame",
+            "soybeans"
+          ],
+          "available": true
+        },
+        {
+          "id": "black-prince",
+          "name": {
+            "cs": "Černý Princ",
+            "uk": "Чорний Принц",
+            "en": "Black Prince"
+          },
+          "desc": {
+            "cs": "Rýže, smetanový sýr, losos, kreveta, okurka, mandlové lupínky",
+            "uk": "Рис, кремовий сир, лосось, креветка, огірок, мигдалеві пластівці",
+            "en": "Rice, cream cheese, salmon, shrimp, cucumber, almond flakes"
+          },
+          "price": 300,
+          "allergens": [
+            "gluten",
+            "crustaceans",
+            "fish",
+            "milk",
+            "nuts"
+          ],
+          "available": true
+        },
+        {
+          "id": "ukrainian-roll",
+          "name": {
+            "cs": "Ukrajinská rolka",
+            "uk": "Український Рол",
+            "en": "Ukrainian Roll"
+          },
+          "desc": {
+            "cs": "Rýže, smetanový sýr, okurka, losos, tobiko",
+            "uk": "Рис, кремовий сир, огірок, лосось, ікра тобіко",
+            "en": "Rice, cream cheese, cucumber, salmon, tobiko roe"
+          },
+          "price": 300,
+          "allergens": [
+            "gluten",
+            "milk",
+            "fish"
+          ],
+          "available": true
+        },
+        {
+          "id": "nel-royal-gunkan-5-pcs",
+          "name": {
+            "cs": "Nel Royal Gunkan 5 ks",
+            "uk": "Нель Роял Гункани 5 шт",
+            "en": "Nel Royal Gunkan 5 pcs"
+          },
+          "desc": {
+            "cs": "Rýže, nori, losos/úhoř/kreveta, tobiko",
+            "uk": "Рис, норі, лосось/вугор/креветка, ікра тобіко",
+            "en": "Rice, nori, salmon/eel/shrimp, tobiko roe"
+          },
+          "price": 200,
+          "allergens": [
+            "gluten",
+            "crustaceans",
+            "fish"
+          ],
+          "available": true
+        },
+        {
+          "id": "imperator",
+          "name": {
+            "cs": "Imperátor",
+            "uk": "Імператор",
+            "en": "Imperator"
+          },
+          "desc": {
+            "cs": "Nori, rýže, kreveta, krabí maso(surimi), omáčka na bázi majonézy, avokádo, losos, Unagi omáčka, paprikové nitky",
+            "uk": "Норі, рис, креветка, крабове м'ясо (сурімі), соус на основі майонезу, авокадо, лосось, соус Унагі, нитки перцю",
+            "en": "Nori, rice, shrimp, crab meat (surimi), mayonnaise-based sauce, avocado, salmon, Unagi sauce, chili threads"
+          },
+          "price": 300,
+          "allergens": [
+            "crustaceans",
+            "fish",
+            "eggs",
+            "soybeans"
+          ],
+          "available": true
+        },
+        {
+          "id": "fenix",
+          "name": {
+            "cs": "Fenix",
+            "uk": "Фенікс",
+            "en": "Fenix"
+          },
+          "desc": {
+            "cs": "Nori, rýže, losos, kreveta, Unagi omáčka, smažená cibulka",
+            "uk": "Норі, рис, лосось, креветка, соус Унагі, сушена цибулька",
+            "en": "Nori, rice, salmon, shrimp, Unagi sauce, dried onions"
+          },
+          "price": 320,
+          "allergens": [
+            "crustaceans",
+            "fish",
+            "soybeans"
+          ],
+          "available": true
+        },
+        {
+          "id": "cheddar-ebi",
+          "name": {
+            "cs": "Cheddar Ebi",
+            "uk": "Чеддар Ебі",
+            "en": "Cheddar Ebi"
+          },
+          "desc": {
+            "cs": "Nori, rýže, smetanový sýr, losos, kreveta v tempuře, sýr Cheddar, Unagi omáčka, kukuřičné kuličky",
+            "uk": "Норі, рис, кремовий сир, лосось, креветка в темпурі, сир Чеддер, соус Унагі, кукурудзяні кульки",
+            "en": "Nori, rice, cream cheese, salmon, tempura shrimp, Cheddar cheese, unagi sauce, corn balls"
+          },
+          "price": 300,
+          "allergens": [
+            "gluten",
+            "milk",
+            "crustaceans",
+            "fish",
+            "soybeans"
+          ],
+          "available": true
+        },
+        {
+          "id": "black-pearl",
+          "name": {
+            "cs": "Černá Perla",
+            "uk": "Чорна Перлина",
+            "en": "Black Pearl"
+          },
+          "desc": {
+            "cs": "Nori, rýže, smetanový sýr, avokádo, kreveta v tempuře, surimi krab, tobiko",
+            "uk": "Норі, рис, кремовий сир, авокадо, креветка в темпурі, сурімі краб, ікра тобіко",
+            "en": "Nori, rice, cream cheese, avocado, tempura shrimp, surimi crab, tobiko roe"
+          },
+          "price": 320,
+          "allergens": [
+            "gluten",
+            "milk",
+            "crustaceans",
+            "fish"
+          ],
+          "available": true
+        },
+        {
+          "id": "salmon-avocado-lux",
+          "name": {
+            "cs": "Losos Avokádo Lux",
+            "uk": "Лосось Авокадо Люкс",
+            "en": "Salmon Avocado Lux"
+          },
+          "desc": {
+            "cs": "Nori, rýže, smetanový sýr, tobiko kaviár, kreveta, surimi, avokádo, losos",
+            "uk": "Норі, рис, крем-сир, ікра тобіко, креветка, сурімі, авокадо, лосось",
+            "en": "Nori, rice, cream cheese, tobiko roe, shrimp, surimi, avocado, salmon"
+          },
+          "price": 340,
+          "allergens": [
+            "gluten",
+            "milk",
+            "crustaceans",
+            "fish"
+          ],
+          "available": true
+        },
+        {
+          "id": "black-ocean",
+          "name": {
+            "cs": "Černý Oceán",
+            "uk": "Чорний Океан",
+            "en": "Black Ocean"
+          },
+          "desc": {
+            "cs": "Nori, losos, kreveta, tobiko kaviár, rýže, surimi",
+            "uk": "Норі, лосось, креветка, ікра тобіко, рис, сурімі",
+            "en": "Nori, salmon, shrimp, tobiko roe, rice, surimi"
+          },
+          "price": 320,
+          "allergens": [
+            "gluten",
+            "crustaceans",
+            "fish"
+          ],
+          "available": true
+        },
+        {
+          "id": "queen-s-crown",
+          "name": {
+            "cs": "Královnina Koruna",
+            "uk": "Королівська Корона",
+            "en": "Queen's Crown"
+          },
+          "desc": {
+            "cs": "Rýže, sýr, kreveta/losos, kaviár",
+            "uk": "Рис, сир, креветка/лосось, ікра",
+            "en": "Rice, cheese, shrimp/salmon, roe"
+          },
+          "variants": [
+            {
+              "id": "1-pc-salmon",
+              "label": {
+                "cs": "1 ks, losos",
+                "uk": "1 шт, лосось",
+                "en": "1 pc, salmon"
+              },
+              "price": 150
+            },
+            {
+              "id": "1-pc-shrimp",
+              "label": {
+                "cs": "1 ks, kreveta",
+                "uk": "1 шт, креветка",
+                "en": "1 pc, shrimp"
+              },
+              "price": 160
+            }
+          ],
+          "allergens": [
+            "gluten",
+            "milk",
+            "crustaceans",
+            "fish"
+          ],
+          "available": true
+        }
+      ]
+    },
+    {
+      "id": "dragon",
+      "name": {
+        "cs": "Dragon",
+        "uk": "Dragon",
+        "en": "Dragon"
+      },
+      "items": [
+        {
+          "id": "red-dragon",
+          "name": {
+            "cs": "Červený drak",
+            "uk": "Червоний Дракон",
+            "en": "Red Dragon"
+          },
+          "desc": {
+            "cs": "Rýže, krémový sýr, ikra tobiko, avokádo, okurka, losos",
+            "uk": "Рис, крем сир, ікра тобіко, авокадо, огірок, лосось",
+            "en": "Rice, cream cheese, tobiko, avocado, cucumber, salmon"
+          },
+          "price": 250,
+          "allergens": [
+            "gluten",
+            "milk",
+            "fish"
+          ],
+          "available": true
+        },
+        {
+          "id": "green-dragon",
+          "name": {
+            "cs": "Zelený drak",
+            "uk": "Зелений Дракон",
+            "en": "Green Dragon"
+          },
+          "desc": {
+            "cs": "Rýže, krémový sýr, avokádo, okurka, losos, omáčka Unagi, sezam",
+            "uk": "Рис, крем сир, авокадо, огірок, лосось, соус Унагі, кунжут",
+            "en": "Rice, cream cheese, avocado, cucumber, salmon, Unagi sauce, sesame"
+          },
+          "price": 280,
+          "allergens": [
+            "gluten",
+            "milk",
+            "fish",
+            "sesame",
+            "soybeans"
+          ],
+          "available": true
+        },
+        {
+          "id": "yellow-dragon",
+          "name": {
+            "cs": "Žlutý drak",
+            "uk": "Жовтий Дракон",
+            "en": "Yellow Dragon"
+          },
+          "desc": {
+            "cs": "Rýže, krémový sýr, okurka/avokádo, mango, kreveta/losos",
+            "uk": "Рис, крем сир, огірок/авокадо, манго, креветка/лосось",
+            "en": "Rice, cream cheese, cucumber/avocado, mango, shrimp/salmon"
+          },
+          "price": 300,
+          "allergens": [
+            "gluten",
+            "milk",
+            "crustaceans",
+            "fish"
+          ],
+          "available": true
+        },
+        {
+          "id": "dragon-eye",
+          "name": {
+            "cs": "Dračí Oko",
+            "uk": "Око Дракона",
+            "en": "Dragon Eye"
+          },
+          "desc": {
+            "cs": "Rýže, smetanový sýr, okurka, kreveta, kiwi",
+            "uk": "Рис, кремовий сир, огірок, креветка, ківі",
+            "en": "Rice, cream cheese, cucumber, shrimp, kiwi"
+          },
+          "price": 250,
+          "allergens": [
+            "gluten",
+            "milk",
+            "crustaceans"
+          ],
+          "available": true
+        }
+      ]
+    },
+    {
+      "id": "philadelphia",
+      "name": {
+        "cs": "Philadelphia",
+        "uk": "Philadelphia",
+        "en": "Philadelphia"
+      },
+      "items": [
+        {
+          "id": "philadelphia-sake",
+          "name": {
+            "cs": "Philadelphia Sake",
+            "uk": "Philadelphia Sake",
+            "en": "Philadelphia Sake"
+          },
+          "desc": {
+            "cs": "Nori, rýže, krémový sýr, losos, okurka",
+            "uk": "Норі, рис, крем сир, лосось, огірок",
+            "en": "Nori, rice, cream cheese, salmon, cucumber"
+          },
+          "price": 230,
+          "allergens": [
+            "gluten",
+            "milk",
+            "fish"
+          ],
+          "available": true
+        },
+        {
+          "id": "philadelphia-ebi",
+          "name": {
+            "cs": "Philadelphia Ebi",
+            "uk": "Philadelphia Ebi",
+            "en": "Philadelphia Ebi"
+          },
+          "desc": {
+            "cs": "Nori, rýže, krémový sýr, kreveta, okurka",
+            "uk": "Норі, рис, крем сир, креветка, огірок",
+            "en": "Nori, rice, cream cheese, shrimp, cucumber"
+          },
+          "price": 230,
+          "allergens": [
+            "gluten",
+            "milk",
+            "crustaceans"
+          ],
+          "available": true
+        },
+        {
+          "id": "philadelphia-grilled",
+          "name": {
+            "cs": "Philadelphia Grilled",
+            "uk": "Philadelphia Grilled",
+            "en": "Philadelphia Grilled"
+          },
+          "desc": {
+            "cs": "Nori, rýže, krémový sýr, okurka, grilovaný losos",
+            "uk": "Норі, рис, крем сир, огірок, грильований лосось",
+            "en": "Nori, rice, cream cheese, cucumber, grilled salmon"
+          },
+          "price": 230,
+          "allergens": [
+            "gluten",
+            "milk",
+            "fish"
+          ],
+          "available": true
+        },
+        {
+          "id": "philadelphia-unagi",
+          "name": {
+            "cs": "Philadelphia Unagi",
+            "uk": "Philadelphia Unagi",
+            "en": "Philadelphia Unagi"
+          },
+          "desc": {
+            "cs": "Nori, rýže, krémový sýr, okurka, úhoř",
+            "uk": "Норі, рис, крем сир, огірок, вугор",
+            "en": "Nori, rice, cream cheese, cucumber, eel"
+          },
+          "price": 230,
+          "allergens": [
+            "gluten",
+            "milk",
+            "fish",
+            "soybeans"
+          ],
+          "available": true
+        },
+        {
+          "id": "philadelphia-sesame",
+          "name": {
+            "cs": "Philadelphia Sesame",
+            "uk": "Philadelphia Sesame",
+            "en": "Philadelphia Sesame"
+          },
+          "desc": {
+            "cs": "Nori, krémový sýr, avokádo, losos, sezam",
+            "uk": "Норі, крем сир, авокадо, лосось, кунжут",
+            "en": "Nori, cream cheese, avocado, salmon, sesame"
+          },
+          "price": 230,
+          "allergens": [
+            "gluten",
+            "milk",
+            "fish",
+            "sesame"
+          ],
+          "available": true
+        }
+      ]
+    },
+    {
+      "id": "california",
+      "name": {
+        "cs": "California",
+        "uk": "California",
+        "en": "California"
+      },
+      "items": [
+        {
+          "id": "california-sake",
+          "name": {
+            "cs": "California Sake",
+            "uk": "California Sake",
+            "en": "California Sake"
+          },
+          "desc": {
+            "cs": "Rýže, krémový sýr, losos, ikra tobiko, avokádo",
+            "uk": "Рис, крем сир, лосось, ікра тобіко, авокадо",
+            "en": "Rice, cream cheese, salmon, tobiko, avocado"
+          },
+          "price": 220,
+          "allergens": [
+            "gluten",
+            "milk",
+            "fish"
+          ],
+          "available": true
+        },
+        {
+          "id": "california-ebi",
+          "name": {
+            "cs": "California Ebi",
+            "uk": "California Ebi",
+            "en": "California Ebi"
+          },
+          "desc": {
+            "cs": "Rýže, krémový sýr, kreveta, ikra tobiko, avokádo",
+            "uk": "Рис, крем сир, креветка, ікра тобіко, авокадо",
+            "en": "Rice, cream cheese, shrimp, tobiko, avocado"
+          },
+          "price": 230,
+          "allergens": [
+            "gluten",
+            "milk",
+            "crustaceans",
+            "fish"
+          ],
+          "available": true
+        },
+        {
+          "id": "california-hot-ebi",
+          "name": {
+            "cs": "California Horký Ebi",
+            "uk": "Каліфорнія Гарячий Ебі",
+            "en": "California Hot Ebi"
+          },
+          "desc": {
+            "cs": "Rýže, krémový sýr, kreveta tempura, ikra tobiko, okurka/avokádo",
+            "uk": "Рис, крем сир, креветка темпура, ікра тобіко, огірок/авокадо",
+            "en": "Rice, cream cheese, tempura shrimp, tobiko, cucumber/avocado"
+          },
+          "price": 250,
+          "allergens": [
+            "gluten",
+            "milk",
+            "crustaceans",
+            "fish"
+          ],
+          "available": true
+        }
+      ]
+    },
+    {
+      "id": "maki",
+      "name": {
+        "cs": "Maki",
+        "uk": "Макі",
+        "en": "Maki"
+      },
+      "items": [
+        {
+          "id": "maki-sake",
+          "name": {
+            "cs": "Maki Salmon",
+            "uk": "Макі Саке",
+            "en": "Maki Sake"
+          },
+          "desc": {
+            "cs": "Nori, rýže, losos",
+            "uk": "Норі, рис, лосось",
+            "en": "Nori, rice, salmon"
+          },
+          "price": 100,
+          "allergens": [
+            "fish"
+          ],
+          "available": true
+        },
+        {
+          "id": "futomaki-sake",
+          "name": {
+            "cs": "Futomaki Sake",
+            "uk": "Футомакі Саке",
+            "en": "Futomaki Sake"
+          },
+          "desc": {
+            "cs": "Nori, rýže, krémový sýr, avokádo, losos",
+            "uk": "Норі, рис, крем сир, авокадо, лосось",
+            "en": "Nori, rice, cream cheese, avocado, salmon"
+          },
+          "price": 220,
+          "allergens": [
+            "fish",
+            "milk"
+          ],
+          "available": true
+        },
+        {
+          "id": "futomaki-choice",
+          "name": {
+            "cs": "Futomaki Choice",
+            "uk": "Футомакі Вибір",
+            "en": "Futomaki Choice"
+          },
+          "desc": {
+            "cs": "Nori, rýže, krémový sýr, avokádo/okurka, losos/kreveta na výběr",
+            "uk": "Норі, рис, крем сир, авокадо/огірок, лосось/креветка на вибір",
+            "en": "Nori, rice, cream cheese, avocado/cucumber, choice of salmon/shrimp"
+          },
+          "price": 230,
+          "allergens": [
+            "milk",
+            "fish",
+            "crustaceans"
+          ],
+          "available": true
+        },
+        {
+          "id": "maki-ebi",
+          "name": {
+            "cs": "Maki Ebi",
+            "uk": "Макі Ебі",
+            "en": "Maki Ebi"
+          },
+          "desc": {
+            "cs": "Rýže, nori, kreveta",
+            "uk": "Рис, норі, креветка",
+            "en": "Rice, nori, shrimp"
+          },
+          "price": 100,
+          "allergens": [
+            "crustaceans"
+          ],
+          "available": true
+        },
+        {
+          "id": "maki-crab",
+          "name": {
+            "cs": "Maki Krab",
+            "uk": "Макі Краб",
+            "en": "Maki Crab"
+          },
+          "desc": {
+            "cs": "Rýže, nori, surimi",
+            "uk": "Рис, норі, сурімі",
+            "en": "Rice, nori, surimi"
+          },
+          "price": 100,
+          "allergens": [
+            "fish"
+          ],
+          "available": true
+        },
+        {
+          "id": "maki-unagi",
+          "name": {
+            "cs": "Maki Unagi",
+            "uk": "Макі Унагі",
+            "en": "Maki Unagi"
+          },
+          "desc": {
+            "cs": "Rýže, nori, úhoř",
+            "uk": "Рис, норі, вугор",
+            "en": "Rice, nori, eel"
+          },
+          "price": 100,
+          "allergens": [
+            "fish",
+            "soybeans"
+          ],
+          "available": true
+        }
+      ]
+    },
+    {
+      "id": "zapecene",
+      "name": {
+        "cs": "Zapékané",
+        "uk": "Запечені",
+        "en": "Baked"
+      },
+      "items": [
+        {
+          "id": "tempura-chicken",
+          "name": {
+            "cs": "Tempura Chicken",
+            "uk": "Tempura Курка",
+            "en": "Tempura Chicken"
+          },
+          "desc": {
+            "cs": "Rýže, nori, okurka, kuře, krémový sýr, tempura těstíčko",
+            "uk": "Рис, норі, огірок, курка, крем сир, кляр темпура",
+            "en": "Rice, nori, cucumber, chicken, cream cheese, tempura batter"
+          },
+          "price": 250,
+          "weight": "300 g",
+          "allergens": [
+            "chicken",
+            "milk",
+            "gluten"
+          ],
+          "available": true
+        },
+        {
+          "id": "crispy-chicken",
+          "name": {
+            "cs": "Křupavé kuře",
+            "uk": "Хрустка курка",
+            "en": "Crispy Chicken"
+          },
+          "desc": {
+            "cs": "Rýže, nori, krémový sýr, okurka, kuřecí tempura, tempura těstíčko",
+            "uk": "Рис, норі, крем-сир, огірок, куряча темпура, кляр темпура",
+            "en": "Rice, nori, cream cheese, cucumber, chicken tempura, tempura batter"
+          },
+          "price": 270,
+          "weight": "300 g",
+          "allergens": [
+            "chicken",
+            "milk",
+            "gluten"
+          ],
+          "available": true
+        },
+        {
+          "id": "tempura-roll",
+          "name": {
+            "cs": "Tempura rolka",
+            "uk": "Темпура Рол",
+            "en": "Tempura Roll"
+          },
+          "desc": {
+            "cs": "Rýže, krémový sýr, losos/kreveta na výběr, tempura těstíčko",
+            "uk": "Рис, крем сир, лосось/креветка на вибір, кляр темпура",
+            "en": "Rice, cream cheese, choice of salmon/shrimp, tempura batter"
+          },
+          "price": 250,
+          "allergens": [
+            "gluten",
+            "milk",
+            "fish",
+            "crustaceans"
+          ],
+          "available": true
+        },
+        {
+          "id": "futomaki-hot",
+          "name": {
+            "cs": "Futomaki Pikantní",
+            "uk": "Футомакі Гарячий",
+            "en": "Futomaki Hot"
+          },
+          "desc": {
+            "cs": "Rýže, nori, smetanový sýr, losos, sýrová čepička s chobotnicí/krevetou, sladká Chili omáčka",
+            "uk": "Рис, норі, кремовий сир, лосось, сирна шапочка з восьминогом/креветкою, солодкий соус Чилі",
+            "en": "Rice, nori, cream cheese, salmon, cheese cap with octopus/shrimp, sweet chili sauce"
+          },
+          "price": 300,
+          "allergens": [
+            "gluten",
+            "milk",
+            "fish",
+            "molluscs",
+            "crustaceans"
+          ],
+          "available": true
+        },
+        {
+          "id": "crispy-gold",
+          "name": {
+            "cs": "Křupavé Zlato",
+            "uk": "Хрустке Золото",
+            "en": "Crispy Gold"
+          },
+          "desc": {
+            "cs": "Rýže, smetanový sýr, losos/kreveta, tobiko, tempura, Unagi omáčka",
+            "uk": "Рис, кремовий сир, лосось/креветка, ікра тобіко, темпура, соус Унагі",
+            "en": "Rice, cream cheese, salmon/shrimp, tobiko roe, tempura, Unagi sauce"
+          },
+          "price": 290,
+          "allergens": [
+            "gluten",
+            "crustaceans",
+            "fish",
+            "milk",
+            "soybeans"
+          ],
+          "available": true
+        },
+        {
+          "id": "futomaki-baked",
+          "name": {
+            "cs": "Pečené Futomaki",
+            "uk": "Футомакі Запечений",
+            "en": "Futomaki Baked"
+          },
+          "desc": {
+            "cs": "Rýže, nori, smetanový sýr, avokádo, losos, sýrová čepička",
+            "uk": "Рис, норі, кремовий сир, авокадо, лосось, сирна шапочка",
+            "en": "Rice, nori, cream cheese, avocado, salmon, cheese topping"
+          },
+          "price": 250,
+          "allergens": [
+            "gluten",
+            "milk",
+            "fish"
+          ],
+          "available": true
+        },
+        {
+          "id": "california-sake-baked",
+          "name": {
+            "cs": "Pečené California Sake",
+            "uk": "Каліфорнія Саке Запечений",
+            "en": "California Sake Baked"
+          },
+          "desc": {
+            "cs": "Rýže, smetanový sýr, losos, tobiko, avokádo, sýrová čepička",
+            "uk": "Рис, кремовий сир, лосось, ікра тобіко, авокадо, сирна шапочка",
+            "en": "Rice, cream cheese, salmon, tobiko roe, avocado, cheese topping"
+          },
+          "price": 260,
+          "allergens": [
+            "gluten",
+            "milk",
+            "fish"
+          ],
+          "available": true
+        },
+        {
+          "id": "california-ebi-baked",
+          "name": {
+            "cs": "Pečené California Ebi",
+            "uk": "Каліфорнія Ебі Запечений",
+            "en": "California Ebi Baked"
+          },
+          "desc": {
+            "cs": "Rýže, smetanový sýr, kreveta, tobiko, avokádo, sýrová čepička",
+            "uk": "Рис, кремовий сир, креветка, ікра тобіко, авокадо, сирна шапочка",
+            "en": "Rice, cream cheese, shrimp, tobiko roe, avocado, cheese topping"
+          },
+          "price": 270,
+          "allergens": [
+            "gluten",
+            "milk",
+            "crustaceans",
+            "fish"
+          ],
+          "available": true
+        },
+        {
+          "id": "phila-sesame-baked",
+          "name": {
+            "cs": "Pečené Phila Sezam",
+            "uk": "Філадельфія Сезам Запечений",
+            "en": "Phila Sesame Baked"
+          },
+          "desc": {
+            "cs": "Rýže, smetanový sýr, sezam, losos, avokádo, sýrová čepička",
+            "uk": "Рис, кремовий сир, кунжут, лосось, авокадо, сирна шапочка",
+            "en": "Rice, cream cheese, sesame, salmon, avocado, cheese topping"
+          },
+          "price": 270,
+          "allergens": [
+            "gluten",
+            "milk",
+            "sesame",
+            "fish"
+          ],
+          "available": true
+        }
+      ]
+    },
+    {
+      "id": "fastfood",
+      "name": {
+        "cs": "Sushi fastfood",
+        "uk": "Суші-фастфуд",
+        "en": "Sushi fastfood"
+      },
+      "items": [
+        {
+          "id": "sushi-sandwich",
+          "name": {
+            "cs": "Sushi Sendvič",
+            "uk": "Суші Сендвіч",
+            "en": "Sushi Sandwich"
+          },
+          "desc": {
+            "cs": "Rýže, smetanový sýr, avokádo, losos, tempura",
+            "uk": "Рис, кремовий сир, авокадо, лосось, темпура",
+            "en": "Rice, cream cheese, avocado, salmon, tempura"
+          },
+          "price": 200,
+          "allergens": [
+            "gluten",
+            "fish",
+            "milk"
+          ],
+          "available": true
+        },
+        {
+          "id": "sushi-tacos",
+          "name": {
+            "cs": "Sushi Tacos",
+            "uk": "Суші Такос",
+            "en": "Sushi Tacos"
+          },
+          "desc": {
+            "cs": "Rýže, smetanový sýr, avokádo, okurka, tobiko, losos/kreveta",
+            "uk": "Рис, кремовий сир, авокадо, огірок, ікра тобіко, лосось/креветка",
+            "en": "Rice, cream cheese, avocado, cucumber, tobiko roe, salmon/shrimp"
+          },
+          "price": 300,
+          "allergens": [
+            "gluten",
+            "fish",
+            "milk",
+            "crustaceans"
+          ],
+          "available": true
+        },
+        {
+          "id": "sushi-burger",
+          "name": {
+            "cs": "Sushi Burger",
+            "uk": "Суші Бургер",
+            "en": "Sushi Burger"
+          },
+          "desc": {
+            "cs": "Rýže, smetanový sýr, losos, tobiko, avokádo, okurka",
+            "uk": "Рис, кремовий сир, лосось, ікра тобіко, авокадо, огірок",
+            "en": "Rice, cream cheese, salmon, tobiko roe, avocado, cucumber"
+          },
+          "price": 350,
+          "allergens": [
+            "gluten",
+            "fish",
+            "milk"
+          ],
+          "available": true
+        },
+        {
+          "id": "sushi-hot-dog",
+          "name": {
+            "cs": "Sushi Hot Dog",
+            "uk": "Суші Хот-Дог",
+            "en": "Sushi Hot Dog"
+          },
+          "desc": {
+            "cs": "Rýže, smetanový sýr, losos/kreveta, japonská majonéza, okurka, tobiko",
+            "uk": "Рис, кремовий сир, лосось/креветка, японський майонез, огірок, ікра тобіко",
+            "en": "Rice, cream cheese, salmon/shrimp, Japanese mayonnaise, cucumber, tobiko roe"
+          },
+          "price": 400,
+          "allergens": [
+            "gluten",
+            "fish",
+            "milk",
+            "crustaceans",
+            "eggs"
+          ],
+          "available": true
+        },
+        {
+          "id": "sushi-pizza",
+          "name": {
+            "cs": "Sushi Pizza",
+            "uk": "Суші Піца",
+            "en": "Sushi Pizza"
+          },
+          "desc": {
+            "cs": "Rýže, smetanový sýr, nori, losos/kreveta/úhoř na výběr, sýrová hmota, omáčka Unagi, sezam",
+            "uk": "Рис, крем-сир, норі, лосось/креветка/вугор на вибір, сирна маса, соус Унагі, кунжут",
+            "en": "Rice, cream cheese, nori, choice of salmon/shrimp/eel, cheese mass, unagi sauce, sesame"
+          },
+          "price": 330,
+          "allergens": [
+            "gluten",
+            "milk",
+            "fish",
+            "crustaceans",
+            "sesame",
+            "soybeans"
+          ],
+          "available": true
+        },
+        {
+          "id": "ebi-tempura",
+          "name": {
+            "cs": "Ebi Tempura 6 ks",
+            "uk": "Ебі Темпура 6 шт",
+            "en": "Ebi Tempura 6 pcs"
+          },
+          "price": 250,
+          "allergens": [
+            "crustaceans",
+            "gluten"
+          ],
+          "available": true
+        }
+      ]
+    },
+    {
+      "id": "poke",
+      "name": {
+        "cs": "Poke bowly",
+        "uk": "Поке-боули",
+        "en": "Poke bowls"
+      },
+      "items": [
+        {
+          "id": "salmon-poke-bowl",
+          "name": {
+            "cs": "Poke Bowl Losos",
+            "uk": "Поке Боул Лосось",
+            "en": "Salmon Poke Bowl"
+          },
+          "desc": {
+            "cs": "Rýže, losos, avokado, okurka, rajče, salat, nori, salát čuka, kličky hrášku, sezam, omačka unagi",
+            "uk": "Рис, лосось в маринаді, огірок, авокадо, помідор, водорості Чука, пророщені паростки горошку, кунжут, соус унагі, норі, салат",
+            "en": "Rice, marinated salmon, cucumber, avocado, tomato, Chuka seaweed, pea sprouts, sesame, unagi sauce, nori, salad"
+          },
+          "variants": [
+            {
+              "id": "400-g",
+              "label": {
+                "cs": "400 g",
+                "uk": "400 г",
+                "en": "400 g"
+              },
+              "price": 350
+            },
+            {
+              "id": "600-g",
+              "label": {
+                "cs": "600 g",
+                "uk": "600 г",
+                "en": "600 g"
+              },
+              "price": 450
+            }
+          ],
+          "allergens": [
+            "fish",
+            "sesame",
+            "soybeans",
+            "gluten"
+          ],
+          "available": true
+        },
+        {
+          "id": "shrimp-poke-bowl",
+          "name": {
+            "cs": "Poke Bowl Kreveta",
+            "uk": "Поке Боул Креветка",
+            "en": "Shrimp Poke Bowl"
+          },
+          "desc": {
+            "cs": "Rýže, krevety, avokado, okurka, rajče, salat, nori, salát čuka, kličky hrášku, sezam, omačka unagi",
+            "uk": "Рис, креветка, пророщені паростки горошку, салат Чука, кунжут, огірок, авокадо, помідор, салат, норі, соус унагі",
+            "en": "Rice, shrimp, pea sprouts, Chuka salad, sesame, cucumber, avocado, tomato, salad, nori, unagi sauce"
+          },
+          "variants": [
+            {
+              "id": "400-g",
+              "label": {
+                "cs": "400 g",
+                "uk": "400 г",
+                "en": "400 g"
+              },
+              "price": 350
+            },
+            {
+              "id": "600-g",
+              "label": {
+                "cs": "600 g",
+                "uk": "600 г",
+                "en": "600 g"
+              },
+              "price": 450
+            }
+          ],
+          "allergens": [
+            "crustaceans",
+            "sesame",
+            "gluten",
+            "soybeans"
+          ],
+          "available": true
+        },
+        {
+          "id": "poke-bowl-tuna",
+          "name": {
+            "cs": "Poke Bowl Tuňák",
+            "uk": "Поке Боул Тунець",
+            "en": "Poke Bowl Tuna"
+          },
+          "desc": {
+            "cs": "Rýže, tuňák, avokado, okurka, rajče, salat, nori, salát čuka, kličky hrášku, sezam, omačka unagi",
+            "uk": "Рис, тунець в маринаді, огірок, помідор, авокадо, кунжут, салат, пророщені паростки горошку, норі, водорості Чука, соус унагі",
+            "en": "Rice, marinated tuna, cucumber, tomato, avocado, sesame, salad, pea sprouts, nori, Chuka seaweed, unagi sauce"
+          },
+          "variants": [
+            {
+              "id": "400-g",
+              "label": {
+                "cs": "400 g",
+                "uk": "400 г",
+                "en": "400 g"
+              },
+              "price": 350
+            },
+            {
+              "id": "600-g",
+              "label": {
+                "cs": "600 g",
+                "uk": "600 г",
+                "en": "600 g"
+              },
+              "price": 450
+            }
+          ],
+          "allergens": [
+            "fish",
+            "sesame",
+            "soybeans",
+            "gluten"
+          ],
+          "available": true
+        },
+        {
+          "id": "poke-bowl-chicken",
+          "name": {
+            "cs": "Poke Bowl Kuře",
+            "uk": "Poke Bowl Курка",
+            "en": "Poke Bowl Chicken"
+          },
+          "desc": {
+            "cs": "Rýže, kuřeci maso, avokado, okurka, rajče, salat, nori, salát čuka, kličky hrášku, sezam, omačka unagi",
+            "uk": "Рис, курка, авокадо, помідор, огірок, кунжут, салат, пророщені паростки горошку, водорості Чука, норі, соус унагі",
+            "en": "Rice, chicken, avocado, tomato, cucumber, sesame, salad, pea sprouts, Chuka seaweed, nori, unagi sauce"
+          },
+          "variants": [
+            {
+              "id": "400-g",
+              "label": {
+                "cs": "400 g",
+                "uk": "400 г",
+                "en": "400 g"
+              },
+              "price": 350
+            },
+            {
+              "id": "600-g",
+              "label": {
+                "cs": "600 g",
+                "uk": "600 г",
+                "en": "600 g"
+              },
+              "price": 450
+            }
+          ],
+          "allergens": [
+            "sesame",
+            "chicken",
+            "soybeans",
+            "gluten"
+          ],
+          "available": true
+        }
+      ]
+    },
+    {
+      "id": "funcoza",
+      "name": {
+        "cs": "Funčoza",
+        "uk": "Фунчоза",
+        "en": "Funchoza"
+      },
+      "items": [
+        {
+          "id": "funchoza-with-vegetables",
+          "name": {
+            "cs": "Funčoza se zeleninou",
+            "uk": "Фунчоза з овочами",
+            "en": "Funchoza with vegetables"
+          },
+          "desc": {
+            "cs": "Skleněné nudle (funčoza), mrkev, červená paprika, okurka, červená cibule, jarní cibulka, česnek, sójová omáčka, sezam",
+            "uk": "Скляна локшина (фунчоза), морква, червоний перець, огірок, червона цибуля, зелена цибуля, часник, соєвий соус, кунжут",
+            "en": "Glass noodles (funchoza), carrot, red pepper, cucumber, red onion, spring onion, garlic, soy sauce, sesame"
+          },
+          "variants": [
+            {
+              "id": "300-g",
+              "label": {
+                "cs": "300 g",
+                "uk": "300 г",
+                "en": "300 g"
+              },
+              "price": 159
+            },
+            {
+              "id": "600-g",
+              "label": {
+                "cs": "600 g",
+                "uk": "600 г",
+                "en": "600 g"
+              },
+              "price": 299
+            }
+          ],
+          "allergens": [
+            "soybeans",
+            "sesame",
+            "gluten"
+          ],
+          "badge": "new",
+          "available": true
+        },
+        {
+          "id": "funchoza-with-chicken-and-vegetables",
+          "name": {
+            "cs": "Funčoza s kuřecím masem a zeleninou",
+            "uk": "Фунчоза з куркою та овочами",
+            "en": "Funchoza with chicken and vegetables"
+          },
+          "desc": {
+            "cs": "Skleněné nudle (funčoza), kuřecí maso, mrkev, červená paprika, okurka, červená cibule, jarní cibulka, česnek, sójová omáčka, sezam",
+            "uk": "Скляна локшина (фунчоза), курка, морква, червоний перець, огірок, червона цибуля, зелена цибуля, часник, соєвий соус, кунжут",
+            "en": "Glass noodles (funchoza), chicken, carrot, red pepper, cucumber, red onion, spring onion, garlic, soy sauce, sesame"
+          },
+          "variants": [
+            {
+              "id": "300-g",
+              "label": {
+                "cs": "300 g",
+                "uk": "300 г",
+                "en": "300 g"
+              },
+              "price": 199
+            },
+            {
+              "id": "600-g",
+              "label": {
+                "cs": "600 g",
+                "uk": "600 г",
+                "en": "600 g"
+              },
+              "price": 379
+            }
+          ],
+          "allergens": [
+            "soybeans",
+            "sesame",
+            "gluten",
+            "onion",
+            "chicken"
+          ],
+          "badge": "new",
+          "available": true
+        },
+        {
+          "id": "funchoza-with-shrimp",
+          "name": {
+            "cs": "Funčoza s krevetami",
+            "uk": "Фунчоза з креветками",
+            "en": "Funchoza with shrimp"
+          },
+          "desc": {
+            "cs": "Skleněné nudle (funčoza), krevety, mrkev, červená paprika, okurka, červená cibule, jarní cibulka, česnek, sójová omáčka, sezam",
+            "uk": "Скляна локшина (фунчоза), креветки, морква, червоний перець, огірок, червона цибуля, зелена цибуля, часник, соєвий соус, кунжут",
+            "en": "Glass noodles (funchoza), shrimp, carrot, red pepper, cucumber, red onion, spring onion, garlic, soy sauce, sesame"
+          },
+          "variants": [
+            {
+              "id": "300-g",
+              "label": {
+                "cs": "300 g",
+                "uk": "300 г",
+                "en": "300 g"
+              },
+              "price": 229
+            },
+            {
+              "id": "600-g",
+              "label": {
+                "cs": "600 g",
+                "uk": "600 г",
+                "en": "600 g"
+              },
+              "price": 429
+            }
+          ],
+          "allergens": [
+            "sesame",
+            "gluten",
+            "soybeans",
+            "crustaceans"
+          ],
+          "badge": "new",
+          "available": true
+        },
+        {
+          "id": "funchoza-with-chicken-and-shrimp",
+          "name": {
+            "cs": "Funčoza s kuřecím masem a krevetami",
+            "uk": "Фунчоза з куркою та креветками",
+            "en": "Funchoza with chicken and shrimp"
+          },
+          "desc": {
+            "cs": "Skleněné nudle (funčoza), kuřecí maso, krevety, mrkev, červená paprika, okurka, červená cibule, jarní cibulka, česnek, sójová omáčka, sezam",
+            "uk": "Скляна локшина (фунчоза), курка, креветки, морква, червоний перець, огірок, червона цибуля, зелена цибуля, часник, соєвий соус, кунжут",
+            "en": "Glass noodles (funchoza), chicken, shrimp, carrot, red pepper, cucumber, red onion, spring onion, garlic, soy sauce, sesame"
+          },
+          "variants": [
+            {
+              "id": "300-g",
+              "label": {
+                "cs": "300 g",
+                "uk": "300 г",
+                "en": "300 g"
+              },
+              "price": 259
+            },
+            {
+              "id": "600-g",
+              "label": {
+                "cs": "600 g",
+                "uk": "600 г",
+                "en": "600 g"
+              },
+              "price": 489
+            }
+          ],
+          "allergens": [
+            "gluten",
+            "soybeans",
+            "sesame",
+            "crustaceans"
+          ],
+          "badge": "new",
+          "available": true
+        }
+      ]
+    },
+    {
+      "id": "dort",
+      "name": {
+        "cs": "Sushi dort",
+        "uk": "Суші-торт",
+        "en": "Sushi cake"
+      },
+      "items": [
+        {
+          "id": "sushi-dort",
+          "name": {
+            "cs": "Sushi Dort",
+            "uk": "Суші Торт",
+            "en": "Sushi Cake"
+          },
+          "desc": {
+            "cs": "Minimální hmotnost 2 kg",
+            "uk": "Мінімальна вага 2 кг",
+            "en": "Minimum weight 2 kg"
+          },
+          "price": 600,
+          "allergens": [
+            "crustaceans",
+            "fish",
+            "milk"
+          ],
+          "available": true
+        }
+      ]
+    },
+    {
+      "id": "napoje",
+      "name": {
+        "cs": "Nápoje",
+        "uk": "Напої",
+        "en": "Drinks"
+      },
+      "items": [
+        {
+          "id": "pepsi-zero-sugar",
+          "name": {
+            "cs": "Pepsi Zero Sugar 0,33 l",
+            "uk": "Pepsi Zero Sugar 0,33 л",
+            "en": "Pepsi Zero Sugar 0.33 L"
+          },
+          "price": 43,
+          "allergens": [],
+          "available": true
+        },
+        {
+          "id": "pepsi-original",
+          "name": {
+            "cs": "Pepsi Original 0,33 l",
+            "uk": "Pepsi Original 0,33 л",
+            "en": "Pepsi Original 0.33 L"
+          },
+          "price": 43,
+          "allergens": [],
+          "available": true
+        },
+        {
+          "id": "nestea-iced-tea",
+          "name": {
+            "cs": "Nestea Iced Tea 0,5 l",
+            "uk": "Nestea Iced Tea 0,5 л",
+            "en": "Nestea Iced Tea 0.5 L"
+          },
+          "price": 37,
+          "allergens": [],
+          "available": true
+        },
+        {
+          "id": "crazy-wolf-energy-drink",
+          "name": {
+            "cs": "Crazy Wolf 0,25 l",
+            "uk": "Crazy Wolf 0,25 л",
+            "en": "Crazy Wolf energy drink 0.25 L"
+          },
+          "desc": {
+            "cs": "Příchutě: meloun, limetka, černý rybíz, bez cukru, ovocná, klasická",
+            "uk": "Смаки: кавун, лайм, чорна смородина, без цукру, фруктовий, класичний",
+            "en": "Flavours: watermelon, lime, blackcurrant, sugar free, fruit, classic"
+          },
+          "price": 16,
+          "allergens": [],
+          "available": true
+        },
+        {
+          "id": "sparkling-water",
+          "name": {
+            "cs": "Sycená voda 0,5 l",
+            "uk": "Газована вода 0,5 л",
+            "en": "Sparkling water 0.5 L"
+          },
+          "price": 20,
+          "allergens": [],
+          "available": true
+        },
+        {
+          "id": "lightly-sparkling-water",
+          "name": {
+            "cs": "Jemně sycená voda 0,5 l",
+            "uk": "Слабогазована вода 0,5 л",
+            "en": "Lightly sparkling water 0.5 L"
+          },
+          "price": 20,
+          "allergens": [],
+          "available": true
+        },
+        {
+          "id": "birell-malina",
+          "name": {
+            "cs": "Birell 0,33 l",
+            "uk": "Birell 0,33 л",
+            "en": "Birell 0.33 L"
+          },
+          "desc": {
+            "cs": "Příchuť malina s limetkou",
+            "uk": "Смак малина з лаймом",
+            "en": "Raspberry and lime"
+          },
+          "price": 32,
+          "allergens": [],
+          "available": true
+        },
+        {
+          "id": "birell-pomelo",
+          "name": {
+            "cs": "Birell 0,33 l",
+            "uk": "Birell 0,33 л",
+            "en": "Birell 0.33 L"
+          },
+          "desc": {
+            "cs": "Příchuť pomelo-grep",
+            "uk": "Смак помело-грейпфрут",
+            "en": "Pomelo and grapefruit"
+          },
+          "price": 32,
+          "allergens": [],
+          "available": true
+        },
+        {
+          "id": "cool-grep",
+          "name": {
+            "cs": "Cool 0,5 l",
+            "uk": "Cool 0,5 л",
+            "en": "Cool 0.5 L"
+          },
+          "desc": {
+            "cs": "Příchuť grep",
+            "uk": "Смак грейпфрут",
+            "en": "Grapefruit"
+          },
+          "price": 38,
+          "allergens": [],
+          "available": true
+        },
+        {
+          "id": "kozel-non-alcoholic",
+          "name": {
+            "cs": "Kozel Nealko 0,5 l",
+            "uk": "Kozel Nealko 0,5 л",
+            "en": "Kozel non-alcoholic 0.5 L"
+          },
+          "price": 39,
+          "allergens": [],
+          "available": true
+        },
+        {
+          "id": "cool-malina",
+          "name": {
+            "cs": "Cool 0,5 l",
+            "uk": "Cool 0,5 л",
+            "en": "Cool 0.5 L"
+          },
+          "desc": {
+            "cs": "Příchuť malina a borůvka",
+            "uk": "Смак малина й чорниця",
+            "en": "Raspberry and blueberry"
+          },
+          "price": 38,
+          "allergens": [],
+          "available": true
+        },
+        {
+          "id": "caprisun",
+          "name": {
+            "cs": "CapriSun 0,2 l",
+            "uk": "CapriSun 0,2 л",
+            "en": "CapriSun 0.2 L"
+          },
+          "price": 23,
+          "allergens": [],
+          "available": true
+        },
+        {
+          "id": "cola",
+          "name": {
+            "cs": "Cola 0,33 l",
+            "uk": "Cola 0,33 л",
+            "en": "Cola 0.33 L"
+          },
+          "price": 43,
+          "allergens": [],
+          "available": true
+        },
+        {
+          "id": "relax-mango-cactus",
+          "name": {
+            "cs": "Relax mango, kaktus 0,3 l",
+            "uk": "Relax манго, кактус 0,3 л",
+            "en": "Relax mango, cactus 0.3 L"
+          },
+          "price": 36,
+          "allergens": [],
+          "available": true
+        },
+        {
+          "id": "relax-apple-multivitamin",
+          "name": {
+            "cs": "Relax jablko, multivitamin 0,3 l",
+            "uk": "Relax яблуко, мультивітамін 0,3 л",
+            "en": "Relax apple, multivitamin 0.3 L"
+          },
+          "price": 36,
+          "allergens": [],
+          "available": true
+        },
+        {
+          "id": "relax-orange",
+          "name": {
+            "cs": "Relax pomeranč 0,3 l",
+            "uk": "Relax апельсин 0,3 л",
+            "en": "Relax orange 0.3 L"
+          },
+          "price": 36,
+          "allergens": [],
+          "available": true
+        },
+        {
+          "id": "borjomi",
+          "name": {
+            "cs": "Borjomi 0,5 l",
+            "uk": "Borjomi 0,5 л",
+            "en": "Borjomi 0.5 L"
+          },
+          "price": 87,
+          "allergens": [],
+          "available": true
+        },
+        {
+          "id": "mirinda-orange",
+          "name": {
+            "cs": "Mirinda pomeranč 0,33 l",
+            "uk": "Mirinda апельсин 0,33 л",
+            "en": "Mirinda orange 0.33 L"
+          },
+          "price": 28,
+          "allergens": [],
+          "available": true
+        },
+        {
+          "id": "nestea-forest-fruit-lemon",
+          "name": {
+            "cs": "Nestea Forest Fruit / Lemon 0,5 l",
+            "uk": "Nestea Forest Fruit / Lemon 0,5 л",
+            "en": "Nestea Forest Fruit / Lemon 0.5 L"
+          },
+          "price": 42,
+          "allergens": [],
+          "available": true
+        },
+        {
+          "id": "coca-cola-cherry",
+          "name": {
+            "cs": "Coca-Cola Cherry 0,33 l",
+            "uk": "Coca-Cola Cherry 0,33 л",
+            "en": "Coca-Cola Cherry 0.33 L"
+          },
+          "price": 40,
+          "allergens": [],
+          "available": true
+        },
+        {
+          "id": "coca-cola-zero",
+          "name": {
+            "cs": "Coca-Cola Zero 0,33 l",
+            "uk": "Coca-Cola Zero 0,33 л",
+            "en": "Coca-Cola Zero 0.33 L"
+          },
+          "price": 40,
+          "allergens": [],
+          "available": true
+        },
+        {
+          "id": "kozel-beer-yellow",
+          "name": {
+            "cs": "Pivo Kozel žluté",
+            "uk": "Пиво Kozel (жовте)",
+            "en": "Kozel beer (yellow)"
+          },
+          "price": 44,
+          "volume": "500 ml",
+          "allergens": [
+            "alcohol"
+          ],
+          "alcohol": true,
+          "group": {
+            "cs": "Alkohol",
+            "uk": "Алкоголь",
+            "en": "Alcohol"
+          },
+          "available": true
+        },
+        {
+          "id": "corona-extra",
+          "name": {
+            "cs": "Corona Extra",
+            "uk": "Corona Extra",
+            "en": "Corona Extra"
+          },
+          "price": 60,
+          "volume": "500 ml",
+          "allergens": [
+            "alcohol"
+          ],
+          "alcohol": true,
+          "group": {
+            "cs": "Alkohol",
+            "uk": "Алкоголь",
+            "en": "Alcohol"
+          },
+          "available": true
+        },
+        {
+          "id": "velkopopovicky-kozel-beer",
+          "name": {
+            "cs": "Pivo Velkopopovický Kozel",
+            "uk": "Пиво Velkopopovický Kozel",
+            "en": "Velkopopovický Kozel beer"
+          },
+          "price": 42,
+          "volume": "500 ml",
+          "allergens": [
+            "alcohol"
+          ],
+          "alcohol": true,
+          "group": {
+            "cs": "Alkohol",
+            "uk": "Алкоголь",
+            "en": "Alcohol"
+          },
+          "available": true
+        },
+        {
+          "id": "gambrinus-original-10",
+          "name": {
+            "cs": "Gambrinus Original 10",
+            "uk": "Gambrinus Original 10",
+            "en": "Gambrinus Original 10"
+          },
+          "price": 43,
+          "allergens": [
+            "alcohol"
+          ],
+          "alcohol": true,
+          "group": {
+            "cs": "Alkohol",
+            "uk": "Алкоголь",
+            "en": "Alcohol"
+          },
+          "available": true
+        },
+        {
+          "id": "starobrno-medium-bitr",
+          "name": {
+            "cs": "Starobrno Medium / Bitr",
+            "uk": "Starobrno Medium / Bitr",
+            "en": "Starobrno Medium / Bitr"
+          },
+          "price": 47,
+          "allergens": [
+            "alcohol"
+          ],
+          "alcohol": true,
+          "group": {
+            "cs": "Alkohol",
+            "uk": "Алкоголь",
+            "en": "Alcohol"
+          },
+          "available": true
+        },
+        {
+          "id": "muscat-semi-sweet-white-wine",
+          "name": {
+            "cs": "Muscat, bílé víno polosladké",
+            "uk": "Muscat, біле напівсолодке вино",
+            "en": "Muscat, semi-sweet white wine"
+          },
+          "variants": [
+            {
+              "id": "lahev",
+              "label": {
+                "cs": "Láhev 0,75 l",
+                "uk": "Пляшка 0,75 л",
+                "en": "Bottle 0.75 L"
+              },
+              "price": 300
+            },
+            {
+              "id": "glass-0-2-l",
+              "label": {
+                "cs": "Sklenka 0,2 l",
+                "uk": "Келих 0,2 л",
+                "en": "Glass 0.2 L"
+              },
+              "price": 80
+            }
+          ],
+          "allergens": [
+            "alcohol",
+            "sulphites"
+          ],
+          "alcohol": true,
+          "badge": "new",
+          "group": {
+            "cs": "Alkohol",
+            "uk": "Алкоголь",
+            "en": "Alcohol"
+          },
+          "available": true
+        },
+        {
+          "id": "merlot-semi-sweet-red-wine",
+          "name": {
+            "cs": "Merlot, červené víno polosladké",
+            "uk": "Merlot, червоне напівсолодке вино",
+            "en": "Merlot, semi-sweet red wine"
+          },
+          "variants": [
+            {
+              "id": "lahev",
+              "label": {
+                "cs": "Láhev 0,75 l",
+                "uk": "Пляшка 0,75 л",
+                "en": "Bottle 0.75 L"
+              },
+              "price": 300
+            },
+            {
+              "id": "glass-0-2-l",
+              "label": {
+                "cs": "Sklenka 0,2 l",
+                "uk": "Келих 0,2 л",
+                "en": "Glass 0.2 L"
+              },
+              "price": 80
+            }
+          ],
+          "allergens": [
+            "sulphites",
+            "alcohol"
+          ],
+          "alcohol": true,
+          "badge": "new",
+          "group": {
+            "cs": "Alkohol",
+            "uk": "Алкоголь",
+            "en": "Alcohol"
+          },
+          "available": true
+        },
+        {
+          "id": "mucha-sekt-ice-sparkling-wine",
+          "name": {
+            "cs": "Mucha Sekt Ice",
+            "uk": "Mucha Sekt Ice, ігристе",
+            "en": "Mucha Sekt Ice, sparkling wine"
+          },
+          "variants": [
+            {
+              "id": "lahev",
+              "label": {
+                "cs": "Láhev 0,75 l",
+                "uk": "Пляшка 0,75 л",
+                "en": "Bottle 0.75 L"
+              },
+              "price": 400
+            },
+            {
+              "id": "glass-0-2-l",
+              "label": {
+                "cs": "Sklenka 0,2 l",
+                "uk": "Келих 0,2 л",
+                "en": "Glass 0.2 L"
+              },
+              "price": 133
+            }
+          ],
+          "allergens": [
+            "alcohol",
+            "sulphites"
+          ],
+          "alcohol": true,
+          "badge": "new",
+          "group": {
+            "cs": "Alkohol",
+            "uk": "Алкоголь",
+            "en": "Alcohol"
+          },
+          "available": true
+        },
+        {
+          "id": "grant-s",
+          "name": {
+            "cs": "Grant's",
+            "uk": "Grant's",
+            "en": "Grant's"
+          },
+          "variants": [
+            {
+              "id": "lahev",
+              "label": {
+                "cs": "Láhev 0,7 l",
+                "uk": "Пляшка 0,7 л",
+                "en": "Bottle 0.7 L"
+              },
+              "price": 725
+            },
+            {
+              "id": "50-g",
+              "label": {
+                "cs": "50 g",
+                "uk": "50 г",
+                "en": "50 g"
+              },
+              "price": 58
+            },
+            {
+              "id": "100-g",
+              "label": {
+                "cs": "100 g",
+                "uk": "100 г",
+                "en": "100 g"
+              },
+              "price": 105
+            }
+          ],
+          "allergens": [
+            "alcohol",
+            "sulphites"
+          ],
+          "alcohol": true,
+          "badge": "new",
+          "group": {
+            "cs": "Alkohol",
+            "uk": "Алкоголь",
+            "en": "Alcohol"
+          },
+          "available": true
+        },
+        {
+          "id": "jameson",
+          "name": {
+            "cs": "Jameson",
+            "uk": "Jameson",
+            "en": "Jameson"
+          },
+          "variants": [
+            {
+              "id": "lahev",
+              "label": {
+                "cs": "Láhev 0,5 l",
+                "uk": "Пляшка 0,5 л",
+                "en": "Bottle 0.5 L"
+              },
+              "price": 840
+            },
+            {
+              "id": "50-g",
+              "label": {
+                "cs": "50 g",
+                "uk": "50 г",
+                "en": "50 g"
+              },
+              "price": 84
+            },
+            {
+              "id": "100-g",
+              "label": {
+                "cs": "100 g",
+                "uk": "100 г",
+                "en": "100 g"
+              },
+              "price": 168
+            }
+          ],
+          "allergens": [
+            "alcohol",
+            "sulphites"
+          ],
+          "alcohol": true,
+          "badge": "new",
+          "group": {
+            "cs": "Alkohol",
+            "uk": "Алкоголь",
+            "en": "Alcohol"
+          },
+          "available": true
+        },
+        {
+          "id": "hot-water",
+          "name": {
+            "cs": "Horká voda",
+            "uk": "Гаряча вода",
+            "en": "Hot water"
+          },
+          "price": 20,
+          "volume": "50 ml",
+          "allergens": [],
+          "group": {
+            "cs": "Horká a studená voda",
+            "uk": "Гаряча й холодна вода",
+            "en": "Hot and cold water"
+          },
+          "available": true
+        },
+        {
+          "id": "cold-water",
+          "name": {
+            "cs": "Studená voda",
+            "uk": "Холодна вода",
+            "en": "Cold water"
+          },
+          "price": 20,
+          "volume": "50 ml",
+          "allergens": [],
+          "group": {
+            "cs": "Horká a studená voda",
+            "uk": "Гаряча й холодна вода",
+            "en": "Hot and cold water"
+          },
+          "available": true
+        }
+      ]
+    },
+    {
+      "id": "omacky",
+      "name": {
+        "cs": "Omáčky a hůlky",
+        "uk": "Соуси й палички",
+        "en": "Sauces and chopsticks"
+      },
+      "items": [
+        {
+          "id": "soy-sauce-50-ml",
+          "name": {
+            "cs": "Sójová omáčka 50 ml",
+            "uk": "Соєвий соус 50 мл",
+            "en": "Soy sauce 50 ml"
+          },
+          "price": 10,
+          "allergens": [
+            "soybeans"
+          ],
+          "available": true
+        },
+        {
+          "id": "soy-sauce-100-ml",
+          "name": {
+            "cs": "Sójová omáčka 100 ml",
+            "uk": "Соєвий соус 100 мл",
+            "en": "Soy sauce 100 ml"
+          },
+          "price": 20,
+          "allergens": [
+            "soybeans"
+          ],
+          "available": true
+        },
+        {
+          "id": "unagi",
+          "name": {
+            "cs": "Unagi",
+            "uk": "Unagi",
+            "en": "Unagi"
+          },
+          "price": 10,
+          "allergens": [
+            "soybeans"
+          ],
+          "available": true
+        },
+        {
+          "id": "teriyaki",
+          "name": {
+            "cs": "Teriyaki",
+            "uk": "Teriyaki",
+            "en": "Teriyaki"
+          },
+          "price": 10,
+          "allergens": [
+            "soybeans"
+          ],
+          "available": true
+        },
+        {
+          "id": "chilli-sweet-and-sour-sauce",
+          "name": {
+            "cs": "Sladkokyselá chilli omáčka",
+            "uk": "Чилі солодко-кислий соус",
+            "en": "Chilli sweet and sour sauce"
+          },
+          "price": 10,
+          "allergens": [],
+          "available": true
+        },
+        {
+          "id": "chopsticks",
+          "name": {
+            "cs": "Jídelní hůlky",
+            "uk": "Палички для їжі",
+            "en": "Chopsticks"
+          },
+          "price": 5,
+          "allergens": [],
+          "available": true
+        }
+      ]
+    },
+    {
+      "id": "poukazy",
+      "name": {
+        "cs": "Dárkové poukazy",
+        "uk": "Сертифікати",
+        "en": "Gift vouchers"
+      },
+      "items": [
+        {
+          "id": "gift-voucher-2-000-kc",
+          "name": {
+            "cs": "Dárkový poukaz 2 000 Kč",
+            "uk": "Подарунковий сертифікат 2 000 Kč",
+            "en": "Gift voucher 2,000 Kč"
+          },
+          "price": 2000,
+          "allergens": [],
+          "available": true
+        },
+        {
+          "id": "gift-voucher-1-500-kc",
+          "name": {
+            "cs": "Dárkový poukaz 1 500 Kč",
+            "uk": "Подарунковий сертифікат 1 500 Kč",
+            "en": "Gift voucher 1,500 Kč"
+          },
+          "price": 1500,
+          "allergens": [],
+          "available": true
+        },
+        {
+          "id": "gift-voucher-1-000-kc",
+          "name": {
+            "cs": "Dárkový poukaz 1 000 Kč",
+            "uk": "Подарунковий сертифікат 1 000 Kč",
+            "en": "Gift voucher 1,000 Kč"
+          },
+          "price": 1000,
+          "allergens": [],
+          "available": true
+        },
+        {
+          "id": "gift-voucher-500-kc",
+          "name": {
+            "cs": "Dárkový poukaz 500 Kč",
+            "uk": "Подарунковий сертифікат 500 Kč",
+            "en": "Gift voucher 500 Kč"
+          },
+          "price": 500,
+          "allergens": [],
+          "available": true
+        }
+      ]
+    }
+  ]
+}

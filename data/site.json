@@ -1,0 +1,41 @@
+{
+  "_help": "Kontakty, otevírací doba, doručení. null = údaj chybí, na webu se ukáže štítek [doplnit], dokud je SHOW_PLACEHOLDERS=true. Popis polí je v README.md.",
+  "name": "sushiNEL",
+  "legal": { "company": null, "ico": null, "dic": null, "seat": null },
+  "phone": "+420770699364",
+  "phoneDisplay": "+420 770 699 364",
+  "email": null,
+  "address": { "street": "Vršovců 1132/26", "zip": "430 01", "city": "Chomutov", "country": "CZ" },
+  "geo": { "lat": 50.4585612, "lng": 13.4140659 },
+  "hours": {
+    "mon": null,
+    "tue": ["09:00", "22:00"],
+    "wed": ["09:00", "22:00"],
+    "thu": ["09:00", "22:00"],
+    "fri": ["09:00", "23:00"],
+    "sat": ["09:00", "23:00"],
+    "sun": ["09:00", "22:00"]
+  },
+  "socials": {
+    "instagram": "https://www.instagram.com/sushinel.cv/",
+    "threads": "https://www.threads.com/@sushinel.cv",
+    "telegram": null,
+    "facebook": null
+  },
+  "ordering": {
+    "menuforma": "https://menuforma.com/delivery/sushinel",
+    "wolt": null,
+    "bolt": null,
+    "foodora": null
+  },
+  "delivery": {
+    "etaMinutes": 30,
+    "zones": null,
+    "minOrder": null,
+    "fee": null,
+    "payment": null,
+    "pickup": true
+  },
+  "story": { "cs": null, "uk": null, "en": null },
+  "reservations": { "maxGuests": 30, "maxDaysAhead": 90 }
+}
