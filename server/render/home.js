@@ -9,7 +9,7 @@ import { esc, exists, fill, kanji, money, picture, placeholder } from './util.js
 const EXCLUDES = ['crustaceans', 'fish', 'milk', 'gluten', 'sesame', 'nuts', 'molluscs'];
 const DAY_KEYS = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
-function dishImage(d, lang) {
+function dishImage(d, lang, lazy = true) {
   const base = `/img/menu/${d.id}`;
   if (!exists(`${base}-480.webp`)) return `<div class="dish__noimg" aria-hidden="true">${kanji('巻')}</div>`;
   return picture({
@@ -21,10 +21,11 @@ function dishImage(d, lang) {
     sizes: '(min-width: 1000px) 18vw, 112px',
     cls: 'dish__pic',
     imgCls: 'dish__img',
+    lazy,
   });
 }
 
-function dishCard(d, cat, lang, t) {
+function dishCard(d, cat, lang, t, lazy = true) {
   const allergens = (d.allergens || []).filter((a) => a !== 'alcohol');
   const sizeBits = [
     d.pieces ? `${d.pieces} ${t.menu.pcs}` : '',
@@ -35,7 +36,7 @@ function dishCard(d, cat, lang, t) {
   const search = [...new Set(['cs', 'uk', 'en'].filter((l) => l !== lang).map((l) => d.name[l]))].filter((n) => n !== d.name[lang]).join(' ');
   const attrs = `data-dish="${esc(d.id)}" data-allergens="${esc((d.allergens || []).join(' '))}" ${search ? `data-alt="${esc(search)}" ` : ''}data-name="${esc(d.name[lang])}"${d.alcohol ? ' data-alcohol' : ''}${first ? '' : ` data-price="${d.price}"`}`;
   return `<article class="dish" ${attrs} data-grab-card>
-  ${dishImage(d, lang)}
+  ${dishImage(d, lang, lazy)}
   <div class="dish__body">
     <h4 class="dish__name">${esc(d.name[lang])}${d.badge === 'new' ? ` <span class="tag">${esc(t.menu.new)}</span>` : ''}${d.alcohol ? ` <span class="tag tag--age">${esc(t.menu.adult)}</span>` : ''}</h4>
     ${d.desc?.[lang] ? `<p class="dish__desc">${esc(d.desc[lang])}</p>` : ''}
@@ -52,13 +53,14 @@ function dishCard(d, cat, lang, t) {
 function menuSection(c, lang, t) {
   const cats = c.menu.categories;
   const tabs = cats.map((cat, i) => `<a class="tab" href="#cat-${esc(cat.id)}" data-tab="${esc(cat.id)}"${i === 0 ? ' aria-current="true"' : ''}><span>${esc(cat.name[lang])}</span><sup>${cat.items.filter((d) => d.available !== false).length}</sup></a>`).join('');
-  const body = cats.map((cat) => {
+  const body = cats.map((cat, ci) => {
     let group = null;
     const rows = [];
-    cat.items.filter((d) => d.available !== false).forEach((d) => {
+    cat.items.filter((d) => d.available !== false).forEach((d, i) => {
       const g = d.group?.[lang] || null;
       if (g !== group) { rows.push(`<h4 class="group">${esc(g || '')}</h4>`); group = g; }
-      rows.push(dishCard(d, cat, lang, t));
+      // The first category is open on arrival: load its first photos right away instead of waiting for scroll
+      rows.push(dishCard(d, cat, lang, t, !(ci === 0 && i < 6)));
     });
     return `<section class="cat" id="cat-${esc(cat.id)}" data-cat="${esc(cat.id)}"><h3 class="cat__h">${esc(cat.name[lang])}</h3><div class="dishes">${rows.join('')}</div></section>`;
   }).join('');
@@ -267,7 +269,7 @@ function visitSection(c, lang, t) {
           <a class="btn btn--primary" href="tel:${esc(s.phone)}" data-morph data-grab><span>${esc(t.nav.call)}</span></a>
           ${s.socials.instagram ? `<a class="btn-plain btn-plain--on" href="${esc(igDirect(s.socials.instagram))}" rel="noopener" target="_blank" data-grab>${esc(t.visit.writeIg)}</a>` : ''}
         </div>
-        <p class="way__tel">${esc(s.phoneDisplay)}</p>
+        <a class="way__tel" href="tel:${esc(s.phone)}">${esc(s.phoneDisplay)}</a>
       </div>
       <div class="way">
         <h3 class="form__h">${esc(t.visit.orderTitle)}</h3>

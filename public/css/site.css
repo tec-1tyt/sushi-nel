@@ -413,9 +413,9 @@ p { text-wrap: pretty; }
 
 /* ---------- reveals. Only ever apply under .fx ---------- */
 /* The clip sits on the image, never on the observed element: a fully clipped target never reports as visible. */
-.fx [data-mask] img { clip-path: inset(100% 0 0 0); transform: scale(1.14); transition: clip-path 1.25s var(--ease), transform 1.6s var(--ease); }
+.fx [data-mask] img { clip-path: inset(100% 0 0 0); transform: scale(1.08); transition: clip-path .8s var(--ease), transform 1s var(--ease); }
 .fx [data-mask].is-in img { clip-path: inset(0 0 0 0); transform: none; }
-.fx .dish { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .9s var(--ease); }
+.fx .dish { opacity: 0; transform: translateY(14px); transition: opacity .35s ease, transform .5s var(--ease); }
 .fx .dish.is-in { opacity: 1; transform: none; }
 .fx [data-lines]:not(.is-split):not(.is-done) { opacity: 0; }
 .line-mask { display: block; overflow: hidden; padding-block: .06em; margin-block: -.06em; }
@@ -440,7 +440,8 @@ body:not(.is-home) .cookie { bottom: 10px; }
 
 /* ---------- footer + legal ---------- */
 .foot { position: relative; z-index: 3; padding: clamp(50px, 8vw, 110px) var(--gut) 26px; border-top: 1px solid var(--line); }
-.foot__cta { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: .1em; text-decoration: none; font: 800 clamp(5.2rem, 26vw, 25rem)/.86 var(--display); text-transform: uppercase; letter-spacing: -.012em; transition: color .3s; overflow: hidden; }
+.foot__cta { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: .1em; text-decoration: none; font: 800 clamp(4.4rem, 20vw, 20rem)/.86 var(--display); text-transform: uppercase; letter-spacing: -.012em; transition: color .3s; overflow: hidden; }
+.foot__cta > span { min-width: 0; }
 .foot__cta .icon { width: 11vw; height: 11vw; max-width: 170px; max-height: 170px; stroke-width: .7; }
 .foot__cta:hover { color: var(--hanko-hi); }
 .foot__grid { display: grid; gap: 26px; margin-top: clamp(30px, 5vw, 70px); font-size: .98rem; }
@@ -563,3 +564,7 @@ body:not(.is-home) .cookie { bottom: 10px; }
   .hero .status { grid-column: 1; grid-row: 3; justify-self: start; padding-right: 0; }
   .hero__h1 { font-size: min(13.9vw, 23.5vh); }
 }
+
+/* Phone tap targets: every link people press with a thumb is at least 44px tall */
+.hero__call, .info__tel, .foot__social a, .foot__grid p > a, .way__tel { display: inline-flex; align-items: center; min-height: 44px; }
+.foot__social { gap: 0; }
