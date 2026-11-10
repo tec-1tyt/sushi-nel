@@ -73,12 +73,12 @@ def decontaminate(rgb, alpha, bgval=250.0):
     return np.clip(np.where(alpha[..., None] > 0.98, c, f), 0, 255).astype(np.uint8)
 
 
-def vignette(shape, inner=0.66, outer=0.98):
+def vignette(shape, inner=0.42, outer=1.0):
     """1 in the middle, 0 at the border, along a rounded-square shape so corners fade too."""
     h, w = shape
     y = np.linspace(-1, 1, h)[:, None]
     x = np.linspace(-1, 1, w)[None, :]
-    d = (np.abs(x) ** 4 + np.abs(y) ** 4) ** 0.25
+    d = (np.abs(x) ** 3 + np.abs(y) ** 3) ** (1 / 3)   # between a circle and a square: no straight edge survives
     t = np.clip((outer - d) / (outer - inner), 0, 1)
     return t * t * (3 - 2 * t)
 
