@@ -6,23 +6,31 @@ const items = new Set();
 let ticking = false;
 let vh = window.innerHeight;
 
+function update(it) {
+  const r = it.el.getBoundingClientRect();
+  const startPx = vh * it.start;
+  const endPx = vh * it.end + (it.useHeight ? -r.height : 0);
+  const p = Math.min(1, Math.max(0, (startPx - r.top) / Math.max(1, startPx - endPx)));
+  if (p !== it.last) { it.last = p; it.fn(p, r); }
+}
+
 const io = 'IntersectionObserver' in window
   ? new IntersectionObserver((entries) => {
-    entries.forEach((e) => { if (e.target._sfx) e.target._sfx.forEach((it) => { it.near = e.isIntersecting; }); });
+    entries.forEach((e) => {
+      if (!e.target._sfx) return;
+      e.target._sfx.forEach((it) => {
+        it.near = e.isIntersecting;
+        // A fast jump can carry an element out of range mid-effect. Settle it at its end state on the way out.
+        if (!it.near) update(it);
+      });
+    });
     request();
   }, { rootMargin: '35% 0px 35% 0px' })
   : null;
 
 function run() {
   ticking = false;
-  items.forEach((it) => {
-    if (!it.near) return;
-    const r = it.el.getBoundingClientRect();
-    const startPx = vh * it.start;
-    const endPx = vh * it.end + (it.useHeight ? -r.height : 0);
-    const p = Math.min(1, Math.max(0, (startPx - r.top) / Math.max(1, startPx - endPx)));
-    if (p !== it.last) { it.last = p; it.fn(p, r); }
-  });
+  items.forEach((it) => { if (it.near) update(it); });
 }
 
 export function request() {
@@ -39,7 +47,13 @@ export function track(el, { start = 1, end = 0, useHeight = false, fn }) {
   request();
 }
 
-window.addEventListener('scroll', request, { passive: true });
+// After scrolling stops, settle every effect once, even ones a fast jump skipped over entirely
+let idle;
+window.addEventListener('scroll', () => {
+  request();
+  clearTimeout(idle);
+  idle = setTimeout(() => items.forEach(update), 160);
+}, { passive: true });
 window.addEventListener('resize', () => {
   vh = window.innerHeight;
   items.forEach((it) => { it.last = -1; });

@@ -67,6 +67,17 @@ export function initMenu({ scrollTo, data }) {
   }
 
   tabs.forEach((t) => t.addEventListener('click', (e) => { e.preventDefault(); show(t.dataset.tab); }));
+
+  // Start downloading a category's photos the moment a finger or mouse reaches its tab, before the click lands
+  const warm = (id) => {
+    const cat = cats.find((c) => c.dataset.cat === id);
+    if (!cat || cat._warm) return;
+    cat._warm = true;
+    cat.querySelectorAll('img[loading="lazy"]').forEach((img, k) => { if (k < 9) img.loading = 'eager'; });
+  };
+  tabs.forEach((t) => {
+    ['pointerenter', 'touchstart', 'focus'].forEach((ev) => t.addEventListener(ev, () => warm(t.dataset.tab), { passive: true }));
+  });
   document.querySelectorAll('[data-jump-tab]').forEach((a) => a.addEventListener('click', (e) => { e.preventDefault(); show(a.dataset.jumpTab); }));
 
   let timer;

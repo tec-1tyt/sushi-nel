@@ -251,10 +251,15 @@ function reveals(G) {
     });
   }, { rootMargin: '0px 0px -8% 0px', threshold: .05 });
 
+  // Dishes start their quick fade a little before they scroll in, so a photo is never waiting on the animation
+  const dishIO = new IntersectionObserver((entries, obs) => {
+    entries.forEach((e) => { if (e.isIntersecting) { obs.unobserve(e.target); e.target.classList.add('is-in'); } });
+  }, { rootMargin: '0px 0px 15% 0px', threshold: 0 });
+
   html.classList.add('fx');
   $$('[data-mask], .orn').forEach((el) => io.observe(el));
-  observeDishes(io);
-  window.__snObserveDishes = () => observeDishes(io);
+  observeDishes(dishIO);
+  window.__snObserveDishes = () => observeDishes(dishIO);
 
   const fonts = document.fonts?.ready || Promise.resolve();
   Promise.race([fonts, new Promise((r) => setTimeout(r, 900))]).then(() => {
