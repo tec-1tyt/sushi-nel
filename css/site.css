@@ -520,11 +520,7 @@ body:not(.is-home) .cookie { bottom: 10px; }
   .dish { grid-column: span 4; grid-template-columns: minmax(0, 1fr); gap: 12px; align-content: start; }
   .dish:not(.dish--row):nth-child(5n + 3) { margin-top: 36px; }
   .dish--row .dish__name { font-size: 1.4rem; }
-  .dish--large { grid-column: span 8; grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); align-items: end; gap: 24px; }
-  .dish--flip { grid-column: 5 / span 8; }
-  .dish--large .dish__name { font-size: 2.3rem; }
   .dish__name { font-size: 1.6rem; }
-  .dish--large .dish__price { font-size: 1.8rem; }
 
   .promo { padding-inline: clamp(30px, 6vw, 110px); }
   .plate { transform: rotate(-.7deg); }
