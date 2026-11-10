@@ -41,43 +41,23 @@ if (data.home) {
   guard('map', () => initMap({ data }));
 
   guard('forms', () => {
-    const res = document.querySelector('[data-form="reservation"]');
-    if (res) {
-      const date = res.querySelector('[name="date"]');
-      if (date) {
-        const now = new Date();
-        const today = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
-        date.min = today;
-        date.max = new Date(now.getTime() + 90 * 864e5).toISOString().slice(0, 10);
-      }
-      const done = (form, html) => {
-        const box = form.querySelector('[data-msg]');
-        box.textContent = html;
-        box.classList.add('is-ok');
-        box.hidden = false;
-        form.reset();
-      };
-      wireForm(res, {
-        url: '/api/reservation',
+    const con = document.querySelector('[data-form="contact"]');
+    if (con) {
+      wireForm(con, {
+        url: '/api/contact',
         data,
         getBody() {
-          const f = new FormData(res);
-          return { name: f.get('name') || '', phone: f.get('phone') || '', date: f.get('date') || '', time: f.get('time') || '', guests: Number(f.get('guests')) || 0, note: f.get('note') || '', consent: f.get('consent') === 'on' };
+          const f = new FormData(con);
+          return { name: f.get('name') || '', contact: f.get('contact') || '', message: f.get('message') || '', consent: f.get('consent') === 'on' };
         },
-        onOk(_j, body) { done(res, data.form.okReserve.replace('{phone}', body.phone)); },
+        onOk() {
+          const box = con.querySelector('[data-msg]');
+          box.textContent = data.form.okContact;
+          box.classList.add('is-ok');
+          box.hidden = false;
+          con.reset();
+        },
       });
-      const con = document.querySelector('[data-form="contact"]');
-      if (con) {
-        wireForm(con, {
-          url: '/api/contact',
-          data,
-          getBody() {
-            const f = new FormData(con);
-            return { name: f.get('name') || '', contact: f.get('contact') || '', message: f.get('message') || '', consent: f.get('consent') === 'on' };
-          },
-          onOk() { done(con, data.form.okContact); },
-        });
-      }
     }
   });
   // Issue the form token early enough that a fast human can't trip the "too fast" check
