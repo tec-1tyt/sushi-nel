@@ -36,6 +36,5 @@
     "payment": null,
     "pickup": true
   },
-  "story": { "cs": null, "uk": null, "en": null },
-  "reservations": { "maxGuests": 30, "maxDaysAhead": 90 }
+  "story": { "cs": null, "uk": null, "en": null }
 }

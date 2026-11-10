@@ -84,8 +84,7 @@ const limiter = (windowMs, limit) => rateLimit({
 });
 
 export const limits = {
-  reservation: limiter(10 * 60 * 1000, 6),
-  contact: limiter(10 * 60 * 1000, 5),
+  contact: limiter(10 * 60 * 1000, Number(process.env.CONTACT_RATE_LIMIT) || 5),
   csrf: limiter(60 * 1000, 40),
 };
 

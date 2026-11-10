@@ -1,7 +1,9 @@
 // Backend tests: npm test. No extra packages, runs on node:test against a real server instance.
 import assert from 'node:assert/strict';
 import { after, before, test } from 'node:test';
-import { createApp } from '../server/index.js';
+// A little more headroom than production, so every check below gets its own requests
+process.env.CONTACT_RATE_LIMIT = '8';
+const { createApp } = await import('../server/index.js');
 
 let server, base, cookie, token;
 
@@ -59,17 +61,18 @@ test('page has no inline style attributes and carries structured data', async ()
   assert.match(html, /Nejlepší sushi v Chomutově/);
 });
 
-test('the order endpoint is gone: ordering is by phone or MenuForma', async () => {
+test('order and booking endpoints are gone: phone, Instagram or MenuForma instead', async () => {
   assert.equal((await post('/api/order', order())).status, 404);
+  assert.equal((await post('/api/reservation', order())).status, 404);
 });
 
 test('POST without a CSRF token is refused', async () => {
-  const r = await fetch(`${base}/api/reservation`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(order()) });
+  const r = await fetch(`${base}/api/contact`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(order()) });
   assert.equal(r.status, 403);
 });
 
 test('POST with a forged token is refused', async () => {
-  const r = await post('/api/reservation', order(), { 'x-csrf-token': `${Date.now() - 5000}.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA` });
+  const r = await post('/api/contact', order(), { 'x-csrf-token': `${Date.now() - 5000}.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA` });
   assert.equal(r.status, 403);
 });
 
@@ -78,24 +81,9 @@ test('cross-site origin is refused even with a valid token', async () => {
   assert.equal(r.status, 403);
 });
 
-test('invalid input returns field errors', async () => {
-  const j = await (await post('/api/reservation', { name: 'A', phone: 'abc', date: 'x', time: '25:00', guests: 0, consent: false })).json();
-  assert.ok(j.errors.name && j.errors.phone && j.errors.date && j.errors.time && j.errors.consent);
-});
-
-test('reservation respects opening hours', async () => {
-  // First Monday from now: the restaurant is closed on Mondays
-  const d = new Date(Date.now() + 864e5);
-  while (d.getUTCDay() !== 1) d.setUTCDate(d.getUTCDate() + 1);
-  const date = d.toISOString().slice(0, 10);
-  const closed = await (await post('/api/reservation', { name: 'Test', phone: '+420777123456', date, time: '18:00', guests: 2, consent: true })).json();
-  assert.equal(closed.errors.date, 'closedDay');
-  d.setUTCDate(d.getUTCDate() + 1);
-  const tue = d.toISOString().slice(0, 10);
-  const late = await (await post('/api/reservation', { name: 'Test', phone: '+420777123456', date: tue, time: '23:30', guests: 2, consent: true })).json();
-  assert.equal(late.errors.time, 'time');
-  const ok = await post('/api/reservation', { name: 'Test', phone: '+420777123456', date: tue, time: '18:00', guests: 2, consent: true });
-  assert.equal(ok.status, 200);
+test('invalid contact input returns field errors', async () => {
+  const j = await (await post('/api/contact', { name: 'A', contact: 'x', message: '', consent: false })).json();
+  assert.ok(j.errors.name && j.errors.contact && j.errors.message && j.errors.consent);
 });
 
 test('a filled honeypot looks like success but sends nothing', async () => {

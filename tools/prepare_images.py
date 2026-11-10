@@ -59,7 +59,7 @@ def cut_white(rgb):
 def cut_black(rgb):
     """Alpha for shots on a near-black background, so no dark rectangle shows against the page."""
     lum = rgb.max(axis=2)
-    lab, _ = ndi.label(lum < 34)
+    lab, _ = ndi.label(lum < 46)
     edge = np.unique(np.concatenate([lab[0], lab[-1], lab[:, 0], lab[:, -1]]))
     bg = np.isin(lab, edge[edge != 0])
     alpha = cv2.GaussianBlur((~bg).astype(np.float32), (0, 0), 1.6)
@@ -71,6 +71,16 @@ def decontaminate(rgb, alpha, bgval=250.0):
     a = np.maximum(alpha[..., None], 0.2)
     f = (c - (1 - a) * bgval) / a
     return np.clip(np.where(alpha[..., None] > 0.98, c, f), 0, 255).astype(np.uint8)
+
+
+def vignette(shape, inner=0.66, outer=0.98):
+    """1 in the middle, 0 at the border, along a rounded-square shape so corners fade too."""
+    h, w = shape
+    y = np.linspace(-1, 1, h)[:, None]
+    x = np.linspace(-1, 1, w)[None, :]
+    d = (np.abs(x) ** 4 + np.abs(y) ** 4) ** 0.25
+    t = np.clip((outer - d) / (outer - inner), 0, 1)
+    return t * t * (3 - 2 * t)
 
 
 def edge_fade(alpha, frac=0.04):
@@ -92,7 +102,10 @@ def dish(src, dish_id, out_dir=None):
         alpha = cut_white(rgb)
         rgb = decontaminate(rgb, alpha)
     else:
-        alpha = cut_black(rgb)
+        # Dark studio shots keep a slate or table texture that shows as a hard rectangle on the page.
+        # A soft rounded vignette melts every edge into the black, whatever the background was.
+        # Voucher posters carry text to the edges, so they stay whole
+        alpha = np.ones(rgb.shape[:2], np.float32) if dish_id.startswith('gift-voucher') else cut_black(rgb) * vignette(rgb.shape[:2])
     alpha = edge_fade(alpha, 0.07)
     rgba = Image.fromarray(np.dstack([rgb, (alpha * 255).astype(np.uint8)]), 'RGBA')
     rgba.resize((480, 480), Image.LANCZOS).save(os.path.join(out_dir, f'{dish_id}-480.avif'), quality=58, speed=4)

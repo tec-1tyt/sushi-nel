@@ -7,7 +7,7 @@ import { branch } from './ornaments.js';
 import { esc, exists, fill, kanji, money, picture, placeholder } from './util.js';
 
 // These read better as a plain list: their photos have loud backgrounds of their own
-const LIST_CATEGORIES = new Set(['napoje', 'omacky', 'poukazy']);
+const LIST_CATEGORIES = new Set(['napoje', 'omacky']);
 const EXCLUDES = ['crustaceans', 'fish', 'milk', 'gluten', 'sesame', 'nuts', 'molluscs'];
 const DAY_KEYS = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
@@ -225,6 +225,12 @@ function consentField(id, lang, t) {
   return `<div class="field field--check" data-field="consent"><label for="${id}"><input id="${id}" type="checkbox" name="consent" required><span>${esc(t.form.consent)} <a href="${lang === 'cs' ? '' : `/${lang}`}/soukromi" target="_blank" rel="noopener">${esc(t.form.consentLink)}</a></span></label><p class="field__err" data-err hidden></p></div>`;
 }
 
+// instagram.com/<name>/ becomes ig.me/m/<name>, which opens a direct message in the app
+const igDirect = (url) => {
+  const m = String(url).match(/instagram\.com\/([A-Za-z0-9._]+)/);
+  return m ? `https://ig.me/m/${m[1]}` : url;
+};
+
 function visitSection(c, lang, t) {
   const s = c.site;
   const routeUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${s.address.street}, ${s.address.zip} ${s.address.city}`)}`;
@@ -258,25 +264,25 @@ function visitSection(c, lang, t) {
   </div>
   <div class="book">
     <figure class="book__ph" data-mask>${picture({ base: '/img/venue/reserved', widths: [640, 1000], alt: t.visit.reserveAlt, width: 1000, height: 701, sizes: '(min-width: 900px) 46vw, 100vw' })}</figure>
-    <form class="form" data-form="reservation" novalidate>
-      <h3 class="form__h">${esc(t.visit.reserveTitle)}</h3>
-      <noscript><p class="form__msg">${esc(t.form.noscript)}</p></noscript>
-      <div class="form__row">
-        ${formField({ id: 'r-name', label: t.form.name, name: 'name', auto: 'name' })}
-        ${formField({ id: 'r-phone', label: t.form.phone, name: 'phone', type: 'tel', ph: t.form.phonePh, auto: 'tel' })}
+    <div class="book__ways">
+      <div class="way">
+        <h3 class="form__h">${esc(t.visit.reserveTitle)}</h3>
+        <p>${esc(t.visit.reserveText)}</p>
+        <div class="way__btns">
+          <a class="btn btn--primary" href="tel:${esc(s.phone)}" data-morph data-grab><span>${esc(t.nav.call)}</span></a>
+          ${s.socials.instagram ? `<a class="btn-plain btn-plain--on" href="${esc(igDirect(s.socials.instagram))}" rel="noopener" target="_blank" data-grab>${esc(t.visit.writeIg)}</a>` : ''}
+        </div>
+        <p class="way__tel">${esc(s.phoneDisplay)}</p>
       </div>
-      <div class="form__row form__row--3">
-        ${formField({ id: 'r-date', label: t.form.date, name: 'date', type: 'date' })}
-        ${formField({ id: 'r-time', label: t.form.time, name: 'time', type: 'time', attrs: 'step="900"' })}
-        ${formField({ id: 'r-guests', label: t.form.guests, name: 'guests', type: 'number', attrs: `min="1" max="${s.reservations.maxGuests}" inputmode="numeric" value="2"` })}
+      <div class="way">
+        <h3 class="form__h">${esc(t.visit.orderTitle)}</h3>
+        <p>${esc(t.visit.orderText)}</p>
+        <div class="way__btns">
+          ${orderLink(c, t, 'btn btn--primary', `<span>${esc(t.visit.onlineMenu)}</span>`, 'data-morph data-grab')}
+          <a class="btn-plain" href="tel:${esc(s.phone)}" data-grab>${esc(t.nav.call)}</a>
+        </div>
       </div>
-      ${formField({ id: 'r-note', label: t.form.note, name: 'note', required: false })}
-      ${honeypot('r-hp', t)}
-      ${consentField('r-consent', lang, t)}
-      <div class="form__turnstile" data-turnstile hidden></div>
-      <button class="btn btn--primary js-only" type="submit" data-morph data-grab><span>${esc(t.form.sendReserve)}</span></button>
-      <p class="form__msg" data-msg role="status" hidden></p>
-    </form>
+    </div>
   </div>
   <form class="form form--contact" id="contact" data-form="contact" novalidate>
     <h3 class="form__h">${esc(t.visit.contactTitle)}</h3>

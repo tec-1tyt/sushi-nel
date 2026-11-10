@@ -60,7 +60,6 @@ export const siteSchema = z.object({
     pickup: z.boolean().nullable(),
   }),
   story: z.object({ cs: z.string().nullable(), uk: z.string().nullable(), en: z.string().nullable() }),
-  reservations: z.object({ maxGuests: z.number().int().positive(), maxDaysAhead: z.number().int().positive() }),
 });
 
 export const promotionsSchema = z.object({
@@ -101,17 +100,6 @@ const common = {
   website: z.string().max(200).optional().default(''),   // honeypot, real visitors never see it
   turnstile: z.string().max(4096).optional(),
 };
-
-export const reservationSchema = z.object({
-  ...common,
-  name,
-  phone,
-  date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'date'),
-  time: hhmm,
-  guests: z.coerce.number().int().min(1, 'guests').max(100, 'guests'),
-  note,
-  consent,
-});
 
 export const contactSchema = z.object({
   ...common,

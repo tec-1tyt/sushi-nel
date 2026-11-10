@@ -361,6 +361,12 @@ p { text-wrap: pretty; }
 .hours__row.is-today dt::before { content: ""; display: inline-block; width: 6px; height: 6px; margin-right: 8px; vertical-align: .14em; border-radius: 50%; background: var(--hanko-hi); }
 .book { display: grid; gap: 24px; margin-top: clamp(40px, 7vw, 100px); }
 .book__ph img { width: 100%; }
+.book__ways { display: grid; gap: 34px; align-content: center; }
+.way { display: grid; gap: 12px; justify-items: start; padding-top: 22px; border-top: 1px solid var(--line); }
+.way p { color: var(--rice-2); max-width: 40ch; }
+.way__btns { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; }
+.way__btns .btn-plain { min-height: 54px; padding-inline: 24px; display: inline-flex; align-items: center; }
+.way__tel { font-size: .94rem; }
 .form { display: grid; gap: 15px; align-content: start; }
 .no-js .form > :not(.form__h, noscript) { display: none; }
 .form > .btn:not(.btn--full), .form > .btn-plain { justify-self: start; }
