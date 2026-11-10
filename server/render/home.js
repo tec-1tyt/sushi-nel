@@ -11,7 +11,7 @@ const LIST_CATEGORIES = new Set(['napoje', 'omacky']);
 const EXCLUDES = ['crustaceans', 'fish', 'milk', 'gluten', 'sesame', 'nuts', 'molluscs'];
 const DAY_KEYS = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
-function dishImage(d, lang, large) {
+function dishImage(d, lang) {
   const base = `/img/menu/${d.id}`;
   if (!exists(`${base}-480.webp`)) return `<div class="dish__noimg" aria-hidden="true">${kanji('巻')}</div>`;
   return picture({
@@ -20,16 +20,14 @@ function dishImage(d, lang, large) {
     alt: d.name[lang],
     width: 480,
     height: 480,
-    sizes: large ? '(min-width: 1000px) 34vw, 86vw' : '(min-width: 1000px) 18vw, 112px',
+    sizes: '(min-width: 1000px) 18vw, 112px',
     cls: 'dish__pic',
     imgCls: 'dish__img',
   });
 }
 
-function dishCard(d, cat, lang, t, i) {
+function dishCard(d, cat, lang, t) {
   const compact = LIST_CATEGORIES.has(cat.id);
-  const large = !compact && i % 5 === 0;
-  const flip = !compact && i % 10 === 5;
   const allergens = (d.allergens || []).filter((a) => a !== 'alcohol');
   const sizeBits = [
     d.pieces ? `${d.pieces} ${t.menu.pcs}` : '',
@@ -39,8 +37,8 @@ function dishCard(d, cat, lang, t, i) {
   const first = d.variants ? d.variants[0] : null;
   const search = [...new Set(['cs', 'uk', 'en'].filter((l) => l !== lang).map((l) => d.name[l]))].filter((n) => n !== d.name[lang]).join(' ');
   const attrs = `data-dish="${esc(d.id)}" data-allergens="${esc((d.allergens || []).join(' '))}" ${search ? `data-alt="${esc(search)}" ` : ''}data-name="${esc(d.name[lang])}"${d.alcohol ? ' data-alcohol' : ''}${first ? '' : ` data-price="${d.price}"`}`;
-  return `<article class="dish${large ? ' dish--large' : ''}${flip ? ' dish--flip' : ''}${compact ? ' dish--row' : ''}" ${attrs} data-grab-card>
-  ${compact ? '' : dishImage(d, lang, large)}
+  return `<article class="dish${compact ? ' dish--row' : ''}" ${attrs} data-grab-card>
+  ${compact ? '' : dishImage(d, lang)}
   <div class="dish__body">
     <h4 class="dish__name">${esc(d.name[lang])}${d.badge === 'new' ? ` <span class="tag">${esc(t.menu.new)}</span>` : ''}${d.alcohol ? ` <span class="tag tag--age">${esc(t.menu.adult)}</span>` : ''}</h4>
     ${d.desc?.[lang] ? `<p class="dish__desc">${esc(d.desc[lang])}</p>` : ''}
@@ -60,10 +58,10 @@ function menuSection(c, lang, t) {
   const body = cats.map((cat) => {
     let group = null;
     const rows = [];
-    cat.items.filter((d) => d.available !== false).forEach((d, i) => {
+    cat.items.filter((d) => d.available !== false).forEach((d) => {
       const g = d.group?.[lang] || null;
       if (g !== group) { rows.push(`<h4 class="group">${esc(g || '')}</h4>`); group = g; }
-      rows.push(dishCard(d, cat, lang, t, i));
+      rows.push(dishCard(d, cat, lang, t));
     });
     return `<section class="cat" id="cat-${esc(cat.id)}" data-cat="${esc(cat.id)}"><h3 class="cat__h">${esc(cat.name[lang])}</h3><div class="dishes">${rows.join('')}</div></section>`;
   }).join('');
