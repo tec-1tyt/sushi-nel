@@ -13,7 +13,7 @@ function head({ lang, c, t, title, description, path, noindex }) {
   const hreflang = LANGS.map((l) => `<link rel="alternate" hreflang="${l}" href="${url}${l === 'cs' ? '' : `/${l}`}${path}">`).join('');
   const canonical = `${url}${lang === 'cs' ? '' : `/${lang}`}${path}`;
   const heroPreload = path === '/'
-    ? '<link rel="preload" as="image" type="image/avif" href="/img/hero/plate-1100.avif" imagesrcset="/img/hero/plate-720.avif 720w, /img/hero/plate-1100.avif 1100w, /img/hero/plate-1536.avif 1536w" imagesizes="(min-width: 1000px) 60vw, 116vw" fetchpriority="high">'
+    ? `<link rel="preload" as="image" type="image/avif" href="${asset('/img/hero/plate-1100.avif')}" imagesrcset="${[720, 1100, 1536].map((w) => `${asset(`/img/hero/plate-${w}.avif`)} ${w}w`).join(', ')}" imagesizes="(min-width: 1000px) 60vw, 116vw" fetchpriority="high">`
     : '';
   return `<head>
 <meta charset="utf-8">

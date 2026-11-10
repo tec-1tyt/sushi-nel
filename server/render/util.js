@@ -36,12 +36,13 @@ export const placeholder = (text) =>
   config.showPlaceholders ? `<span class="todo" title="Doplňte údaj v data/*.json">[${esc(text)}]</span>` : '';
 
 // A <picture> with AVIF first. Only existing files are referenced, so a missing size can't produce a broken image.
+// Every file carries a content hash (?v=), so a replaced photo shows at once instead of the browser's cached copy.
 export function picture({ base, widths, alt, width, height, sizes, cls = '', imgCls = '', eager = false, avif = true, attrs = '' }) {
-  const srcset = (ext) => widths.filter((w) => exists(`${base}-${w}.${ext}`)).map((w) => `${base}-${w}.${ext} ${w}w`).join(', ');
+  const srcset = (ext) => widths.filter((w) => exists(`${base}-${w}.${ext}`)).map((w) => `${asset(`${base}-${w}.${ext}`)} ${w}w`).join(', ');
   const webp = srcset('webp');
   const av = avif ? srcset('avif') : '';
   const largest = widths[widths.length - 1];
-  return `<picture class="${esc(cls)}">${av ? `<source type="image/avif" srcset="${av}" sizes="${esc(sizes)}">` : ''}${webp ? `<source type="image/webp" srcset="${webp}" sizes="${esc(sizes)}">` : ''}<img class="${esc(imgCls)}" src="${base}-${largest}.webp" alt="${esc(alt)}" width="${width}" height="${height}" decoding="async" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} ${attrs}></picture>`;
+  return `<picture class="${esc(cls)}">${av ? `<source type="image/avif" srcset="${av}" sizes="${esc(sizes)}">` : ''}${webp ? `<source type="image/webp" srcset="${webp}" sizes="${esc(sizes)}">` : ''}<img class="${esc(imgCls)}" src="${asset(`${base}-${largest}.webp`)}" alt="${esc(alt)}" width="${width}" height="${height}" decoding="async" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} ${attrs}></picture>`;
 }
 
 export const kanji = (text, cls = '') => `<span class="kanji ${esc(cls)}" data-k="${esc(text)}" aria-hidden="true"></span>`;
