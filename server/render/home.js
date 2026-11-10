@@ -6,8 +6,6 @@ import { page } from './layout.js';
 import { branch } from './ornaments.js';
 import { esc, exists, fill, kanji, money, picture, placeholder } from './util.js';
 
-// These read better as a plain list: their photos have loud backgrounds of their own
-const LIST_CATEGORIES = new Set(['napoje', 'omacky']);
 const EXCLUDES = ['crustaceans', 'fish', 'milk', 'gluten', 'sesame', 'nuts', 'molluscs'];
 const DAY_KEYS = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
@@ -27,7 +25,6 @@ function dishImage(d, lang) {
 }
 
 function dishCard(d, cat, lang, t) {
-  const compact = LIST_CATEGORIES.has(cat.id);
   const allergens = (d.allergens || []).filter((a) => a !== 'alcohol');
   const sizeBits = [
     d.pieces ? `${d.pieces} ${t.menu.pcs}` : '',
@@ -37,8 +34,8 @@ function dishCard(d, cat, lang, t) {
   const first = d.variants ? d.variants[0] : null;
   const search = [...new Set(['cs', 'uk', 'en'].filter((l) => l !== lang).map((l) => d.name[l]))].filter((n) => n !== d.name[lang]).join(' ');
   const attrs = `data-dish="${esc(d.id)}" data-allergens="${esc((d.allergens || []).join(' '))}" ${search ? `data-alt="${esc(search)}" ` : ''}data-name="${esc(d.name[lang])}"${d.alcohol ? ' data-alcohol' : ''}${first ? '' : ` data-price="${d.price}"`}`;
-  return `<article class="dish${compact ? ' dish--row' : ''}" ${attrs} data-grab-card>
-  ${compact ? '' : dishImage(d, lang)}
+  return `<article class="dish" ${attrs} data-grab-card>
+  ${dishImage(d, lang)}
   <div class="dish__body">
     <h4 class="dish__name">${esc(d.name[lang])}${d.badge === 'new' ? ` <span class="tag">${esc(t.menu.new)}</span>` : ''}${d.alcohol ? ` <span class="tag tag--age">${esc(t.menu.adult)}</span>` : ''}</h4>
     ${d.desc?.[lang] ? `<p class="dish__desc">${esc(d.desc[lang])}</p>` : ''}
