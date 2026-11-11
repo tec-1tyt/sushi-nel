@@ -24,7 +24,7 @@ function head({ lang, c, t, title, description, path, noindex }) {
 ${noindex ? '<meta name="robots" content="noindex">' : ''}
 <link rel="canonical" href="${esc(canonical)}">
 ${hreflang}<link rel="alternate" hreflang="x-default" href="${url}${path}">
-<meta name="theme-color" content="#fbeef1">
+<meta name="theme-color" content="#fadbe4">
 <meta name="color-scheme" content="light">
 <meta property="og:type" content="restaurant">
 <meta property="og:site_name" content="${esc(c.site.name)}">
@@ -153,12 +153,6 @@ ${body}
 ${footer({ lang, c, t, home })}
 ${extra}
 ${cookieBanner(lang, t)}
-<div class="chop" data-chop aria-hidden="true" hidden>
-  <svg viewBox="-6 -6 92 92" width="92" height="92" fill="none">
-    <g data-stick="a"><path class="chop__out" d="M0 0 72 -3"/><path class="chop__stick" d="M0 0 72 -3"/><path class="chop__tip" d="M0 0 13 -.5"/></g>
-    <g data-stick="b"><path class="chop__out" d="M0 0 72 3"/><path class="chop__stick" d="M0 0 72 3"/><path class="chop__tip" d="M0 0 13 .5"/></g>
-  </svg>
-</div>
 <script type="application/json" id="client-data">${clientData({ lang, c, t, home })}</script>
 <script src="${asset('/vendor/gsap.min.js')}" defer></script>
 <script src="${asset('/vendor/lenis.min.js')}" defer></script>

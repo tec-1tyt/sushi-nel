@@ -8,13 +8,16 @@ export function initPetals(canvas) {
 
   const weak = (navigator.hardwareConcurrency || 8) <= 4 || (navigator.deviceMemory || 8) <= 4;
   const small = innerWidth < 760;
-  const COUNT = small ? (weak ? 9 : 14) : (weak ? 18 : 34);
-  const dpr = Math.min(window.devicePixelRatio || 1, small || weak ? 1.25 : 1.6);
+  const COUNT = small ? (weak ? 8 : 12) : (weak ? 18 : 34);
+  const dpr = Math.min(window.devicePixelRatio || 1, small || weak ? 1 : 1.6);
   let W = 0, H = 0;
   const mouse = { x: -999, y: -999, active: false };
   let scrollV = 0, lastY = scrollY;
 
   function resize() {
+    // On phones the address bar showing or hiding changes only the height a little. Reallocating the canvas
+    // for that makes the page stutter mid-scroll, so keep the canvas as it is.
+    if (W && innerWidth === W && Math.abs(innerHeight - H) < 200) { H = Math.max(H, innerHeight); return; }
     W = innerWidth;
     H = innerHeight;
     canvas.width = Math.round(W * dpr);
@@ -23,7 +26,7 @@ export function initPetals(canvas) {
   }
 
   // One petal shape, drawn once per colour so frames only blit images
-  const TINTS = ['rgba(231,150,174,.88)', 'rgba(244,184,201,.92)', 'rgba(214,118,148,.78)'];
+  const TINTS = ['rgba(224,110,148,.9)', 'rgba(240,160,186,.95)', 'rgba(200,80,122,.8)'];
   const sprites = TINTS.map((fill) => {
     const c = document.createElement('canvas');
     c.width = c.height = 64;

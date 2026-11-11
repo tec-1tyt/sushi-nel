@@ -4,7 +4,7 @@ import { request } from './scrollfx.js';
 
 const norm = (s) => s.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase();
 
-export function initMenu({ scrollTo, data }) {
+export function initMenu({ scrollTo, data, lenis }) {
   const list = document.querySelector('[data-menu-list]');
   if (!list) return null;
   const tabs = [...document.querySelectorAll('[data-tab]')];
@@ -99,6 +99,56 @@ export function initMenu({ scrollTo, data }) {
     if (out) out.textContent = fmt(r.dataset.price);
   });
 
+  initDialog(list, fmt, lenis);
   apply();
   return { fmt };
+}
+
+// Tapping a dish opens it large: photo, full text, sizes, price and the ways to order
+function initDialog(list, fmt, lenis) {
+  const dlg = document.querySelector('[data-dlg]');
+  if (!dlg || typeof dlg.showModal !== 'function') return;
+  const pic = dlg.querySelector('[data-dlg-pic]');
+  const name = dlg.querySelector('[data-dlg-name]');
+  const info = dlg.querySelector('[data-dlg-info]');
+
+  function open(card) {
+    const p = card.querySelector('.dish__pic, .dish__noimg')?.cloneNode(true);
+    p?.querySelectorAll('source, img').forEach((el) => { el.sizes = '(min-width: 760px) 440px, 100vw'; el.removeAttribute('style'); if (el.tagName === 'IMG') el.loading = 'eager'; });
+    pic.replaceChildren(...(p ? [p] : []));
+    name.innerHTML = card.querySelector('.dish__name').innerHTML;
+    name.querySelector('[data-dish-open]')?.replaceWith(card.dataset.name);
+    const body = card.querySelector('.dish__body').cloneNode(true);
+    body.querySelector('.dish__name')?.remove();
+    // Radio groups need their own names here, or picking a size in the dialog would change the card
+    body.querySelectorAll('input[type=radio]').forEach((r) => { r.name = `dlg-${r.name}`; r.id = ''; });
+    info.replaceChildren(...body.childNodes);
+    lenis?.stop();
+    dlg.showModal();
+  }
+
+  function close() {
+    if (!dlg.open) return;
+    if (document.documentElement.classList.contains('rm')) { dlg.close(); return; }
+    dlg.classList.add('is-closing');
+    setTimeout(() => { dlg.classList.remove('is-closing'); dlg.close(); }, 220);
+  }
+
+  list.addEventListener('click', (e) => {
+    const card = e.target.closest('[data-dish]');
+    // Size chips keep working inside the card
+    if (!card || e.target.closest('input, label, a')) return;
+    open(card);
+  });
+  dlg.addEventListener('close', () => lenis?.start());
+  dlg.addEventListener('cancel', (e) => { e.preventDefault(); close(); });
+  dlg.querySelector('[data-dlg-close]').addEventListener('click', close);
+  // A click on the dimmed backdrop lands on the dialog element itself
+  dlg.addEventListener('click', (e) => { if (e.target === dlg) close(); });
+  info.addEventListener('change', (e) => {
+    const r = e.target;
+    if (r.type !== 'radio') return;
+    const out = info.querySelector('[data-price-out]');
+    if (out) out.textContent = fmt(r.dataset.price);
+  });
 }

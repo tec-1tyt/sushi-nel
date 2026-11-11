@@ -1,20 +1,51 @@
 {
   "_help": "Kontakty, otevírací doba, doručení. null = údaj chybí, na webu se ukáže štítek [doplnit], dokud je SHOW_PLACEHOLDERS=true. Popis polí je v README.md.",
   "name": "sushiNEL",
-  "legal": { "company": null, "ico": null, "dic": null, "seat": null },
+  "legal": {
+    "company": null,
+    "ico": null,
+    "dic": null,
+    "seat": null
+  },
   "phone": "+420770699364",
   "phoneDisplay": "+420 770 699 364",
   "email": null,
-  "address": { "street": "Vršovců 1132/26", "zip": "430 01", "city": "Chomutov", "country": "CZ" },
-  "geo": { "lat": 50.4585612, "lng": 13.4140659 },
+  "address": {
+    "street": "Vršovců 1132/26",
+    "zip": "430 01",
+    "city": "Chomutov",
+    "country": "CZ"
+  },
+  "geo": {
+    "lat": 50.4585612,
+    "lng": 13.4140659
+  },
   "hours": {
     "mon": null,
-    "tue": ["09:00", "22:00"],
-    "wed": ["09:00", "22:00"],
-    "thu": ["09:00", "22:00"],
-    "fri": ["09:00", "23:00"],
-    "sat": ["09:00", "23:00"],
-    "sun": ["09:00", "22:00"]
+    "tue": [
+      "09:00",
+      "22:00"
+    ],
+    "wed": [
+      "09:00",
+      "22:00"
+    ],
+    "thu": [
+      "09:00",
+      "22:00"
+    ],
+    "fri": [
+      "09:00",
+      "23:00"
+    ],
+    "sat": [
+      "09:00",
+      "23:00"
+    ],
+    "sun": [
+      "09:00",
+      "22:00"
+    ]
   },
   "socials": {
     "instagram": "https://www.instagram.com/sushinel.cv/",
@@ -30,11 +61,123 @@
   },
   "delivery": {
     "etaMinutes": 30,
-    "zones": null,
+    "fees": [
+      {
+        "town": "Chomutov",
+        "fee": 150
+      },
+      {
+        "town": "Jirkov",
+        "fee": 200
+      },
+      {
+        "town": "Kadaň",
+        "fee": 400
+      },
+      {
+        "town": "Most",
+        "fee": 400
+      },
+      {
+        "town": "Klášterec nad Ohří",
+        "fee": 500
+      }
+    ],
+    "otherTowns": [
+      "Bílina",
+      "Žatec"
+    ],
     "minOrder": null,
-    "fee": null,
     "payment": null,
     "pickup": true
   },
-  "story": { "cs": null, "uk": null, "en": null }
+  "story": {
+    "uk": [
+      {
+        "title": "Один вечір",
+        "quote": "«А давай спробуємо самі зробити суші?»",
+        "text": "Усе почалося не з бізнес-плану, а з цікавості. Одного вечора на звичайній домашній кухні ми просто спробували. Рис вийшов липким, роли розвалювалися, а перші нігірі більше нагадували експеримент, ніж вечерю. Ми сміялися, з’їли все і наступного дня пробували знову."
+      },
+      {
+        "title": "Тиждень за тижнем",
+        "text": "Ми дивилися відео, читали, питали, пробували нові поєднання. Кожен рол ставав трохи рівнішим, смак чистішим, а рука впевненішою. Ми не шукали ідеальної форми. Хотіли, щоб було смачно по-справжньому."
+      },
+      {
+        "title": "Перші замовлення",
+        "quote": "«Зробіть і нам, ми заплатимо»",
+        "text": "Так казали друзі й сусіди. Ми не вірили, що це серйозно, але робили кожну порцію так, ніби її їстиме наша родина. Люди поверталися, розповідали іншим, і замовлень ставало більше."
+      },
+      {
+        "title": "Ми не міряємо начинку на вагах",
+        "promise": true,
+        "text": "Рибу, сир, авокадо й соус кладемо власноруч, так, як поклали б собі: щедро, акуратно, від душі. Кожен шматочок має бути таким, яким ми самі хотіли б його отримати."
+      },
+      {
+        "title": "Своє місце",
+        "text": "Те, що починалося на домашній кухні, виросло в заклад зі столиками, теплим світлом і відкритою кухнею. Головне залишилося тим самим: маленька команда, любов до справи й увага до кожної деталі."
+      },
+      {
+        "title": "І далі",
+        "text": "Ми й далі вчимося, пробуємо нове і готуємо з тією ж радістю, що й першого вечора. Приходьте, ми будемо раді вас пригостити."
+      }
+    ],
+    "cs": [
+      {
+        "title": "Jeden večer",
+        "quote": "„Co kdybychom si sushi zkusili udělat sami?“",
+        "text": "Nezačalo to podnikatelským plánem, ale zvědavostí. Jednoho večera jsme to v obyčejné domácí kuchyni prostě zkusili. Rýže se lepila, rolky se rozpadaly a první nigiri vypadaly spíš jako pokus než jako večeře. Smáli jsme se, snědli všechno a druhý den to zkusili znovu."
+      },
+      {
+        "title": "Týden po týdnu",
+        "text": "Dívali jsme se na videa, četli, ptali se a zkoušeli nové kombinace. Každá rolka byla o kousek rovnější, chuť čistší a ruka jistější. Nehledali jsme dokonalý tvar. Chtěli jsme, aby to opravdu chutnalo."
+      },
+      {
+        "title": "První objednávky",
+        "quote": "„Udělejte to i nám, zaplatíme.“",
+        "text": "Tak říkali kamarádi a sousedé. Nevěřili jsme, že to myslí vážně, ale každou porci jsme dělali, jako by ji měla jíst naše rodina. Lidé se vraceli, říkali to dalším a objednávek přibývalo."
+      },
+      {
+        "title": "Náplň neměříme na vahách",
+        "promise": true,
+        "text": "Rybu, sýr, avokádo i omáčku dáváme vlastníma rukama, tak jako bychom to dali sobě: štědře, pečlivě, od srdce. Každý kousek má být takový, jaký bychom chtěli dostat my sami."
+      },
+      {
+        "title": "Vlastní místo",
+        "text": "Z domácí kuchyně vyrostl podnik se stoly, teplým světlem a otevřenou kuchyní. To hlavní zůstalo stejné: malý tým, láska k řemeslu a péče o každý detail."
+      },
+      {
+        "title": "A dál",
+        "text": "Pořád se učíme, zkoušíme nové věci a vaříme se stejnou radostí jako ten první večer. Přijďte, rádi vás pohostíme."
+      }
+    ],
+    "en": [
+      {
+        "title": "One evening",
+        "quote": "“What if we tried making sushi ourselves?”",
+        "text": "It didn’t start with a business plan. It started with curiosity. One evening, in an ordinary home kitchen, we simply gave it a go. The rice was sticky, the rolls fell apart, and the first nigiri looked more like an experiment than dinner. We laughed, ate everything, and tried again the next day."
+      },
+      {
+        "title": "Week after week",
+        "text": "We watched videos, read, asked around and tried new combinations. Each roll came out a little neater, the taste a little cleaner, the hand a little steadier. We weren’t chasing the perfect shape. We wanted it to taste genuinely good."
+      },
+      {
+        "title": "The first orders",
+        "quote": "“Make some for us too, we’ll pay.”",
+        "text": "That’s what friends and neighbours said. We couldn’t believe they meant it, but we made every portion as if our own family would eat it. People came back, told others, and the orders kept growing."
+      },
+      {
+        "title": "We don’t weigh the filling",
+        "promise": true,
+        "text": "Fish, cheese, avocado and sauce go in by hand, the way we’d make it for ourselves: generous, careful, from the heart. Every piece should be exactly what we’d want to get."
+      },
+      {
+        "title": "A place of our own",
+        "text": "What began in a home kitchen grew into a place with tables, warm light and an open kitchen. The heart of it stayed the same: a small team, love for the craft and care for every detail."
+      },
+      {
+        "title": "And on we go",
+        "text": "We keep learning, trying new things and cooking with the same joy as on that first evening. Come by, we’d love to treat you."
+      }
+    ]
+  }
 }

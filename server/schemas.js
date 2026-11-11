@@ -53,13 +53,15 @@ export const siteSchema = z.object({
   ordering: z.object({ menuforma: z.string().nullable(), wolt: z.string().nullable(), bolt: z.string().nullable(), foodora: z.string().nullable() }),
   delivery: z.object({
     etaMinutes: z.number().nullable(),
-    zones: localized.nullable(),
+    fees: z.array(z.object({ town: z.string(), fee: z.number() })).nullable(),
+    otherTowns: z.array(z.string()).nullable(),
     minOrder: z.number().nullable(),
-    fee: localized.nullable(),
     payment: localized.nullable(),
     pickup: z.boolean().nullable(),
   }),
-  story: z.object({ cs: z.string().nullable(), uk: z.string().nullable(), en: z.string().nullable() }),
+  story: z.object(Object.fromEntries(['cs', 'uk', 'en'].map((l) => [l, z.array(z.object({
+    title: z.string(), text: z.string(), quote: z.string().optional(), promise: z.boolean().optional(),
+  })).nullable()]))),
 });
 
 export const promotionsSchema = z.object({

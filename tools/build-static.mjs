@@ -48,8 +48,8 @@ writeFileSync(join(dist, 'site.webmanifest'), JSON.stringify({
   short_name: c.site.name,
   start_url: `${BASE}/`,
   display: 'standalone',
-  background_color: '#fbeef1',
-  theme_color: '#fbeef1',
+  background_color: '#fadbe4',
+  theme_color: '#fadbe4',
   icons: [{ src: `${BASE}/img/logo/icon-192.png`, sizes: '192x192', type: 'image/png' }, { src: `${BASE}/img/logo/icon-512.png`, sizes: '512x512', type: 'image/png' }],
 }));
 

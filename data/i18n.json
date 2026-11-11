@@ -66,7 +66,8 @@
       "note": "Filtr vychází z údajů v menu. Při alergii nám raději zavolejte, složení ověříme.",
       "weightMissing": "gramáž",
       "from": "od",
-      "noPhoto": "Bez fotky"
+      "noPhoto": "Bez fotky",
+      "close": "Zavřít"
     },
     "exclude": {
       "crustaceans": "krevet",
@@ -129,7 +130,10 @@
       "menuformaNote": "Objednávka a platba přes MenuForma",
       "phone": "Telefon",
       "instagram": "Zpráva na Instagramu",
-      "pickup": "Vyzvednutí na Vršovců 26 je možné také."
+      "pickup": "Vyzvednutí na Vršovců 26 je možné také.",
+      "fees": "Kam vozíme a za kolik",
+      "otherTowns": "{towns} a další města",
+      "byPhone": "cenu domluvíme po telefonu"
     },
     "about": {
       "title": "O nás",
@@ -137,6 +141,7 @@
       "flowerTitle": "Květ z rolek",
       "flower": "Květ na našem talíři není grafika. Rolku nakrájíme do srdcí a složíme z nich sakuru.",
       "storyMissing": "příběh podniku: kdo jste, od kdy, proč sushi",
+      "storyCta": "Kde nás najdete",
       "kitchenMissing": "fotky kuchyně",
       "hint": "Táhněte do strany",
       "alt": {
@@ -295,7 +300,8 @@
       "note": "Фільтр спирається на дані меню. Якщо маєте алергію, краще подзвоніть, ми уточнимо склад.",
       "weightMissing": "вага",
       "from": "від",
-      "noPhoto": "Без фото"
+      "noPhoto": "Без фото",
+      "close": "Закрити"
     },
     "exclude": {
       "crustaceans": "креветок",
@@ -358,7 +364,10 @@
       "menuformaNote": "Замовлення й оплата через MenuForma",
       "phone": "Телефон",
       "instagram": "Повідомлення в Instagram",
-      "pickup": "Можна й забрати самостійно на Vršovců 26."
+      "pickup": "Можна й забрати самостійно на Vršovců 26.",
+      "fees": "Куди возимо і скільки коштує",
+      "otherTowns": "{towns} та інші міста",
+      "byPhone": "ціну домовимося телефоном"
     },
     "about": {
       "title": "Про нас",
@@ -366,6 +375,7 @@
       "flowerTitle": "Квітка з ролів",
       "flower": "Квітка на нашій тарілці не графіка. Рол ми нарізаємо сердечками й складаємо з них сакуру.",
       "storyMissing": "історія закладу: хто ви, відколи, чому суші",
+      "storyCta": "Як нас знайти",
       "kitchenMissing": "фото кухні",
       "hint": "Тягніть убік",
       "alt": {
@@ -524,7 +534,8 @@
       "note": "The filter uses our menu data. If you have an allergy, please call and we will check the ingredients.",
       "weightMissing": "weight",
       "from": "from",
-      "noPhoto": "No photo"
+      "noPhoto": "No photo",
+      "close": "Close"
     },
     "exclude": {
       "crustaceans": "shrimp",
@@ -587,7 +598,10 @@
       "menuformaNote": "Order and pay through MenuForma",
       "phone": "Phone",
       "instagram": "Instagram message",
-      "pickup": "You can also collect from Vršovců 26."
+      "pickup": "You can also collect from Vršovců 26.",
+      "fees": "Where we deliver and the fee",
+      "otherTowns": "{towns} and other towns",
+      "byPhone": "fee agreed by phone"
     },
     "about": {
       "title": "About",
@@ -595,6 +609,7 @@
       "flowerTitle": "A flower of rolls",
       "flower": "The flower on our plate is not a graphic. We cut the roll into hearts and build the sakura from them.",
       "storyMissing": "your story: who you are, since when, why sushi",
+      "storyCta": "Find us",
       "kitchenMissing": "kitchen photos",
       "hint": "Drag sideways",
       "alt": {

@@ -37,7 +37,7 @@ function preloader(G, done) {
       ease: 'expo.out',
       onUpdate() { path.setAttribute('d', toPath(mix(A, B, st.t, buf))); },
     }, '<')
-    .to(path, { fill: '#e7a3b8', duration: .35 }, '<')
+    .to(path, { fill: '#e07a9c', duration: .35 }, '<')
     .to(path, { y: 120, x: 40, rotation: 70, opacity: 0, duration: .55, ease: 'power2.in', transformOrigin: '50% 50%' }, '>-0.05')
     .to(pre, { opacity: 0, duration: .32, ease: 'power1.out' }, '<0.18');
 }
@@ -60,8 +60,10 @@ function scrollLinked() {
   const hero = $('.hero');
   const plate = $('[data-hero-plate]');
   const lines = $$('.hero .ln');
-  const desktop = matchMedia('(min-width: 1000px)').matches;
-  if (hero && plate) {
+  // Phones scroll on their own thread: effects driven from JS on every scroll frame land a frame late and
+  // look shaky there, and they cost battery. Phones get the calm, finished state instead.
+  const lite = matchMedia('(max-width: 999px), (pointer: coarse)').matches;
+  if (hero && plate && !lite) {
     track(hero, {
       start: 0,
       end: -1,
@@ -69,30 +71,6 @@ function scrollLinked() {
         plate.style.translate = `0 ${(-p * 16).toFixed(2)}vh`;
         plate.style.rotate = `${(p * 9).toFixed(2)}deg`;
         lines.forEach((ln, i) => { ln.style.transform = `translateX(${((i % 2 ? 1 : -1) * p * 7).toFixed(2)}vw)`; });
-      },
-    });
-  }
-
-  // Falling drop: leaves the plate, reaches the menu heading as a petal
-  const dropSvg = $('[data-flowdrop]');
-  if (dropSvg && hero) {
-    const path = dropSvg.querySelector('path');
-    const N = 36;
-    const A = sample(drop, N), B = sample(petal, N);
-    const buf = new Float32Array(A.length);
-    path.setAttribute('d', toPath(A));
-    track(hero, {
-      start: 0,
-      end: -.82,
-      fn(p) {
-        const inFlight = p > .001 && p < .995;
-        dropSvg.style.opacity = inFlight ? String(Math.min(1, p * 8) * Math.min(1, (1 - p) * 8)) : '0';
-        if (!inFlight) return;
-        const eased = p * p;
-        dropSvg.style.transform = `translate3d(${(Math.sin(p * 5) * 26 * p).toFixed(1)}px,${(eased * innerHeight * .72).toFixed(1)}px,0) rotate(${(p > .5 ? (p - .5) * 170 : 0).toFixed(1)}deg)`;
-        const m = Math.min(1, Math.max(0, (p - .42) / .4));
-        path.setAttribute('d', toPath(mix(A, B, m, buf)));
-        path.setAttribute('fill', m > .5 ? '#e7a3b8' : '#6b2f14');
       },
     });
   }
@@ -125,20 +103,18 @@ function scrollLinked() {
       const inner = [[c[0][0] + k, c[0][1] + k], [c[1][0] - k, c[1][1] + k], [c[2][0] - k, c[2][1] - k], [c[3][0] + k, c[3][1] - k]];
       if (bevel) bevel.setAttribute('d', `M${inner.map((v) => v.map((n) => n.toFixed(1)).join(' ')).join('L')}Z${c.map((v, i) => `M${v[0].toFixed(1)} ${v[1].toFixed(1)}L${inner[i][0].toFixed(1)} ${inner[i][1].toFixed(1)}`).join('')}`);
     };
+    const draw = (p) => {
+      if (!A) return;
+      const e = 1 - (1 - p) ** 3;
+      platePath.setAttribute('d', toPath(mix(A, B, e, buf)));
+      const show = Math.min(1, Math.max(0, (p - .55) / .32));
+      content.style.opacity = String(show);
+      if (bevel) bevel.style.opacity = String(show);
+    };
     measure();
-    if (window.ResizeObserver) new ResizeObserver(() => requestAnimationFrame(() => { measure(); request(); })).observe(plateBox);
-    track(plateBox, {
-      start: 1.05,
-      end: .34,
-      fn(p) {
-        if (!A) return;
-        const e = 1 - (1 - p) ** 3;
-        platePath.setAttribute('d', toPath(mix(A, B, e, buf)));
-        const show = Math.min(1, Math.max(0, (p - .55) / .32));
-        content.style.opacity = String(show);
-        if (bevel) bevel.style.opacity = String(show);
-      },
-    });
+    if (lite) draw(1);
+    if (window.ResizeObserver) new ResizeObserver(() => requestAnimationFrame(() => { measure(); if (lite) draw(1); else request(); })).observe(plateBox);
+    if (!lite) track(plateBox, { start: 1.05, end: .34, fn: draw });
   }
 
   // Sauce lines on the plate and the delivery route are drawn by scrolling

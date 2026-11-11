@@ -38,7 +38,7 @@ function dishCard(d, cat, lang, t, lazy = true) {
   return `<article class="dish" ${attrs} data-grab-card>
   ${dishImage(d, lang, lazy)}
   <div class="dish__body">
-    <h4 class="dish__name">${esc(d.name[lang])}${d.badge === 'new' ? ` <span class="tag">${esc(t.menu.new)}</span>` : ''}${d.alcohol ? ` <span class="tag tag--age">${esc(t.menu.adult)}</span>` : ''}</h4>
+    <h4 class="dish__name"><button class="dish__open" type="button" data-dish-open>${esc(d.name[lang])}</button>${d.badge === 'new' ? ` <span class="tag">${esc(t.menu.new)}</span>` : ''}${d.alcohol ? ` <span class="tag tag--age">${esc(t.menu.adult)}</span>` : ''}</h4>
     ${d.desc?.[lang] ? `<p class="dish__desc">${esc(d.desc[lang])}</p>` : ''}
     ${sizeBits.length ? `<p class="dish__size">${esc(sizeBits.join(' · '))}</p>` : ''}
     ${d.variants ? `<fieldset class="dish__variants"><legend class="sr">${esc(t.menu.variant)}</legend>${d.variants.map((v, k) => `<label class="chip"><input type="radio" name="v-${esc(d.id)}" value="${esc(v.id)}" data-price="${v.price}" data-label="${esc(v.label[lang])}"${k === 0 ? ' checked' : ''}><span>${esc(v.label[lang])}</span><b class="nojs-price">${money(v.price, lang)}</b></label>`).join('')}</fieldset>` : ''}
@@ -66,7 +66,6 @@ function menuSection(c, lang, t) {
   }).join('');
   const filters = EXCLUDES.map((a) => `<label class="chip chip--x"><input type="checkbox" value="${a}" data-exclude><span>${esc(t.exclude[a])}</span></label>`).join('');
   return `<section class="menu" id="menu" aria-labelledby="menu-h">
-  <span class="menu__drop-target" data-drop-target aria-hidden="true"></span>
   ${branch({ seed: 11, cls: 'orn--menu', blooms: 5 })}
   <aside class="rail">
     <div class="rail__head">
@@ -159,9 +158,8 @@ function deliverySection(c, lang, t) {
     <g data-rider><circle r="5" class="route__dot"/></g>
   </svg>
   <dl class="facts">
-    ${fact(t.delivery.zones, localizedOr(d.zones))}
+    ${d.fees ? `<div class="fact fact--fees"><dt>${esc(t.delivery.fees)}</dt><dd><ul class="fees">${d.fees.map((f) => `<li><span>${esc(f.town)}</span><b>${money(f.fee, lang)}</b></li>`).join('')}${d.otherTowns ? `<li class="fees__other"><span>${esc(fill(t.delivery.otherTowns, { towns: d.otherTowns.join(', ') }))}</span><a href="tel:${esc(c.site.phone)}">${esc(t.delivery.byPhone)}</a></li>` : ''}</ul></dd></div>` : fact(t.delivery.zones, null)}
     ${fact(t.delivery.minOrder, d.minOrder ? money(d.minOrder, lang) : null)}
-    ${fact(t.delivery.fee, localizedOr(d.fee))}
     ${fact(t.delivery.payment, localizedOr(d.payment))}
   </dl>
   <div class="channels">
@@ -181,7 +179,21 @@ function deliverySection(c, lang, t) {
 }
 
 function aboutSection(c, lang, t) {
-  const story = c.site.story[lang];
+  const story = c.site.story[lang] || [];
+  // Chapter n of the owner's story, placed between the photos
+  const ch = (i) => {
+    const s = story[i];
+    if (!s) return '';
+    const last = i === story.length - 1;
+    return `<article class="panel chapter${s.promise ? ' chapter--promise' : ''}">
+        <p class="chapter__n" aria-hidden="true">${String(i + 1).padStart(2, '0')}</p>
+        ${s.promise ? kanji('心', 'chapter__k') : ''}
+        <h3 class="chapter__t">${esc(s.title)}</h3>
+        ${s.quote ? `<p class="chapter__q">${esc(s.quote)}</p>` : ''}
+        <p class="chapter__p">${esc(s.text)}</p>
+        ${last ? `<a class="tlink chapter__cta" href="#visit">${esc(t.about.storyCta)}${icons.arrow()}</a>` : ''}
+      </article>`;
+  };
   const fig = (name, widths, w, h, cls, sizes) => `<figure class="ph ${cls}" data-mask>${picture({ base: `/img/venue/${name}`, widths, alt: t.about.alt[name], width: w, height: h, sizes })}</figure>`;
   return `<section class="about" id="about" aria-labelledby="about-h" data-makimono>
   <div class="about__sticky">
@@ -192,19 +204,25 @@ function aboutSection(c, lang, t) {
         ${kanji('物語', 'kanji--v')}
         <p class="about__lead">${esc(t.about.lead)}</p>
         <p class="about__bar">${esc(t.about.bar)}</p>
-        ${story ? `<p class="about__story">${esc(story)}</p>` : `<p class="about__story">${placeholder(t.about.storyMissing)}</p>`}
+        ${story.length ? '' : `<p class="about__story">${placeholder(t.about.storyMissing)}</p>`}
         <p class="about__hint" aria-hidden="true">${esc(t.about.hint)} ${icons.arrow()}</p>
       </div>
+      ${ch(0)}
       ${fig('night', [520, 900], 900, 975, 'ph--tall', '(min-width: 900px) 40vw, 78vw')}
+      ${ch(1)}
       ${fig('lamp', [490], 490, 563, 'ph--low', '(min-width: 900px) 30vw, 70vw')}
+      ${ch(2)}
       <div class="panel panel--flower">
         <h3>${esc(t.about.flowerTitle)}</h3>
         <p>${esc(t.about.flower)}</p>
       </div>
       ${fig('tempura', [520, 900], 900, 1088, 'ph--tall', '(min-width: 900px) 38vw, 78vw')}
+      ${ch(3)}
       ${fig('triptych', [740], 740, 372, 'ph--wide', '(min-width: 900px) 46vw, 86vw')}
+      ${ch(4)}
       ${fig('box', [420, 560], 560, 960, 'ph--mid', '(min-width: 900px) 26vw, 66vw')}
       ${fig('cake', [420, 750], 750, 690, 'ph--low', '(min-width: 900px) 32vw, 74vw')}
+      ${ch(5)}
       <div class="panel panel--end">${placeholder(t.about.kitchenMissing)}</div>
     </div>
     <span class="rod rod--b" aria-hidden="true"></span>
@@ -316,7 +334,6 @@ function heroSection(c, lang, t) {
     <p class="status js-only" data-status></p>
   </div>
   <div class="hanko" role="img" aria-label="${esc(h.seal)}"><span aria-hidden="true">桜</span></div>
-  <svg class="flowdrop" viewBox="0 0 100 100" aria-hidden="true" data-flowdrop><path fill="#3a1508" stroke="#7a3a1c" stroke-width="1" d="M50 10C66 38 78 50 78 66a28 28 0 0 1-56 0C22 50 34 38 50 10Z"/></svg>
 </section>`;
 }
 
@@ -328,9 +345,28 @@ function orderLink(c, t, cls, inner, attrs = '') {
     : `<a class="${cls}" href="tel:${esc(c.site.phone)}" ${attrs}>${inner}</a>`;
 }
 
+// One dialog for every dish. menu.js fills it from the clicked card.
+function dishDialog(c, t) {
+  return `<dialog class="dlg" data-dlg aria-labelledby="dlg-title" data-lenis-prevent>
+  <div class="dlg__box" tabindex="-1" autofocus>
+    <button class="dlg__x" type="button" data-dlg-close aria-label="${esc(t.menu.close)}">${icons.close()}</button>
+    <div class="dlg__pic" data-dlg-pic></div>
+    <div class="dlg__body">
+      <h2 class="dlg__name" id="dlg-title" data-dlg-name></h2>
+      <div data-dlg-info></div>
+      <div class="dlg__acts">
+        ${orderLink(c, t, 'btn btn--primary', `<span>${esc(t.nav.order)}</span>`)}
+        <a class="btn-plain dlg__call" href="tel:${esc(c.site.phone)}">${icons.phone()}<span>${esc(t.nav.call)}</span></a>
+      </div>
+    </div>
+  </div>
+</dialog>`;
+}
+
 function dockAndPreloader(c, lang, t) {
   const s = c.site;
-  return `<nav class="dock js-only" aria-label="${esc(t.nav.order)}">
+  return `${dishDialog(c, t)}
+<nav class="dock js-only" aria-label="${esc(t.nav.order)}">
   <a href="tel:${esc(s.phone)}" class="dock__b">${icons.phone()}<span>${esc(t.nav.call)}</span></a>
   ${orderLink(c, t, 'dock__b dock__b--main', `<span>${esc(t.nav.order)}</span>`)}
   <a href="#visit" class="dock__b">${icons.pin()}<span>${esc(t.nav.route)}</span></a>
