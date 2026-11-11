@@ -54,8 +54,8 @@ export function createApp() {
     short_name: content().site.name,
     start_url: '/',
     display: 'standalone',
-    background_color: '#0b0a0a',
-    theme_color: '#0b0a0a',
+    background_color: '#fbeef1',
+    theme_color: '#fbeef1',
     icons: [{ src: '/img/logo/icon-192.png', sizes: '192x192', type: 'image/png' }, { src: '/img/logo/icon-512.png', sizes: '512x512', type: 'image/png' }],
   }));
 

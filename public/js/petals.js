@@ -23,7 +23,7 @@ export function initPetals(canvas) {
   }
 
   // One petal shape, drawn once per colour so frames only blit images
-  const TINTS = ['rgba(240,186,198,.92)', 'rgba(246,212,218,.86)', 'rgba(226,158,174,.82)'];
+  const TINTS = ['rgba(231,150,174,.88)', 'rgba(244,184,201,.92)', 'rgba(214,118,148,.78)'];
   const sprites = TINTS.map((fill) => {
     const c = document.createElement('canvas');
     c.width = c.height = 64;

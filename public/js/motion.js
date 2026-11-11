@@ -37,7 +37,7 @@ function preloader(G, done) {
       ease: 'expo.out',
       onUpdate() { path.setAttribute('d', toPath(mix(A, B, st.t, buf))); },
     }, '<')
-    .to(path, { fill: '#eec3cb', duration: .35 }, '<')
+    .to(path, { fill: '#e7a3b8', duration: .35 }, '<')
     .to(path, { y: 120, x: 40, rotation: 70, opacity: 0, duration: .55, ease: 'power2.in', transformOrigin: '50% 50%' }, '>-0.05')
     .to(pre, { opacity: 0, duration: .32, ease: 'power1.out' }, '<0.18');
 }
@@ -92,7 +92,7 @@ function scrollLinked() {
         dropSvg.style.transform = `translate3d(${(Math.sin(p * 5) * 26 * p).toFixed(1)}px,${(eased * innerHeight * .72).toFixed(1)}px,0) rotate(${(p > .5 ? (p - .5) * 170 : 0).toFixed(1)}deg)`;
         const m = Math.min(1, Math.max(0, (p - .42) / .4));
         path.setAttribute('d', toPath(mix(A, B, m, buf)));
-        path.setAttribute('fill', m > .5 ? '#eec3cb' : '#6b2f14');
+        path.setAttribute('fill', m > .5 ? '#e7a3b8' : '#6b2f14');
       },
     });
   }

@@ -24,8 +24,8 @@ function head({ lang, c, t, title, description, path, noindex }) {
 ${noindex ? '<meta name="robots" content="noindex">' : ''}
 <link rel="canonical" href="${esc(canonical)}">
 ${hreflang}<link rel="alternate" hreflang="x-default" href="${url}${path}">
-<meta name="theme-color" content="#0b0a0a">
-<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#fbeef1">
+<meta name="color-scheme" content="light">
 <meta property="og:type" content="restaurant">
 <meta property="og:site_name" content="${esc(c.site.name)}">
 <meta property="og:title" content="${esc(title)}">

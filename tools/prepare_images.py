@@ -83,6 +83,20 @@ def vignette(shape, inner=0.42, outer=1.0):
     return t * t * (3 - 2 * t)
 
 
+def rounded(shape, radius=0.09):
+    """Rounded-rectangle alpha with an antialiased edge."""
+    h, w = shape
+    r = radius * min(h, w)
+    SS = 4
+    m = np.zeros((h * SS, w * SS), np.uint8)
+    rr = int(r * SS)
+    cv2.rectangle(m, (rr, 0), (w * SS - rr, h * SS), 255, -1)
+    cv2.rectangle(m, (0, rr), (w * SS, h * SS - rr), 255, -1)
+    for cx, cy in ((rr, rr), (w * SS - rr, rr), (rr, h * SS - rr), (w * SS - rr, h * SS - rr)):
+        cv2.circle(m, (cx, cy), rr, 255, -1, lineType=cv2.LINE_AA)
+    return cv2.resize(m, (w, h), interpolation=cv2.INTER_AREA).astype(np.float32) / 255
+
+
 def edge_fade(alpha, frac=0.04):
     h, w = alpha.shape
     n = max(3, int(min(h, w) * frac))
@@ -99,14 +113,13 @@ def dish(src, dish_id, out_dir=None):
     im = im.crop(((im.width - side) // 2, (im.height - side) // 2, (im.width + side) // 2, (im.height + side) // 2)).resize((512, 512), Image.LANCZOS)
     rgb = np.array(im)
     if border_stats(rgb) > 0.42:
+        # White studio shot: cut the dish out so it sits straight on the page
         alpha = cut_white(rgb)
         rgb = decontaminate(rgb, alpha)
+        alpha = edge_fade(alpha, 0.07)
     else:
-        # Dark studio shots keep a slate or table texture that shows as a hard rectangle on the page.
-        # A soft rounded vignette melts every edge into the black, whatever the background was.
-        # Voucher posters carry text to the edges, so they stay whole
-        alpha = np.ones(rgb.shape[:2], np.float32) if dish_id.startswith('gift-voucher') else cut_black(rgb) * vignette(rgb.shape[:2])
-    alpha = edge_fade(alpha, 0.07)
+        # A photo with its own background reads best on the pastel page as a clean rounded tile
+        alpha = rounded(rgb.shape[:2])
     rgba = Image.fromarray(np.dstack([rgb, (alpha * 255).astype(np.uint8)]), 'RGBA')
     rgba.resize((480, 480), Image.LANCZOS).save(os.path.join(out_dir, f'{dish_id}-480.avif'), quality=58, speed=4)
     rgba.resize((480, 480), Image.LANCZOS).save(os.path.join(out_dir, f'{dish_id}-480.webp'), quality=78, method=6, alpha_quality=88)
