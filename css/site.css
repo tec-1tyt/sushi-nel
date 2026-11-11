@@ -140,7 +140,15 @@ a:hover > .i-bob { transform: translateY(-3px); }
 .overlay .lang a { color: #ffd9d5; }
 .overlay .lang a[aria-current] { color: #fff; text-decoration-color: #fff; }
 
-/* ---------- petals, preloader ---------- */
+/* ---------- petals, cursor, preloader ---------- */
+.chop { position: fixed; left: 0; top: 0; z-index: 110; width: 92px; height: 92px; margin: -6px 0 0 -6px; pointer-events: none; will-change: transform; opacity: 0; transition: opacity .2s; }
+.chop.is-on { opacity: 1; }
+.chop svg { overflow: visible; transform-origin: 6px 6px; will-change: transform; }
+.chop__out { stroke: #0b0a0a; stroke-width: 6; stroke-linecap: round; }
+.chop__stick { stroke: #d62a22; stroke-width: 3.6; stroke-linecap: round; }
+.chop__tip { stroke: #f3ece2; stroke-width: 3.6; stroke-linecap: round; }
+.has-chop, .has-chop a, .has-chop button, .has-chop label, .has-chop summary, .has-chop .leaflet-container, .has-chop .leaflet-interactive, .has-chop .leaflet-grab { cursor: none !important; }
+.has-chop input:not([type="radio"], [type="checkbox"]), .has-chop textarea { cursor: text !important; }
 .petals { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: 2; pointer-events: none; }
 .no-js .petals, .rm .petals { display: none; }
 
@@ -413,7 +421,7 @@ p { text-wrap: pretty; }
 .line-mask { display: block; overflow: hidden; padding-block: .2em .06em; margin-block: -.2em -.06em; }
 .line-in { display: block; will-change: transform; }
 
-/* hover lift: the dish rises */
+/* hover lift: the chopsticks "pick up" the dish */
 @media (hover: hover) and (pointer: fine) {
   .dish:hover .dish__img { transform: translateY(-9px) rotate(-1.6deg) scale(1.025); }
   .is-grabbed { transform: translate(var(--gx, 0), var(--gy, 0)); }
@@ -639,3 +647,8 @@ body:not(.is-home) .cookie { bottom: 10px; }
 @media (max-width: 759px) {
   .fact--fees { grid-template-columns: minmax(0, 1fr); gap: 8px; }
 }
+/* The dialog sits in the top layer, above the chopsticks, so inside it the normal pointer comes back */
+.has-chop .dish, .has-chop .dish__open { cursor: none !important; }
+.has-chop .dlg, .has-chop .dlg * { cursor: default !important; }
+.has-chop .dlg a, .has-chop .dlg button, .has-chop .dlg label { cursor: pointer !important; }
+html:has(.dlg[open]) .chop { opacity: 0 !important; }

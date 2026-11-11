@@ -1,6 +1,7 @@
 // Entry point. Each feature starts inside its own guard: one failure can't take down the rest,
 // and if the motion layer fails the page simply stays static and fully readable.
 import { initConsent } from './consent.js';
+import { initCursor } from './cursor.js';
 import { primeToken, wireForm } from './forms.js';
 import { initMap } from './map.js';
 import { initMenu } from './menu.js';
@@ -30,6 +31,7 @@ function scrollTo(target, offset) {
 }
 
 guard('petals', () => initPetals(document.querySelector('[data-petals]')));
+guard('cursor', () => initCursor(document.querySelector('[data-chop]')));
 guard('consent', initConsent);
 guard('nav', () => initNav({ scrollTo, lenis }));
 guard('status', () => initStatus(data));
