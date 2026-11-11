@@ -1,25 +1,22 @@
 // Page choreography: preloader, hero entrance, scroll-linked morphs, reveals, the unrolling "about" scroll, button morphs.
 // Nothing here is required to read or use the page.
 import { track, request } from './scrollfx.js';
-import { brush, circle, drop, mix, petal, pill, polygonSampler, sample, toPath } from './shapes.js';
+import { brush, circle, drop, mix, pill, polygonSampler, sample, toPath } from './shapes.js';
 
 const reduced = () => document.documentElement.classList.contains('rm');
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
-/* ---------- preloader: a drop of soy falls, lands, opens into a petal ---------- */
+/* ---------- preloader: a sakura blossom opens petal by petal, then the petals scatter and reveal the page ---------- */
 function preloader(G, done) {
   const html = document.documentElement;
   const pre = $('[data-pre]');
   if (!pre || html.classList.contains('pre-done') || !G) { html.classList.add('pre-done'); done(); return; }
-  const path = $('[data-pre-path]', pre);
-  const ring = $('.pre__ring', pre);
-  const N = 40;
-  const A = sample(drop, N);
-  const B = sample(petal, N);
-  const buf = new Float32Array(A.length);
-  path.setAttribute('d', toPath(A));
-  const st = { t: 0 };
+  const flower = $('[data-pre-flower]', pre);
+  const petals = $$('[data-pre-petal]', pre);
+  const veins = $$('[data-pre-vein]', pre);
+  const stamens = $$('[data-pre-stamen]', pre);
+  const core = $('[data-pre-core]', pre);
   let finished = false;
   const finish = () => {
     if (finished) return;
@@ -28,18 +25,16 @@ function preloader(G, done) {
     try { sessionStorage.setItem('sn_pre', '1'); } catch { /* storage blocked */ }
   };
   const tl = G.timeline({ onComplete: finish });
-  tl.fromTo(path, { y: -150, scaleY: 1.25, transformOrigin: '50% 50%' }, { y: 0, scaleY: 1, duration: .55, ease: 'power2.in' })
-    .call(done)
-    .fromTo(ring, { attr: { r: 8 }, opacity: .7 }, { attr: { r: 46 }, opacity: 0, duration: .75, ease: 'expo.out', immediateRender: false }, '>-0.02')
-    .to(st, {
-      t: 1,
-      duration: .55,
-      ease: 'expo.out',
-      onUpdate() { path.setAttribute('d', toPath(mix(A, B, st.t, buf))); },
-    }, '<')
-    .to(path, { fill: '#e07a9c', duration: .35 }, '<')
-    .to(path, { y: 120, x: 40, rotation: 70, opacity: 0, duration: .55, ease: 'power2.in', transformOrigin: '50% 50%' }, '>-0.05')
-    .to(pre, { opacity: 0, duration: .32, ease: 'power1.out' }, '<0.18');
+  tl.fromTo(flower, { rotation: -40, svgOrigin: '0 0' }, { rotation: 8, duration: 1.5, ease: 'power3.out' }, 0)
+    .from(petals, { scale: 0, rotation: -25, svgOrigin: '0 0', duration: .62, ease: 'back.out(1.7)', stagger: .08 }, 0)
+    .from(veins, { opacity: 0, duration: .3, stagger: .08 }, .25)
+    .from(core, { scale: 0, svgOrigin: '0 0', duration: .4, ease: 'back.out(2.4)' }, .4)
+    .from(stamens, { scale: 0, svgOrigin: '0 0', duration: .45, ease: 'back.out(2)', stagger: .04 }, .48)
+    .call(done, null, .95)
+    // Each petal sits inside a rotated group, so moving it up its own axis sends it outward
+    .to(petals, { y: -62, rotation: (k) => (k % 2 ? 34 : -34), opacity: 0, duration: .62, ease: 'power2.in', stagger: .035 }, 1.12)
+    .to([...veins, ...stamens, core], { opacity: 0, duration: .25 }, 1.12)
+    .to(pre, { opacity: 0, duration: .38, ease: 'power1.out' }, 1.36);
 }
 
 /* ---------- hero entrance ---------- */
