@@ -6,10 +6,14 @@
       "active": true,
       "main": true,
       "validFrom": null,
-      "validTo": null,
+      "validTo": "2026-11-22",
       "source": "Instagram, 2026-09-03",
       "threshold": 1000,
-      "thresholdExcludes": ["napoje", "omacky", "poukazy"],
+      "thresholdExcludes": [
+        "napoje",
+        "omacky",
+        "poukazy"
+      ],
       "gift": "tempura-roll",
       "title": {
         "cs": "Tempura rolka zdarma",
@@ -21,42 +25,78 @@
         "uk": "Замовте суші мінімум на 1 000 Kč, і рол буде у подарунок.",
         "en": "Order sushi for 1,000 Kč or more and the roll comes with it."
       },
-      "terms": null
+      "terms": {
+        "cs": "Platí od úterý 17. 11. do neděle 22. 11. 2026. V pondělí máme zavřeno.",
+        "uk": "Діє з вівторка 17.11 до неділі 22.11.2026. У понеділок ми зачинені.",
+        "en": "Valid from Tuesday 17 Nov to Sunday 22 Nov 2026. We are closed on Mondays."
+      }
     },
     {
       "id": "new-customers",
       "active": false,
       "placeholder": true,
       "source": "V datech žádná sleva pro nové zákazníky není. Doplňte, pokud platí.",
-      "title": { "cs": "Sleva pro nové zákazníky", "uk": "Знижка для нових клієнтів", "en": "New customer discount" },
-      "text": { "cs": "", "uk": "", "en": "" },
+      "title": {
+        "cs": "Sleva pro nové zákazníky",
+        "uk": "Знижка для нових клієнтів",
+        "en": "New customer discount"
+      },
+      "text": {
+        "cs": "",
+        "uk": "",
+        "en": ""
+      },
       "terms": null
     },
     {
       "id": "wednesday-set",
       "active": false,
       "source": "Instagram, 2026-04-27. Starší akce, zapněte, pokud se vrací.",
-      "title": { "cs": "Wednesday Set, 40 ks za 1 200 Kč", "uk": "Wednesday Set, 40 шт за 1 200 Kč", "en": "Wednesday Set, 40 pcs for 1,200 Kč" },
+      "title": {
+        "cs": "Wednesday Set, 40 ks za 1 200 Kč",
+        "uk": "Wednesday Set, 40 шт за 1 200 Kč",
+        "en": "Wednesday Set, 40 pcs for 1,200 Kč"
+      },
       "text": {
         "cs": "Ve středu: Tempura Sake, Tender Ebi, California Ebi, Phila Sesame a Futomaki Choice. K tomu Phila Grilled a nápoj.",
         "uk": "У середу: Tempura Sake, Tender Ebi, California Ebi, Phila Sesame та Futomaki Choice. У подарунок Phila Grilled і напій.",
         "en": "On Wednesdays: Tempura Sake, Tender Ebi, California Ebi, Phila Sesame and Futomaki Choice. Phila Grilled and a drink on us."
       },
-      "terms": { "cs": "Počet setů je omezený, jen na předobjednávku.", "uk": "Кількість сетів обмежена, лише передзамовлення.", "en": "Limited number, pre-order only." }
+      "terms": {
+        "cs": "Počet setů je omezený, jen na předobjednávku.",
+        "uk": "Кількість сетів обмежена, лише передзамовлення.",
+        "en": "Limited number, pre-order only."
+      }
     },
     {
       "id": "salmon-day",
       "active": false,
       "source": "Instagram, 2026-05-25. Starší akce, zapněte, pokud se vrací.",
-      "title": { "cs": "Salmon Day, set s lososem za 800 Kč", "uk": "Salmon Day, сет із лососем за 800 Kč", "en": "Salmon Day, salmon set for 800 Kč" },
-      "text": { "cs": "Jen v úterý.", "uk": "Тільки у вівторок.", "en": "Tuesdays only." },
-      "terms": { "cs": "Počet je omezený.", "uk": "Кількість обмежена.", "en": "Limited number." }
+      "title": {
+        "cs": "Salmon Day, set s lososem za 800 Kč",
+        "uk": "Salmon Day, сет із лососем за 800 Kč",
+        "en": "Salmon Day, salmon set for 800 Kč"
+      },
+      "text": {
+        "cs": "Jen v úterý.",
+        "uk": "Тільки у вівторок.",
+        "en": "Tuesdays only."
+      },
+      "terms": {
+        "cs": "Počet je omezený.",
+        "uk": "Кількість обмежена.",
+        "en": "Limited number."
+      }
     },
     {
       "id": "friday-combo",
       "active": false,
       "source": "Instagram, 2026-04-23. Starší akce, zapněte, pokud se vrací.",
-      "title": { "cs": "Friday Combo", "uk": "Friday Combo", "en": "Friday Combo" },
+      "title": {
+        "cs": "Friday Combo",
+        "uk": "Friday Combo",
+        "en": "Friday Combo"
+      },
       "text": {
         "cs": "Set Dragons 2.0 (32 ks) a Coca-Cola 0,33 l zdarma.",
         "uk": "Сет Dragons 2.0 (32 шматочки) і Coca-Cola 0,33 у подарунок.",
@@ -68,8 +108,16 @@
       "id": "sets-minus-10",
       "active": false,
       "source": "Instagram, 2026-06-01. Časově omezená akce.",
-      "title": { "cs": "-10 % na všechny sety", "uk": "-10% на всі сети", "en": "10% off all sets" },
-      "text": { "cs": "", "uk": "", "en": "" },
+      "title": {
+        "cs": "-10 % na všechny sety",
+        "uk": "-10% на всі сети",
+        "en": "10% off all sets"
+      },
+      "text": {
+        "cs": "",
+        "uk": "",
+        "en": ""
+      },
       "terms": null
     }
   ]
