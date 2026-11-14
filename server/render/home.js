@@ -295,7 +295,7 @@ function visitSection(c, lang, t) {
     </div>
   </div>
   <div class="book">
-    <figure class="book__ph" data-mask>${picture({ base: '/img/venue/reserved', widths: [640, 1000], alt: t.visit.reserveAlt, width: 1000, height: 701, sizes: '(min-width: 900px) 46vw, 100vw' })}</figure>
+    <figure class="book__ph" data-mask>${picture({ base: '/img/venue/reserved', widths: [640, 1000], alt: t.visit.reserveAlt, width: 1000, height: 1000, sizes: '(min-width: 900px) 46vw, 100vw' })}</figure>
     <div class="book__ways">
       <div class="way">
         <h3 class="form__h">${esc(t.visit.reserveTitle)}</h3>
