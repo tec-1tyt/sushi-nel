@@ -220,8 +220,13 @@ function aboutSection(c, lang, t) {
       ${ch(3)}
       <figure class="panel cert">
         <a class="cert__link" href="${asset('/img/venue/haccp-1400.webp')}" target="_blank" rel="noopener" aria-label="${esc(t.about.haccpOpen)}">${picture({ base: '/img/venue/haccp', widths: [720, 1400], alt: t.about.alt.haccp, width: 1400, height: 1003, sizes: '(min-width: 900px) 40vw, 82vw', imgCls: 'cert__img' })}</a>
-        <figcaption><b>${esc(t.about.haccpTitle)}</b><span>${esc(t.about.haccpText)}</span></figcaption>
       </figure>
+      <article class="panel chapter cert-text">
+        <h3 class="chapter__t">${esc(t.about.haccpTitle)}</h3>
+        <p class="chapter__p">${esc(t.about.haccpText)}</p>
+        <p class="cert-text__meta">${esc(t.about.haccpMeta)}</p>
+        <a class="tlink" href="${asset('/img/venue/haccp-1400.webp')}" target="_blank" rel="noopener">${esc(t.about.haccpOpen)}${icons.arrow()}</a>
+      </article>
       ${fig('triptych', [740], 740, 372, 'ph--wide', '(min-width: 900px) 46vw, 86vw')}
       ${ch(4)}
       ${fig('box', [420, 560], 560, 960, 'ph--mid', '(min-width: 900px) 26vw, 66vw')}
