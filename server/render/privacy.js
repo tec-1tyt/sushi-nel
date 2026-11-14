@@ -81,7 +81,7 @@ export function renderPrivacy(c, lang) {
   <p>${esc(p.noTrack)}</p>
   <p><a class="tlink tlink--light" href="${lang === 'cs' ? '/' : `/${lang}/`}">${esc(p.back)}</a></p>
 </article>`;
-  return page({ lang, c, t, title: `${p.title} · ${s.name}`, description: p.title, path: '/soukromi', body });
+  return page({ lang, c, t, title: `${p.title} · ${s.name}`, description: `${p.title}. ${s.name}, ${s.address.street}, ${s.address.zip} ${s.address.city}.`, path: '/soukromi', body });
 }
 
 export function renderNotFound(c, lang) {

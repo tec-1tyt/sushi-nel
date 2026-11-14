@@ -103,7 +103,7 @@ function promoSection(c, lang, t) {
       <div class="offer__body">
         <h3 class="offer__title">${esc(main.title[lang])}</h3>
         ${main.text[lang] ? `<p class="offer__text">${esc(main.text[lang])}</p>` : ''}
-        ${main.terms?.[lang] ? `<p class="offer__terms">${esc(main.terms[lang])}</p>` : `<p class="offer__terms">${placeholder(t.promo.termsMissing)}</p>`}
+        ${main.terms?.[lang] ? `<p class="offer__terms">${esc(main.terms[lang])}</p>` : (config.showPlaceholders ? `<p class="offer__terms">${placeholder(t.promo.termsMissing)}</p>` : '')}
         <a class="btn btn--primary" href="#menu" data-morph data-grab><span>${esc(t.promo.orderNow)}</span></a>
       </div>
       ${giftPic}
@@ -140,7 +140,7 @@ function promoSection(c, lang, t) {
 
 function deliverySection(c, lang, t) {
   const d = c.site.delivery;
-  const fact = (label, value) => `<div class="fact"><dt>${esc(label)}</dt><dd>${value ?? placeholder(t.delivery.missing)}</dd></div>`;
+  const fact = (label, value) => (value == null && !config.showPlaceholders ? '' : `<div class="fact"><dt>${esc(label)}</dt><dd>${value ?? placeholder(t.delivery.missing)}</dd></div>`);
   const localizedOr = (v) => (v?.[lang] ? esc(v[lang]) : null);
   const channel = (html) => `<li>${html}</li>`;
   const o = c.site.ordering;
@@ -232,7 +232,7 @@ function aboutSection(c, lang, t) {
       ${fig('box', [420, 560], 560, 960, 'ph--mid', '(min-width: 900px) 26vw, 66vw')}
       ${fig('cake', [420, 750], 750, 690, 'ph--low', '(min-width: 900px) 32vw, 74vw')}
       ${ch(5)}
-      <div class="panel panel--end">${placeholder(t.about.kitchenMissing)}</div>
+      ${config.showPlaceholders ? `<div class="panel panel--end">${placeholder(t.about.kitchenMissing)}</div>` : ''}
     </div>
     <span class="rod rod--b" aria-hidden="true"></span>
   </div>

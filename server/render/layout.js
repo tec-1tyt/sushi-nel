@@ -12,7 +12,7 @@ function head({ lang, c, t, title, description, path, noindex }) {
   const url = config.siteUrl;
   const hreflang = LANGS.map((l) => `<link rel="alternate" hreflang="${l}" href="${url}${l === 'cs' ? '' : `/${l}`}${path}">`).join('');
   const canonical = `${url}${lang === 'cs' ? '' : `/${lang}`}${path}`;
-  const heroPreload = path === '/'
+  const heroPreload = path === '/' && !noindex
     ? `<link rel="preload" as="image" type="image/avif" href="${asset('/img/hero/plate-1100.avif')}" imagesrcset="${[720, 1100, 1536].map((w) => `${asset(`/img/hero/plate-${w}.avif`)} ${w}w`).join(', ')}" imagesizes="(min-width: 1000px) 60vw, 116vw" fetchpriority="high">`
     : '';
   return `<head>
@@ -39,7 +39,7 @@ ${hreflang}<link rel="alternate" hreflang="x-default" href="${url}${path}">
 <link rel="icon" type="image/png" sizes="32x32" href="/img/logo/favicon-32.png">
 <link rel="apple-touch-icon" href="/img/logo/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-${path === '/' ? FONT_PRELOAD[lang].map((f) => `<link rel="preload" as="font" type="font/woff2" href="/fonts/${f}.woff2" crossorigin>`).join('\n') : ''}
+${path === '/' && !noindex ? FONT_PRELOAD[lang].map((f) => `<link rel="preload" as="font" type="font/woff2" href="/fonts/${f}.woff2" crossorigin>`).join('\n') : ''}
 ${heroPreload}
 <link rel="stylesheet" href="${asset('/css/site.css')}">
 <script>${bootScript()}</script>
