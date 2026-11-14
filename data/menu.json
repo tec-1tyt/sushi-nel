@@ -88,7 +88,7 @@
           },
           "desc": {
             "cs": "Tempura rolka, California Sake, Sopka Sezam, Jemný Ebi, Lehký Ebi, Futomaki Sake",
-            "uk": "Темпура Рол, California Sake, Вулкан Сезам, Ніжний Ebi, Легкий Ebi, Футомакі Саке",
+            "uk": "Темпура Рол, California Sake, Вулкан Сезам, Ніжний Ебі, Легкий Ебі, Футомакі Саке",
             "en": "Tempura Roll, California Sake, Volcano Sesame, Tender Ebi, Light Ebi, Futomaki Sake"
           },
           "price": 1450,
@@ -110,7 +110,7 @@
           },
           "desc": {
             "cs": "Philadelphia Sake, Futomaki Sake, Jemný Ebi, Lehký Ebi, Sopka Sezam",
-            "uk": "Philadelphia Sake, Футомакі Саке, Ніжний Ebi, Легкий Ebi, Вулкан Сезам",
+            "uk": "Philadelphia Sake, Футомакі Саке, Ніжний Ебі, Легкий Ебі, Вулкан Сезам",
             "en": "Philadelphia Sake, Futomaki Sake, Tender Ebi, Light Ebi, Volcano Sesame"
           },
           "price": 1250,
@@ -175,7 +175,7 @@
           },
           "desc": {
             "cs": "Philadelphia Sake, Sýrová rolka, Samurajská rolka, Zelený drak, Jemný Ebi, Sopka Sezam, Lehký Ebi, Futomaki Sake, Philadelphia Sesame",
-            "uk": "Philadelphia Sake, Рол з сиром, Samurai Roll, Зелений Дракон, Ніжний Ebi, Вулкан Сезам, Легкий Ebi, Футомакі Саке, Philadelphia Sesame",
+            "uk": "Philadelphia Sake, Рол з сиром, Samurai Roll, Зелений Дракон, Ніжний Ебі, Вулкан Сезам, Легкий Ебі, Футомакі Саке, Philadelphia Sesame",
             "en": "Philadelphia Sake, Cheese Roll, Samurai Roll, Green Dragon, Tender Ebi, Volcano Sesame, Light Ebi, Futomaki Sake, Philadelphia Sesame"
           },
           "price": 2250,
@@ -285,7 +285,7 @@
           },
           "desc": {
             "cs": "Philadelphia Ebi, California Ebi, California Horký Ebi, Lehký Ebi",
-            "uk": "Philadelphia Ebi, California Ebi, Каліфорнія Гарячий Ебі, Легкий Ebi",
+            "uk": "Philadelphia Ebi, California Ebi, Каліфорнія Гарячий Ебі, Легкий Ебі",
             "en": "Philadelphia Ebi, California Ebi, California Hot Ebi, Light Ebi"
           },
           "price": 1150,
@@ -305,7 +305,7 @@
           },
           "desc": {
             "cs": "Tako Sezam, Lehký Ebi, Philadelphia Sesame, Jemný Ebi, Samurajská rolka, Philadelphia Sake, Zelený drak, Sýrová rolka",
-            "uk": "Тако Сезам, Легкий Ebi, Philadelphia Sesame, Ніжний Ebi, Samurai Roll, Philadelphia Sake, Зелений Дракон, Рол з сиром",
+            "uk": "Тако Сезам, Легкий Ебі, Philadelphia Sesame, Ніжний Ебі, Samurai Roll, Philadelphia Sake, Зелений Дракон, Рол з сиром",
             "en": "Tako Sesame, Light Ebi, Philadelphia Sesame, Tender Ebi, Samurai Roll, Philadelphia Sake, Green Dragon, Cheese Roll"
           },
           "price": 2050,
@@ -382,7 +382,7 @@
           },
           "desc": {
             "cs": "Rýže, krémový sýr, okurka, losos, sýr Cheddar",
-            "uk": "Рис, крем сир, огірок, лосось, сир Чедер",
+            "uk": "Рис, крем-сир, огірок, лосось, сир Чедер",
             "en": "Rice, cream cheese, cucumber, salmon, Cheddar cheese"
           },
           "price": 230,
@@ -402,7 +402,7 @@
           },
           "desc": {
             "cs": "Rýže, krémový sýr, okurka, ikra tobiko, čepička z lososa/krevety na výběr",
-            "uk": "Рис, крем сир, огірок, ікра тобіко, шапочка з лосося/креветки на вибір",
+            "uk": "Рис, крем-сир, огірок, ікра тобіко, шапочка з лосося/креветки на вибір",
             "en": "Rice, cream cheese, cucumber, tobiko, choice of salmon/shrimp topping"
           },
           "price": 300,
@@ -418,12 +418,12 @@
           "id": "light-ebi",
           "name": {
             "cs": "Lehký Ebi",
-            "uk": "Легкий Ebi",
+            "uk": "Легкий Ебі",
             "en": "Light Ebi"
           },
           "desc": {
             "cs": "Rýže, krémový sýr, okurka, kreveta, omáčka Unagi",
-            "uk": "Рис, крем сир, огірок, креветка, соус Унагі",
+            "uk": "Рис, крем-сир, огірок, креветка, соус Унагі",
             "en": "Rice, cream cheese, cucumber, shrimp, Unagi sauce"
           },
           "price": 260,
@@ -440,12 +440,12 @@
           "id": "tender-ebi",
           "name": {
             "cs": "Jemný Ebi",
-            "uk": "Ніжний Ebi",
+            "uk": "Ніжний Ебі",
             "en": "Tender Ebi"
           },
           "desc": {
             "cs": "Rýže, krémový sýr, okurka, avokádo, ikra tobiko, sýrová čepička s krevetou, mandlové plátky",
-            "uk": "Рис, крем сир, огірок, авокадо, ікра тобіко, сирна шапочка з креветкою, мигдалеві пластівці",
+            "uk": "Рис, крем-сир, огірок, авокадо, ікра тобіко, сирна шапочка з креветкою, мигдалеві пластівці",
             "en": "Rice, cream cheese, cucumber, avocado, tobiko, cheese topping with shrimp, almond flakes"
           },
           "price": 270,
@@ -467,7 +467,7 @@
           },
           "desc": {
             "cs": "Rýže, krémový sýr, okurka, avokádo, čepička z lososa/krevety na výběr, sezam",
-            "uk": "Рис, крем сир, огірок, авокадо, шапочка з лосося/креветки на вибір, кунжут",
+            "uk": "Рис, крем-сир, огірок, авокадо, шапочка з лосося/креветки на вибір, кунжут",
             "en": "Rice, cream cheese, cucumber, avocado, choice of salmon/shrimp topping, sesame"
           },
           "price": 250,
@@ -489,7 +489,7 @@
           },
           "desc": {
             "cs": "Rýže, smetanový sýr, losos, okurka, sýrová čepička, mini chobotnice",
-            "uk": "Рис, кремовий сир, лосось, огірок, сирна шапочка, міні восьминіг",
+            "uk": "Рис, крем-сир, лосось, огірок, сирна шапочка, міні восьминіг",
             "en": "Rice, cream cheese, salmon, cucumber, cheese topping, baby octopus"
           },
           "price": 300,
@@ -533,7 +533,7 @@
           },
           "desc": {
             "cs": "Rýže, smetanový sýr, losos, kreveta, okurka, mandlové lupínky",
-            "uk": "Рис, кремовий сир, лосось, креветка, огірок, мигдалеві пластівці",
+            "uk": "Рис, крем-сир, лосось, креветка, огірок, мигдалеві пластівці",
             "en": "Rice, cream cheese, salmon, shrimp, cucumber, almond flakes"
           },
           "price": 300,
@@ -555,7 +555,7 @@
           },
           "desc": {
             "cs": "Rýže, smetanový sýr, okurka, losos, tobiko",
-            "uk": "Рис, кремовий сир, огірок, лосось, ікра тобіко",
+            "uk": "Рис, крем-сир, огірок, лосось, ікра тобіко",
             "en": "Rice, cream cheese, cucumber, salmon, tobiko roe"
           },
           "price": 300,
@@ -636,7 +636,7 @@
           },
           "desc": {
             "cs": "Nori, rýže, smetanový sýr, losos, kreveta v tempuře, sýr Cheddar, Unagi omáčka, kukuřičné kuličky",
-            "uk": "Норі, рис, кремовий сир, лосось, креветка в темпурі, сир Чеддер, соус Унагі, кукурудзяні кульки",
+            "uk": "Норі, рис, крем-сир, лосось, креветка в темпурі, сир Чеддер, соус Унагі, кукурудзяні кульки",
             "en": "Nori, rice, cream cheese, salmon, tempura shrimp, Cheddar cheese, unagi sauce, corn balls"
           },
           "price": 300,
@@ -658,7 +658,7 @@
           },
           "desc": {
             "cs": "Nori, rýže, smetanový sýr, avokádo, kreveta v tempuře, surimi krab, tobiko",
-            "uk": "Норі, рис, кремовий сир, авокадо, креветка в темпурі, сурімі краб, ікра тобіко",
+            "uk": "Норі, рис, крем-сир, авокадо, креветка в темпурі, сурімі краб, ікра тобіко",
             "en": "Nori, rice, cream cheese, avocado, tempura shrimp, surimi crab, tobiko roe"
           },
           "price": 320,
@@ -770,7 +770,7 @@
           },
           "desc": {
             "cs": "Rýže, krémový sýr, ikra tobiko, avokádo, okurka, losos",
-            "uk": "Рис, крем сир, ікра тобіко, авокадо, огірок, лосось",
+            "uk": "Рис, крем-сир, ікра тобіко, авокадо, огірок, лосось",
             "en": "Rice, cream cheese, tobiko, avocado, cucumber, salmon"
           },
           "price": 250,
@@ -790,7 +790,7 @@
           },
           "desc": {
             "cs": "Rýže, krémový sýr, avokádo, okurka, losos, omáčka Unagi, sezam",
-            "uk": "Рис, крем сир, авокадо, огірок, лосось, соус Унагі, кунжут",
+            "uk": "Рис, крем-сир, авокадо, огірок, лосось, соус Унагі, кунжут",
             "en": "Rice, cream cheese, avocado, cucumber, salmon, Unagi sauce, sesame"
           },
           "price": 280,
@@ -812,7 +812,7 @@
           },
           "desc": {
             "cs": "Rýže, krémový sýr, okurka/avokádo, mango, kreveta/losos",
-            "uk": "Рис, крем сир, огірок/авокадо, манго, креветка/лосось",
+            "uk": "Рис, крем-сир, огірок/авокадо, манго, креветка/лосось",
             "en": "Rice, cream cheese, cucumber/avocado, mango, shrimp/salmon"
           },
           "price": 300,
@@ -833,7 +833,7 @@
           },
           "desc": {
             "cs": "Rýže, smetanový sýr, okurka, kreveta, kiwi",
-            "uk": "Рис, кремовий сир, огірок, креветка, ківі",
+            "uk": "Рис, крем-сир, огірок, креветка, ківі",
             "en": "Rice, cream cheese, cucumber, shrimp, kiwi"
           },
           "price": 250,
@@ -863,7 +863,7 @@
           },
           "desc": {
             "cs": "Nori, rýže, krémový sýr, losos, okurka",
-            "uk": "Норі, рис, крем сир, лосось, огірок",
+            "uk": "Норі, рис, крем-сир, лосось, огірок",
             "en": "Nori, rice, cream cheese, salmon, cucumber"
           },
           "price": 230,
@@ -883,7 +883,7 @@
           },
           "desc": {
             "cs": "Nori, rýže, krémový sýr, kreveta, okurka",
-            "uk": "Норі, рис, крем сир, креветка, огірок",
+            "uk": "Норі, рис, крем-сир, креветка, огірок",
             "en": "Nori, rice, cream cheese, shrimp, cucumber"
           },
           "price": 230,
@@ -903,7 +903,7 @@
           },
           "desc": {
             "cs": "Nori, rýže, krémový sýr, okurka, grilovaný losos",
-            "uk": "Норі, рис, крем сир, огірок, грильований лосось",
+            "uk": "Норі, рис, крем-сир, огірок, грильований лосось",
             "en": "Nori, rice, cream cheese, cucumber, grilled salmon"
           },
           "price": 230,
@@ -923,7 +923,7 @@
           },
           "desc": {
             "cs": "Nori, rýže, krémový sýr, okurka, úhoř",
-            "uk": "Норі, рис, крем сир, огірок, вугор",
+            "uk": "Норі, рис, крем-сир, огірок, вугор",
             "en": "Nori, rice, cream cheese, cucumber, eel"
           },
           "price": 230,
@@ -944,7 +944,7 @@
           },
           "desc": {
             "cs": "Nori, krémový sýr, avokádo, losos, sezam",
-            "uk": "Норі, крем сир, авокадо, лосось, кунжут",
+            "uk": "Норі, крем-сир, авокадо, лосось, кунжут",
             "en": "Nori, cream cheese, avocado, salmon, sesame"
           },
           "price": 230,
@@ -975,7 +975,7 @@
           },
           "desc": {
             "cs": "Rýže, krémový sýr, losos, ikra tobiko, avokádo",
-            "uk": "Рис, крем сир, лосось, ікра тобіко, авокадо",
+            "uk": "Рис, крем-сир, лосось, ікра тобіко, авокадо",
             "en": "Rice, cream cheese, salmon, tobiko, avocado"
           },
           "price": 220,
@@ -995,7 +995,7 @@
           },
           "desc": {
             "cs": "Rýže, krémový sýr, kreveta, ikra tobiko, avokádo",
-            "uk": "Рис, крем сир, креветка, ікра тобіко, авокадо",
+            "uk": "Рис, крем-сир, креветка, ікра тобіко, авокадо",
             "en": "Rice, cream cheese, shrimp, tobiko, avocado"
           },
           "price": 230,
@@ -1016,7 +1016,7 @@
           },
           "desc": {
             "cs": "Rýže, krémový sýr, kreveta tempura, ikra tobiko, okurka/avokádo",
-            "uk": "Рис, крем сир, креветка темпура, ікра тобіко, огірок/авокадо",
+            "uk": "Рис, крем-сир, креветка темпура, ікра тобіко, огірок/авокадо",
             "en": "Rice, cream cheese, tempura shrimp, tobiko, cucumber/avocado"
           },
           "price": 250,
@@ -1065,7 +1065,7 @@
           },
           "desc": {
             "cs": "Nori, rýže, krémový sýr, avokádo, losos",
-            "uk": "Норі, рис, крем сир, авокадо, лосось",
+            "uk": "Норі, рис, крем-сир, авокадо, лосось",
             "en": "Nori, rice, cream cheese, avocado, salmon"
           },
           "price": 220,
@@ -1084,7 +1084,7 @@
           },
           "desc": {
             "cs": "Nori, rýže, krémový sýr, avokádo/okurka, losos/kreveta na výběr",
-            "uk": "Норі, рис, крем сир, авокадо/огірок, лосось/креветка на вибір",
+            "uk": "Норі, рис, крем-сир, авокадо/огірок, лосось/креветка на вибір",
             "en": "Nori, rice, cream cheese, avocado/cucumber, choice of salmon/shrimp"
           },
           "price": 230,
@@ -1164,12 +1164,12 @@
           "id": "tempura-chicken",
           "name": {
             "cs": "Tempura Chicken",
-            "uk": "Tempura Курка",
+            "uk": "Темпура Курка",
             "en": "Tempura Chicken"
           },
           "desc": {
             "cs": "Rýže, nori, okurka, kuře, krémový sýr, tempura těstíčko",
-            "uk": "Рис, норі, огірок, курка, крем сир, кляр темпура",
+            "uk": "Рис, норі, огірок, курка, крем-сир, кляр темпура",
             "en": "Rice, nori, cucumber, chicken, cream cheese, tempura batter"
           },
           "price": 250,
@@ -1211,7 +1211,7 @@
           },
           "desc": {
             "cs": "Rýže, krémový sýr, losos/kreveta na výběr, tempura těstíčko",
-            "uk": "Рис, крем сир, лосось/креветка на вибір, кляр темпура",
+            "uk": "Рис, крем-сир, лосось/креветка на вибір, кляр темпура",
             "en": "Rice, cream cheese, choice of salmon/shrimp, tempura batter"
           },
           "price": 250,
@@ -1232,7 +1232,7 @@
           },
           "desc": {
             "cs": "Rýže, nori, smetanový sýr, losos, sýrová čepička s chobotnicí/krevetou, sladká Chili omáčka",
-            "uk": "Рис, норі, кремовий сир, лосось, сирна шапочка з восьминогом/креветкою, солодкий соус Чилі",
+            "uk": "Рис, норі, крем-сир, лосось, сирна шапочка з восьминогом/креветкою, солодкий соус Чилі",
             "en": "Rice, nori, cream cheese, salmon, cheese cap with octopus/shrimp, sweet chili sauce"
           },
           "price": 300,
@@ -1254,7 +1254,7 @@
           },
           "desc": {
             "cs": "Rýže, smetanový sýr, losos/kreveta, tobiko, tempura, Unagi omáčka",
-            "uk": "Рис, кремовий сир, лосось/креветка, ікра тобіко, темпура, соус Унагі",
+            "uk": "Рис, крем-сир, лосось/креветка, ікра тобіко, темпура, соус Унагі",
             "en": "Rice, cream cheese, salmon/shrimp, tobiko roe, tempura, Unagi sauce"
           },
           "price": 290,
@@ -1276,7 +1276,7 @@
           },
           "desc": {
             "cs": "Rýže, nori, smetanový sýr, avokádo, losos, sýrová čepička",
-            "uk": "Рис, норі, кремовий сир, авокадо, лосось, сирна шапочка",
+            "uk": "Рис, норі, крем-сир, авокадо, лосось, сирна шапочка",
             "en": "Rice, nori, cream cheese, avocado, salmon, cheese topping"
           },
           "price": 250,
@@ -1296,7 +1296,7 @@
           },
           "desc": {
             "cs": "Rýže, smetanový sýr, losos, tobiko, avokádo, sýrová čepička",
-            "uk": "Рис, кремовий сир, лосось, ікра тобіко, авокадо, сирна шапочка",
+            "uk": "Рис, крем-сир, лосось, ікра тобіко, авокадо, сирна шапочка",
             "en": "Rice, cream cheese, salmon, tobiko roe, avocado, cheese topping"
           },
           "price": 260,
@@ -1316,7 +1316,7 @@
           },
           "desc": {
             "cs": "Rýže, smetanový sýr, kreveta, tobiko, avokádo, sýrová čepička",
-            "uk": "Рис, кремовий сир, креветка, ікра тобіко, авокадо, сирна шапочка",
+            "uk": "Рис, крем-сир, креветка, ікра тобіко, авокадо, сирна шапочка",
             "en": "Rice, cream cheese, shrimp, tobiko roe, avocado, cheese topping"
           },
           "price": 270,
@@ -1337,7 +1337,7 @@
           },
           "desc": {
             "cs": "Rýže, smetanový sýr, sezam, losos, avokádo, sýrová čepička",
-            "uk": "Рис, кремовий сир, кунжут, лосось, авокадо, сирна шапочка",
+            "uk": "Рис, крем-сир, кунжут, лосось, авокадо, сирна шапочка",
             "en": "Rice, cream cheese, sesame, salmon, avocado, cheese topping"
           },
           "price": 270,
@@ -1368,7 +1368,7 @@
           },
           "desc": {
             "cs": "Rýže, smetanový sýr, avokádo, losos, tempura",
-            "uk": "Рис, кремовий сир, авокадо, лосось, темпура",
+            "uk": "Рис, крем-сир, авокадо, лосось, темпура",
             "en": "Rice, cream cheese, avocado, salmon, tempura"
           },
           "price": 200,
@@ -1388,7 +1388,7 @@
           },
           "desc": {
             "cs": "Rýže, smetanový sýr, avokádo, okurka, tobiko, losos/kreveta",
-            "uk": "Рис, кремовий сир, авокадо, огірок, ікра тобіко, лосось/креветка",
+            "uk": "Рис, крем-сир, авокадо, огірок, ікра тобіко, лосось/креветка",
             "en": "Rice, cream cheese, avocado, cucumber, tobiko roe, salmon/shrimp"
           },
           "price": 300,
@@ -1409,7 +1409,7 @@
           },
           "desc": {
             "cs": "Rýže, smetanový sýr, losos, tobiko, avokádo, okurka",
-            "uk": "Рис, кремовий сир, лосось, ікра тобіко, авокадо, огірок",
+            "uk": "Рис, крем-сир, лосось, ікра тобіко, авокадо, огірок",
             "en": "Rice, cream cheese, salmon, tobiko roe, avocado, cucumber"
           },
           "price": 350,
@@ -1429,7 +1429,7 @@
           },
           "desc": {
             "cs": "Rýže, smetanový sýr, losos/kreveta, japonská majonéza, okurka, tobiko",
-            "uk": "Рис, кремовий сир, лосось/креветка, японський майонез, огірок, ікра тобіко",
+            "uk": "Рис, крем-сир, лосось/креветка, японський майонез, огірок, ікра тобіко",
             "en": "Rice, cream cheese, salmon/shrimp, Japanese mayonnaise, cucumber, tobiko roe"
           },
           "price": 400,
@@ -1613,7 +1613,7 @@
           "id": "poke-bowl-chicken",
           "name": {
             "cs": "Poke Bowl Kuře",
-            "uk": "Poke Bowl Курка",
+            "uk": "Поке Боул Курка",
             "en": "Poke Bowl Chicken"
           },
           "desc": {

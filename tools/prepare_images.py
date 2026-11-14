@@ -123,6 +123,8 @@ def dish(src, dish_id, out_dir=None):
     rgba = Image.fromarray(np.dstack([rgb, (alpha * 255).astype(np.uint8)]), 'RGBA')
     rgba.resize((480, 480), Image.LANCZOS).save(os.path.join(out_dir, f'{dish_id}-480.avif'), quality=58, speed=4)
     rgba.resize((480, 480), Image.LANCZOS).save(os.path.join(out_dir, f'{dish_id}-480.webp'), quality=78, method=6, alpha_quality=88)
+    rgba.resize((360, 360), Image.LANCZOS).save(os.path.join(out_dir, f'{dish_id}-360.avif'), quality=57, speed=4)
+    rgba.resize((360, 360), Image.LANCZOS).save(os.path.join(out_dir, f'{dish_id}-360.webp'), quality=77, method=6, alpha_quality=86)
     rgba.resize((240, 240), Image.LANCZOS).save(os.path.join(out_dir, f'{dish_id}-240.webp'), quality=76, method=6, alpha_quality=85)
     rgba.resize((240, 240), Image.LANCZOS).save(os.path.join(out_dir, f'{dish_id}-240.avif'), quality=56, speed=4)
 

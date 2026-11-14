@@ -76,7 +76,11 @@
       "gluten": "lepku",
       "sesame": "sezamu",
       "nuts": "ořechů",
-      "molluscs": "měkkýšů"
+      "molluscs": "měkkýšů",
+      "eggs": "vajec",
+      "soybeans": "sóji",
+      "sulphites": "siřičitanů",
+      "lupin": "vlčího bobu"
     },
     "allergen": {
       "gluten": "lepek",
@@ -315,7 +319,11 @@
       "gluten": "глютену",
       "sesame": "кунжуту",
       "nuts": "горіхів",
-      "molluscs": "молюсків"
+      "molluscs": "молюсків",
+      "eggs": "яєць",
+      "soybeans": "сої",
+      "sulphites": "сульфітів",
+      "lupin": "люпину"
     },
     "allergen": {
       "gluten": "глютен",
@@ -554,7 +562,11 @@
       "gluten": "gluten",
       "sesame": "sesame",
       "nuts": "nuts",
-      "molluscs": "molluscs"
+      "molluscs": "molluscs",
+      "eggs": "eggs",
+      "soybeans": "soy",
+      "sulphites": "sulphites",
+      "lupin": "lupin"
     },
     "allergen": {
       "gluten": "gluten",

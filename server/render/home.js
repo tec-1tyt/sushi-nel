@@ -6,7 +6,7 @@ import { page } from './layout.js';
 import { branch } from './ornaments.js';
 import { asset, esc, exists, fill, kanji, money, picture, placeholder } from './util.js';
 
-const EXCLUDES = ['crustaceans', 'fish', 'milk', 'gluten', 'sesame', 'nuts', 'molluscs'];
+const EXCLUDES = ['crustaceans', 'fish', 'milk', 'gluten', 'eggs', 'soybeans', 'sesame', 'nuts', 'molluscs', 'sulphites', 'lupin'];
 const DAY_KEYS = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
 function dishImage(d, lang, lazy = true) {
@@ -14,7 +14,7 @@ function dishImage(d, lang, lazy = true) {
   if (!exists(`${base}-480.webp`)) return `<div class="dish__noimg" aria-hidden="true">${kanji('巻')}</div>`;
   return picture({
     base,
-    widths: [240, 480],
+    widths: [240, 360, 480],
     alt: d.name[lang],
     width: 480,
     height: 480,
@@ -67,7 +67,7 @@ function menuSection(c, lang, t) {
   const filters = EXCLUDES.map((a) => `<label class="chip chip--x"><input type="checkbox" value="${a}" data-exclude><span>${esc(t.exclude[a])}</span></label>`).join('');
   return `<section class="menu" id="menu" aria-labelledby="menu-h">
   ${branch({ seed: 11, cls: 'orn--menu', blooms: 5 })}
-  <aside class="rail">
+  <div class="rail">
     <div class="rail__head">
       <h2 class="h-sec" id="menu-h" data-lines>${esc(t.menu.title)}</h2>
       ${kanji('品書', 'kanji--v')}
@@ -79,7 +79,7 @@ function menuSection(c, lang, t) {
       <fieldset class="excl"><legend>${esc(t.menu.without)}</legend>${filters}</fieldset>
       <p class="tools__note">${esc(t.menu.note)}</p>
     </details>
-  </aside>
+  </div>
   <div class="menu__list" data-menu-list aria-live="polite">
     <p class="menu__none" data-none hidden>${esc(t.menu.none)} <button class="linkbtn" type="button" data-reset>${esc(t.menu.reset)}</button></p>
     ${body}

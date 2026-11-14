@@ -25,6 +25,7 @@ function preloader(G, done) {
     try { sessionStorage.setItem('sn_pre', '1'); } catch { /* storage blocked */ }
   };
   const tl = G.timeline({ onComplete: finish });
+  tl.timeScale(1.5);
   tl.fromTo(flower, { rotation: -40, svgOrigin: '0 0' }, { rotation: 8, duration: 1.5, ease: 'power3.out' }, 0)
     .from(petals, { scale: 0, rotation: -25, svgOrigin: '0 0', duration: .62, ease: 'back.out(1.7)', stagger: .08 }, 0)
     .from(veins, { opacity: 0, duration: .3, stagger: .08 }, .25)

@@ -99,6 +99,13 @@ export function initMenu({ scrollTo, data, lenis }) {
     if (out) out.textContent = fmt(r.dataset.price);
   });
 
+  // Phones: a soft fade on the right edge says "there are more categories", and goes away at the end
+  if (tabsBox) {
+    const edge = () => tabsBox.classList.toggle('tabs--more', tabsBox.scrollLeft + tabsBox.clientWidth < tabsBox.scrollWidth - 6);
+    tabsBox.addEventListener('scroll', edge, { passive: true });
+    addEventListener('resize', edge, { passive: true });
+    edge();
+  }
   initDialog(list, fmt, lenis);
   apply();
   return { fmt };
@@ -112,7 +119,9 @@ function initDialog(list, fmt, lenis) {
   const name = dlg.querySelector('[data-dlg-name]');
   const info = dlg.querySelector('[data-dlg-info]');
 
+  let opener = null;
   function open(card) {
+    opener = card.querySelector('[data-dish-open]');
     const p = card.querySelector('.dish__pic, .dish__noimg')?.cloneNode(true);
     p?.querySelectorAll('source, img').forEach((el) => { el.sizes = '(min-width: 760px) 440px, 100vw'; el.removeAttribute('style'); if (el.tagName === 'IMG') el.loading = 'eager'; });
     pic.replaceChildren(...(p ? [p] : []));
@@ -140,7 +149,7 @@ function initDialog(list, fmt, lenis) {
     if (!card || e.target.closest('input, label, a')) return;
     open(card);
   });
-  dlg.addEventListener('close', () => lenis?.start());
+  dlg.addEventListener('close', () => { lenis?.start(); opener?.focus({ preventScroll: true }); });
   dlg.addEventListener('cancel', (e) => { e.preventDefault(); close(); });
   dlg.querySelector('[data-dlg-close]').addEventListener('click', close);
   // A click on the dimmed backdrop lands on the dialog element itself

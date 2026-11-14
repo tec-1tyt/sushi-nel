@@ -2,9 +2,64 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "",
   "installCommand": "npm install --omit=dev",
-  "functions": { "api/index.js": { "includeFiles": "@(data|public)/**", "maxDuration": 10 } },
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "@(data|public)/**",
+      "maxDuration": 10
+    }
+  },
   "redirects": [
-    { "source": "/(.*)", "has": [{ "type": "host", "value": "www.sushinel.com" }], "destination": "https://sushinel.com/$1", "permanent": true }
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.sushinel.com"
+        }
+      ],
+      "destination": "https://sushinel.com/$1",
+      "permanent": true
+    }
   ],
-  "rewrites": [{ "source": "/(.*)", "destination": "/api/index.js" }]
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api/index.js"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(css|js|img|vendor|fonts)/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
+    },
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(css|js|img|vendor)/(.*)",
+      "has": [
+        {
+          "type": "query",
+          "key": "v"
+        }
+      ],
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
 }

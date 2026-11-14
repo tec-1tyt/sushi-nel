@@ -206,6 +206,7 @@ p { text-wrap: pretty; }
 .tools__note { margin-top: 10px; }
 .search { position: relative; z-index: 3; margin-top: 18px; display: flex; align-items: center; gap: 10px; min-height: 48px; padding-inline: 14px; border: 1px solid var(--line-2); border-radius: 6px; transition: border-color .2s; }
 .search:focus-within { border-color: var(--rice); }
+.search:has(input:focus-visible) { outline: 2px solid var(--hanko-hi); outline-offset: 3px; }
 .search .icon { width: 20px; height: 20px; color: var(--ash); }
 .search input { flex: 1; min-width: 0; background: none; border: 0; outline: 0; padding: 10px 0; font-size: 1rem; }
 .search input::placeholder { color: var(--ash); }
@@ -670,3 +671,8 @@ html:has(.dlg[open]) .chop { opacity: 0 !important; }
 .cert-text { width: min(80vw, 360px); }
 .cert-text__meta { font-size: .9rem; color: var(--sakura); font-weight: 600; }
 .cert-text .tlink { justify-self: start; min-height: 44px; }
+
+/* The strip of menu categories on phones fades out at the right edge while more are hidden */
+@media (max-width: 999px) {
+  .tabs--more { -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 56px), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 56px), transparent); }
+}
