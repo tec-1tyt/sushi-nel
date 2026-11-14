@@ -36,6 +36,9 @@ ${hreflang}<link rel="alternate" hreflang="x-default" href="${url}${path}">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="${{ cs: 'cs_CZ', uk: 'uk_UA', en: 'en_GB' }[lang]}">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="48x48" href="/img/logo/favicon-48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/img/logo/favicon-96.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/img/logo/favicon-32.png">
 <link rel="apple-touch-icon" href="/img/logo/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
