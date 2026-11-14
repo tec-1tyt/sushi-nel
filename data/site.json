@@ -2,10 +2,10 @@
   "_help": "Kontakty, otevírací doba, doručení. null = údaj chybí, na webu se ukáže štítek [doplnit], dokud je SHOW_PLACEHOLDERS=true. Popis polí je v README.md.",
   "name": "sushiNEL",
   "legal": {
-    "company": null,
-    "ico": null,
+    "company": "sushiNEL",
+    "ico": "29879701",
     "dic": null,
-    "seat": null
+    "seat": "Vršovců 1132/26, 430 01 Chomutov"
   },
   "phone": "+420770699364",
   "phoneDisplay": "+420 770 699 364",
