@@ -656,3 +656,13 @@ body:not(.is-home) .cookie { bottom: 10px; }
 .has-chop .dlg, .has-chop .dlg * { cursor: default !important; }
 .has-chop .dlg a, .has-chop .dlg button, .has-chop .dlg label { cursor: pointer !important; }
 html:has(.dlg[open]) .chop { opacity: 0 !important; }
+
+/* ---------- HACCP certificate card in the about scroll ---------- */
+.cert { width: min(82vw, 480px); display: grid; gap: 12px; align-content: center; margin: 0; }
+.cert__link { display: block; padding: 10px; background: var(--plate); border-radius: 14px; box-shadow: 0 22px 46px rgb(122 30 60 / .2); transform: rotate(-1.4deg); transition: transform .5s var(--ease), box-shadow .5s; }
+.cert__link:hover { transform: rotate(0) translateY(-4px); box-shadow: 0 28px 56px rgb(122 30 60 / .26); }
+.cert__link picture { display: block; }
+.cert__img { display: block; width: 100%; height: auto; border-radius: 6px; }
+.cert figcaption { display: grid; gap: 2px; color: var(--rice-2); font-size: .95rem; }
+.cert figcaption b { font: 800 1.5rem/1 var(--display); text-transform: uppercase; color: var(--rice); }
+.about.is-pinned .cert { width: min(46vw, 62vh * 1.4); }
