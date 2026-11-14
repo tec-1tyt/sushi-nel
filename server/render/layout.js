@@ -132,6 +132,7 @@ function clientData({ lang, c, t, home }) {
     errors: t.errors,
     form: t.form,
     status: t.status,
+    menu: { hint: t.menu.orderHint, copied: t.menu.orderCopied },
     hours: c.site.hours,
     geo: c.site.geo,
     mapAttr: '© OpenStreetMap contributors',

@@ -6,6 +6,14 @@ import { page } from './layout.js';
 import { branch } from './ornaments.js';
 import { asset, esc, exists, fill, kanji, money, picture, placeholder } from './util.js';
 
+// How MenuForma names our categories (it has Czech and English only, so Ukrainian visitors see the Czech names)
+const MENUFORMA_CATS = {
+  sety: ['Sushi sady', 'Sushi Sets'], speciality: ['Specials', 'Specials'], dragon: ['Dragon Rolls', 'Dragon Rolls'],
+  philadelphia: ['Philadelphia Rolls', 'Philadelphia Rolls'], california: ['California Rolls', 'California Rolls'], maki: ['Maki Rolls', 'Maki Rolls'],
+  zapecene: ['Zapékané rolky', 'Baked Rolls'], fastfood: ['Sushi Fastfood', 'Sushi Fastfood'], poke: ['Poke bowly', 'Poke bowls'],
+  funcoza: ['Funčoza', 'Funčoza'], dort: ['Sushi Dort', 'Sushi Cake'], napoje: ['Nápoje', 'Drinks'], omacky: ['Omáčky', 'Sauces'], poukazy: ['Certifikáty', 'Certifikáty'],
+};
+
 const EXCLUDES = ['crustaceans', 'fish', 'milk', 'gluten', 'eggs', 'soybeans', 'sesame', 'nuts', 'molluscs', 'sulphites', 'lupin'];
 const DAY_KEYS = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
@@ -34,7 +42,7 @@ function dishCard(d, cat, lang, t, lazy = true) {
   ].filter(Boolean);
   const first = d.variants ? d.variants[0] : null;
   const search = [...new Set(['cs', 'uk', 'en'].filter((l) => l !== lang).map((l) => d.name[l]))].filter((n) => n !== d.name[lang]).join(' ');
-  const attrs = `data-dish="${esc(d.id)}" data-allergens="${esc((d.allergens || []).join(' '))}" ${search ? `data-alt="${esc(search)}" ` : ''}data-name="${esc(d.name[lang])}"${d.alcohol ? ' data-alcohol' : ''}${first ? '' : ` data-price="${d.price}"`}`;
+  const attrs = `data-dish="${esc(d.id)}" data-allergens="${esc((d.allergens || []).join(' '))}" ${search ? `data-alt="${esc(search)}" ` : ''}data-name="${esc(d.name[lang])}" data-mf-name="${esc(d.name[lang === 'uk' ? 'cs' : lang])}"${d.alcohol ? ' data-alcohol' : ''}${first ? '' : ` data-price="${d.price}"`}`;
   return `<article class="dish" ${attrs} data-grab-card>
   ${dishImage(d, lang, lazy)}
   <div class="dish__body">
@@ -62,7 +70,7 @@ function menuSection(c, lang, t) {
       // The first category is open on arrival: load its first photos right away instead of waiting for scroll
       rows.push(dishCard(d, cat, lang, t, !(ci === 0 && i < 6)));
     });
-    return `<section class="cat" id="cat-${esc(cat.id)}" data-cat="${esc(cat.id)}"><h3 class="cat__h">${esc(cat.name[lang])}</h3><div class="dishes">${rows.join('')}</div></section>`;
+    return `<section class="cat" id="cat-${esc(cat.id)}" data-cat="${esc(cat.id)}" data-mf-cat="${esc((MENUFORMA_CATS[cat.id] || [])[lang === 'en' ? 1 : 0] || cat.name[lang])}"><h3 class="cat__h">${esc(cat.name[lang])}</h3><div class="dishes">${rows.join('')}</div></section>`;
   }).join('');
   const filters = EXCLUDES.map((a) => `<label class="chip chip--x"><input type="checkbox" value="${a}" data-exclude><span>${esc(t.exclude[a])}</span></label>`).join('');
   return `<section class="menu" id="menu" aria-labelledby="menu-h">
@@ -364,9 +372,10 @@ function dishDialog(c, t) {
       <h2 class="dlg__name" id="dlg-title" data-dlg-name></h2>
       <div data-dlg-info></div>
       <div class="dlg__acts">
-        ${orderLink(c, t, 'btn btn--primary', `<span>${esc(t.nav.order)}</span>`)}
+        ${orderLink(c, t, 'btn btn--primary', `<span>${esc(t.nav.order)}</span>`, 'data-dlg-order')}
         <a class="btn-plain dlg__call" href="tel:${esc(c.site.phone)}">${icons.phone()}<span>${esc(t.nav.call)}</span></a>
       </div>
+      <p class="dlg__hint" data-dlg-hint></p>
     </div>
   </div>
 </dialog>`;

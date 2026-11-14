@@ -676,3 +676,6 @@ html:has(.dlg[open]) .chop { opacity: 0 !important; }
 @media (max-width: 999px) {
   .tabs--more { -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 56px), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 56px), transparent); }
 }
+
+.dlg__hint { font-size: .9rem; line-height: 1.4; color: var(--rice-2); }
+.dlg__hint.is-done { color: var(--sakura); font-weight: 600; }

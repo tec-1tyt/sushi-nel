@@ -106,22 +106,29 @@ export function initMenu({ scrollTo, data, lenis }) {
     addEventListener('resize', edge, { passive: true });
     edge();
   }
-  initDialog(list, fmt, lenis);
+  initDialog(list, fmt, lenis, data);
   apply();
   return { fmt };
 }
 
 // Tapping a dish opens it large: photo, full text, sizes, price and the ways to order
-function initDialog(list, fmt, lenis) {
+function initDialog(list, fmt, lenis, data) {
   const dlg = document.querySelector('[data-dlg]');
   if (!dlg || typeof dlg.showModal !== 'function') return;
   const pic = dlg.querySelector('[data-dlg-pic]');
   const name = dlg.querySelector('[data-dlg-name]');
   const info = dlg.querySelector('[data-dlg-info]');
 
+  const hint = dlg.querySelector('[data-dlg-hint]');
+  const fillText = (tpl) => tpl.replace('{name}', current.name).replace('{cat}', current.cat);
+  let current = { name: '', cat: '' };
   let opener = null;
   function open(card) {
     opener = card.querySelector('[data-dish-open]');
+    // MenuForma cannot open one dish by link, so the dialog tells where to find it and copies the name on tap
+    current = { name: card.dataset.mfName || card.dataset.name, cat: card.closest('[data-cat]')?.dataset.mfCat || '' };
+    hint.textContent = fillText(data.menu.hint);
+    hint.classList.remove('is-done');
     const p = card.querySelector('.dish__pic, .dish__noimg')?.cloneNode(true);
     p?.querySelectorAll('source, img').forEach((el) => { el.sizes = '(min-width: 760px) 440px, 100vw'; el.removeAttribute('style'); if (el.tagName === 'IMG') el.loading = 'eager'; });
     pic.replaceChildren(...(p ? [p] : []));
@@ -148,6 +155,10 @@ function initDialog(list, fmt, lenis) {
     // Size chips keep working inside the card
     if (!card || e.target.closest('input, label, a')) return;
     open(card);
+  });
+  dlg.querySelector('[data-dlg-order]')?.addEventListener('click', () => {
+    // The link opens the online menu in a new tab as usual. The copy is a bonus, and may be blocked.
+    navigator.clipboard?.writeText(current.name).then(() => { hint.textContent = fillText(data.menu.copied); hint.classList.add('is-done'); }).catch(() => {});
   });
   dlg.addEventListener('close', () => { lenis?.start(); opener?.focus({ preventScroll: true }); });
   dlg.addEventListener('cancel', (e) => { e.preventDefault(); close(); });

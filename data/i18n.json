@@ -67,7 +67,9 @@
       "weightMissing": "gramáž",
       "from": "od",
       "noPhoto": "Bez fotky",
-      "close": "Zavřít"
+      "close": "Zavřít",
+      "orderHint": "Otevře se online menu. Název „{name}“ zkopírujeme, najdete ho v kategorii „{cat}“.",
+      "orderCopied": "Zkopírováno: „{name}“. V online menu ho najdete v kategorii „{cat}“."
     },
     "exclude": {
       "crustaceans": "krevet",
@@ -310,7 +312,9 @@
       "weightMissing": "вага",
       "from": "від",
       "noPhoto": "Без фото",
-      "close": "Закрити"
+      "close": "Закрити",
+      "orderHint": "Відкриється онлайн-меню. Назву «{name}» скопіюємо, шукайте її в категорії «{cat}».",
+      "orderCopied": "Скопійовано: «{name}». В онлайн-меню шукайте в категорії «{cat}»."
     },
     "exclude": {
       "crustaceans": "креветок",
@@ -553,7 +557,9 @@
       "weightMissing": "weight",
       "from": "from",
       "noPhoto": "No photo",
-      "close": "Close"
+      "close": "Close",
+      "orderHint": "The online menu will open. We copy the name “{name}”; find it in the category “{cat}”.",
+      "orderCopied": "Copied: “{name}”. Find it in the online menu under “{cat}”."
     },
     "exclude": {
       "crustaceans": "shrimp",
