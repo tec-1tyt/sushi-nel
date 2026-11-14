@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "",
+  "installCommand": "npm install --omit=dev",
+  "functions": { "api/index.js": { "includeFiles": "@(data|public)/**", "maxDuration": 10 } },
+  "redirects": [
+    { "source": "/(.*)", "has": [{ "type": "host", "value": "www.sushinel.com" }], "destination": "https://sushinel.com/$1", "permanent": true }
+  ],
+  "rewrites": [{ "source": "/(.*)", "destination": "/api/index.js" }]
+}
