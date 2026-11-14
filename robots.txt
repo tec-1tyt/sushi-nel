@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /api/
-
-Sitemap: https://tec-1tyt.github.io/sushi-nel/sitemap.xml
