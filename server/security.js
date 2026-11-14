@@ -75,16 +75,21 @@ export function sameOrigin(req, res, next) {
   next();
 }
 
-const limiter = (windowMs, limit) => rateLimit({
+const limiter = (windowMs, limit, extra = {}) => rateLimit({
   windowMs,
   limit,
+  ...extra,
   standardHeaders: 'draft-7',
   legacyHeaders: false,
   message: { ok: false, error: 'rate' },
 });
 
 export const limits = {
-  contact: limiter(10 * 60 * 1000, Number(process.env.CONTACT_RATE_LIMIT) || 5),
+  // Three layers: a burst limit and a daily limit per visitor, and one cap for the whole site,
+  // so even a spammer with many addresses cannot flood the Telegram group.
+  contact: limiter(10 * 60 * 1000, Number(process.env.CONTACT_RATE_LIMIT) || 3),
+  contactDay: limiter(24 * 60 * 60 * 1000, Number(process.env.CONTACT_DAY_LIMIT) || 8),
+  contactAll: limiter(60 * 60 * 1000, Number(process.env.CONTACT_ALL_LIMIT) || 30, { keyGenerator: () => 'all' }),
   csrf: limiter(60 * 1000, 40),
 };
 

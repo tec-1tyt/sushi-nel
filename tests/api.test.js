@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import { after, before, test } from 'node:test';
 // A little more headroom than production, so every check below gets its own requests
 process.env.CONTACT_RATE_LIMIT = '8';
+process.env.CONTACT_DAY_LIMIT = '100';
+process.env.CONTACT_ALL_LIMIT = '100';
 const { createApp } = await import('../server/index.js');
 
 let server, base, cookie, token;

@@ -43,7 +43,7 @@ export function apiRouter() {
   const r = express.Router();
   r.get('/csrf', limits.csrf, issueCsrf);
   const body = express.json({ limit: '24kb', strict: true });
-  r.post('/contact', limits.contact, sameOrigin, verifyCsrf, body, endpoint(contactSchema, handleContact));
+  r.post('/contact', limits.contact, limits.contactDay, limits.contactAll, sameOrigin, verifyCsrf, body, endpoint(contactSchema, handleContact));
   r.use((_req, res) => res.status(404).json({ ok: false, error: 'not_found' }));
   // Malformed or oversized JSON ends here without leaking a stack trace
   r.use((err, _req, res, _next) => res.status(err.status === 413 ? 413 : 400).json({ ok: false, error: 'invalid' }));
