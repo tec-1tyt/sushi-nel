@@ -2,7 +2,7 @@
   "cs": {
     "meta": {
       "title": "sushiNEL · Nejlepší sushi v Chomutově, rozvoz a rezervace",
-      "description": "Sushi v Chomutově, Vršovců 26. Rolky, sety, poke bowly a funčoza. Objednejte s doručením nebo si zarezervujte stůl. Úterý až neděle od 9 hodin.",
+      "description": "Sushi v Chomutově, Vršovců 1132/26. Rolky, sety, poke bowly a funčoza. Objednejte s doručením nebo si zarezervujte stůl. Úterý až neděle od 9 hodin.",
       "keywords": "sushi Chomutov, rozvoz sushi Chomutov, suši Chomutov, sushi bar Chomutov, суші Хомутов"
     },
     "nav": {
@@ -136,7 +136,7 @@
       "menuformaNote": "Objednávka a platba přes MenuForma",
       "phone": "Telefon",
       "instagram": "Zpráva na Instagramu",
-      "pickup": "Vyzvednutí na Vršovců 26 je možné také.",
+      "pickup": "Vyzvednutí na adrese Vršovců 1132/26, Chomutov je možné také.",
       "fees": "Kam vozíme a za kolik",
       "otherTowns": "{towns} a další města",
       "byPhone": "cenu domluvíme po telefonu"
@@ -247,7 +247,7 @@
   "uk": {
     "meta": {
       "title": "sushiNEL · Найкращі суші в Хомутові, доставка та бронювання",
-      "description": "Суші в Хомутові, Vršovců 26. Роли, сети, поке-боули та фунчоза. Замовляйте доставку або бронюйте стіл. Вівторок–неділя від 9:00.",
+      "description": "Суші в Хомутові, Vršovců 1132/26. Роли, сети, поке-боули та фунчоза. Замовляйте доставку або бронюйте стіл. Вівторок–неділя від 9:00.",
       "keywords": "суші Хомутов, доставка суші Хомутов, суші-бар Хомутов, роли Хомутов, sushi Chomutov"
     },
     "nav": {
@@ -381,7 +381,7 @@
       "menuformaNote": "Замовлення й оплата через MenuForma",
       "phone": "Телефон",
       "instagram": "Повідомлення в Instagram",
-      "pickup": "Можна й забрати самостійно на Vršovců 26.",
+      "pickup": "Можна й забрати самостійно за адресою Vršovců 1132/26, Chomutov.",
       "fees": "Куди возимо і скільки коштує",
       "otherTowns": "{towns} та інші міста",
       "byPhone": "ціну домовимося телефоном"
@@ -492,7 +492,7 @@
   "en": {
     "meta": {
       "title": "sushiNEL · Best sushi in Chomutov, delivery and reservations",
-      "description": "Sushi in Chomutov, Vršovců 26. Rolls, sets, poke bowls and funchoza. Order for delivery or book a table. Tuesday to Sunday from 9 am.",
+      "description": "Sushi in Chomutov, Vršovců 1132/26. Rolls, sets, poke bowls and funchoza. Order for delivery or book a table. Tuesday to Sunday from 9 am.",
       "keywords": "sushi Chomutov, sushi delivery Chomutov, sushi bar Chomutov, sushi restaurant Chomutov"
     },
     "nav": {
@@ -626,7 +626,7 @@
       "menuformaNote": "Order and pay through MenuForma",
       "phone": "Phone",
       "instagram": "Instagram message",
-      "pickup": "You can also collect from Vršovců 26.",
+      "pickup": "You can also collect from Vršovců 1132/26, Chomutov.",
       "fees": "Where we deliver and the fee",
       "otherTowns": "{towns} and other towns",
       "byPhone": "fee agreed by phone"
