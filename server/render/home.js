@@ -4,7 +4,7 @@ import { livePromotions } from '../content.js';
 import { icons } from './icons.js';
 import { page } from './layout.js';
 import { branch } from './ornaments.js';
-import { esc, exists, fill, kanji, money, picture, placeholder } from './util.js';
+import { asset, esc, exists, fill, kanji, money, picture, placeholder } from './util.js';
 
 const EXCLUDES = ['crustaceans', 'fish', 'milk', 'gluten', 'sesame', 'nuts', 'molluscs'];
 const DAY_KEYS = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
@@ -218,6 +218,10 @@ function aboutSection(c, lang, t) {
       </div>
       ${fig('tempura', [520, 900], 900, 1088, 'ph--tall', '(min-width: 900px) 38vw, 78vw')}
       ${ch(3)}
+      <figure class="panel cert">
+        <a class="cert__link" href="${asset('/img/venue/haccp-1400.webp')}" target="_blank" rel="noopener" aria-label="${esc(t.about.haccpOpen)}">${picture({ base: '/img/venue/haccp', widths: [720, 1400], alt: t.about.alt.haccp, width: 1400, height: 1003, sizes: '(min-width: 900px) 40vw, 82vw', imgCls: 'cert__img' })}</a>
+        <figcaption><b>${esc(t.about.haccpTitle)}</b><span>${esc(t.about.haccpText)}</span></figcaption>
+      </figure>
       ${fig('triptych', [740], 740, 372, 'ph--wide', '(min-width: 900px) 46vw, 86vw')}
       ${ch(4)}
       ${fig('box', [420, 560], 560, 960, 'ph--mid', '(min-width: 900px) 26vw, 66vw')}

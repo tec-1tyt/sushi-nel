@@ -142,6 +142,9 @@
       "flower": "Květ na našem talíři není grafika. Rolku nakrájíme do srdcí a složíme z nich sakuru.",
       "storyMissing": "příběh podniku: kdo jste, od kdy, proč sushi",
       "storyCta": "Kde nás najdete",
+      "haccpTitle": "Certifikát HACCP",
+      "haccpText": "Máme zpracovaný systém kritických bodů HACCP. Vydán 27. 10. 2026.",
+      "haccpOpen": "Zobrazit celý certifikát",
       "kitchenMissing": "fotky kuchyně",
       "hint": "Táhněte do strany",
       "alt": {
@@ -150,7 +153,8 @@
         "triptych": "Obraz se sushi na stěně v teplém světle",
         "tempura": "Rolky v tempuře na černém talíři, za nimi růžová sakura",
         "box": "Rolky v průhledném patrovém boxu",
-        "cake": "Dort s logem sushiNEL"
+        "cake": "Dort s logem sushiNEL",
+        "haccp": "Certifikát HACCP pro provozovnu sushiNEL, vydán 27. 10. 2026"
       },
       "bar": "Kavárna a bar: k rolkám víno, sekt, pivo nebo whisky."
     },
@@ -376,6 +380,9 @@
       "flower": "Квітка на нашій тарілці не графіка. Рол ми нарізаємо сердечками й складаємо з них сакуру.",
       "storyMissing": "історія закладу: хто ви, відколи, чому суші",
       "storyCta": "Як нас знайти",
+      "haccpTitle": "Сертифікат HACCP",
+      "haccpText": "Маємо опрацьовану систему контролю безпеки харчових продуктів HACCP. Виданий 27.10.2026.",
+      "haccpOpen": "Відкрити весь сертифікат",
       "kitchenMissing": "фото кухні",
       "hint": "Тягніть убік",
       "alt": {
@@ -384,7 +391,8 @@
         "triptych": "Картина із суші на стіні в теплому світлі",
         "tempura": "Роли в темпурі на чорній тарілці, за ними рожева сакура",
         "box": "Роли в прозорому багатоярусному боксі",
-        "cake": "Торт із логотипом sushiNEL"
+        "cake": "Торт із логотипом sushiNEL",
+        "haccp": "Сертифікат HACCP для закладу sushiNEL, виданий 27.10.2026"
       },
       "bar": "Кафе-бар: до ролів вино, ігристе, пиво чи віскі."
     },
@@ -610,6 +618,9 @@
       "flower": "The flower on our plate is not a graphic. We cut the roll into hearts and build the sakura from them.",
       "storyMissing": "your story: who you are, since when, why sushi",
       "storyCta": "Find us",
+      "haccpTitle": "HACCP certificate",
+      "haccpText": "Our food safety system (HACCP) is in place and certified. Issued 27 October 2026.",
+      "haccpOpen": "Open the full certificate",
       "kitchenMissing": "kitchen photos",
       "hint": "Drag sideways",
       "alt": {
@@ -618,7 +629,8 @@
         "triptych": "Sushi painting on the wall in warm light",
         "tempura": "Tempura rolls on a black plate, pink sakura behind",
         "box": "Rolls in a clear tiered box",
-        "cake": "Cake with the sushiNEL logo"
+        "cake": "Cake with the sushiNEL logo",
+        "haccp": "HACCP certificate for the sushiNEL premises, issued 27 October 2026"
       },
       "bar": "A café-bar: wine, sparkling, beer or whisky with your rolls."
     },
