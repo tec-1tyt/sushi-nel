@@ -1360,6 +1360,25 @@
       },
       "items": [
         {
+          "id": "classic-hot-dog",
+          "name": {
+            "cs": "Classic Hot Dog",
+            "uk": "Класичний хот-дог",
+            "en": "Classic Hot Dog"
+          },
+          "desc": {
+            "cs": "Párek v housce, salát, okurka, mrkev, kečup",
+            "uk": "Сосиска в булочці, салат, огірок, морква, кетчуп",
+            "en": "Sausage in a bun, lettuce, cucumber, carrot, ketchup"
+          },
+          "price": 129,
+          "allergens": [
+            "gluten"
+          ],
+          "badge": "new",
+          "available": true
+        },
+        {
           "id": "sushi-sandwich",
           "name": {
             "cs": "Sushi Sendvič",
