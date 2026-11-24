@@ -679,3 +679,7 @@ html:has(.dlg[open]) .chop { opacity: 0 !important; }
 
 .dlg__hint { font-size: .9rem; line-height: 1.4; color: var(--rice-2); }
 .dlg__hint.is-done { color: var(--sakura); font-weight: 600; }
+
+/* A deal with a menu photo (set of the week): the dish tile instead of the wide gift photo */
+.offer__pic--dish { display: block; }
+.offer__pic--dish img { max-width: min(100%, 460px); margin-inline: auto; border-radius: 22px; box-shadow: 0 20px 44px rgb(122 30 60 / .18); }

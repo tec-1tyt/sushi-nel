@@ -75,6 +75,9 @@ export const promotionsSchema = z.object({
     validTo: z.string().nullable().optional(),
     source: z.string().optional(),
     threshold: z.number().optional(),
+    price: z.number().optional(),       // headline price of a deal, e.g. set of the week
+    oldPrice: z.number().optional(),
+    dish: z.string().optional(),        // menu item shown with the deal
     thresholdExcludes: z.array(z.string()).optional(),
     gift: z.string().optional(),
     title: localized,

@@ -2,6 +2,32 @@
   "_help": "Akce. active:true = zobrazí se na webu. validFrom/validTo (RRRR-MM-DD) jsou volitelné, po datu validTo se akce sama skryje. Popis polí je v README.md.",
   "promotions": [
     {
+      "id": "set-of-the-week",
+      "active": true,
+      "main": true,
+      "validFrom": "2026-11-24",
+      "validTo": "2026-11-29",
+      "source": "Zpráva od majitelky, 24.11.2026",
+      "price": 800,
+      "oldPrice": 950,
+      "dish": "salmon-set",
+      "title": {
+        "cs": "Set týdne: Salmon Set",
+        "uk": "Сет тижня: Лосось Сет",
+        "en": "Set of the week: Salmon Set"
+      },
+      "text": {
+        "cs": "Volcano Sesame, Maki Sake, Samurai a Red Dragon. Jen 800 Kč místo 950 Kč.",
+        "uk": "Вулкан Сезам, Макі Саке, Samurai Roll і Червоний Дракон. Лише 800 Kč замість 950 Kč.",
+        "en": "Volcano Sesame, Maki Sake, Samurai Roll and Red Dragon. Only 800 Kč instead of 950 Kč."
+      },
+      "terms": {
+        "cs": "Platí od úterý 24. 11. do neděle 29. 11. 2026.",
+        "uk": "Діє з вівторка 24.11 до неділі 29.11.2026.",
+        "en": "Valid from Tuesday 24 Nov to Sunday 29 Nov 2026."
+      }
+    },
+    {
       "id": "tempura-1000",
       "active": true,
       "main": true,

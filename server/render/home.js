@@ -103,11 +103,14 @@ function promoSection(c, lang, t) {
   const newCustomers = c.promos.promotions.find((p) => p.id === 'new-customers');
   const hasFuncoza = c.dishes.has('funchoza-with-vegetables');
   // A real photo from the restaurant, not the studio shot used in the menu
+  const dealDish = main?.dish ? c.dishes.get(main.dish) : null;
   const giftPic = gift
     ? picture({ base: '/img/venue/promo-tempura', widths: [480, 770], alt: gift.name[lang], width: 770, height: 370, sizes: '(min-width: 1000px) 34vw, 86vw', cls: 'offer__pic' })
-    : '';
+    : dealDish
+      ? picture({ base: `/img/menu/${dealDish.id}`, widths: [360, 480], alt: dealDish.name[lang], width: 480, height: 480, sizes: '(min-width: 1000px) 30vw, 70vw', cls: 'offer__pic offer__pic--dish' })
+      : '';
   const mainHtml = main ? `<div class="offer">
-      <p class="offer__num">${main.threshold ? money(main.threshold, lang) : esc(main.title[lang])}</p>
+      <p class="offer__num">${main.price ? money(main.price, lang) : main.threshold ? money(main.threshold, lang) : esc(main.title[lang])}</p>
       <div class="offer__body">
         <h3 class="offer__title">${esc(main.title[lang])}</h3>
         ${main.text[lang] ? `<p class="offer__text">${esc(main.text[lang])}</p>` : ''}

@@ -59,7 +59,7 @@ export function jsonLd(c, lang) {
   };
   const active = livePromotions(promos.promotions).filter((p) => !p.placeholder);
   if (active.length) {
-    restaurant.makesOffer = active.map((p) => ({ '@type': 'Offer', name: p.title[lang], description: p.text[lang] || undefined }));
+    restaurant.makesOffer = active.map((p) => ({ '@type': 'Offer', name: p.title[lang], description: p.text[lang] || undefined, price: p.price || undefined, priceCurrency: p.price ? 'CZK' : undefined }));
   }
   // Prevent "</script>" inside JSON from closing the tag
   return JSON.stringify(restaurant).replace(/</g, '\\u003c');
