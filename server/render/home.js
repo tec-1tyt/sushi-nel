@@ -14,7 +14,7 @@ const MENUFORMA_CATS = {
   funcoza: ['Funčoza', 'Funčoza'], dort: ['Sushi Dort', 'Sushi Cake'], napoje: ['Nápoje', 'Drinks'], omacky: ['Omáčky', 'Sauces'], poukazy: ['Certifikáty', 'Certifikáty'],
 };
 
-const EXCLUDES = ['crustaceans', 'fish', 'milk', 'gluten', 'eggs', 'soybeans', 'sesame', 'nuts', 'molluscs', 'sulphites', 'lupin'];
+const EXCLUDES = ['crustaceans', 'fish', 'milk', 'gluten', 'eggs', 'soybeans', 'sesame', 'nuts', 'molluscs', 'sulphites', 'lupin', 'mustard'];
 const DAY_KEYS = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
 function dishImage(d, lang, lazy = true) {

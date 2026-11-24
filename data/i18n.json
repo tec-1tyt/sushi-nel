@@ -82,7 +82,8 @@
       "eggs": "vajec",
       "soybeans": "sóji",
       "sulphites": "siřičitanů",
-      "lupin": "vlčího bobu"
+      "lupin": "vlčího bobu",
+      "mustard": "hořčice"
     },
     "allergen": {
       "gluten": "lepek",
@@ -327,7 +328,8 @@
       "eggs": "яєць",
       "soybeans": "сої",
       "sulphites": "сульфітів",
-      "lupin": "люпину"
+      "lupin": "люпину",
+      "mustard": "гірчиці"
     },
     "allergen": {
       "gluten": "глютен",
@@ -572,7 +574,8 @@
       "eggs": "eggs",
       "soybeans": "soy",
       "sulphites": "sulphites",
-      "lupin": "lupin"
+      "lupin": "lupin",
+      "mustard": "mustard"
     },
     "allergen": {
       "gluten": "gluten",

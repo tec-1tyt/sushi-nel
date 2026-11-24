@@ -1367,13 +1367,15 @@
             "en": "Classic Hot Dog"
           },
           "desc": {
-            "cs": "Párek v housce, salát, okurka, mrkev, kečup",
-            "uk": "Сосиска в булочці, салат, огірок, морква, кетчуп",
-            "en": "Sausage in a bun, lettuce, cucumber, carrot, ketchup"
+            "cs": "Nadýchaná bulka, lahodný párek, čerstvý listový salát, okurka, korejská mrkev a omáčky dle vašeho výběru: kečup, majonéza nebo hořčice. Ideální svačina před obědem, rychlé občerstvení během dne nebo chutná alternativa k večeři.",
+            "uk": "М’яка булочка, апетитна сосиска, свіже листя салату, огірок, морква по-корейськи та соуси на ваш вибір: кетчуп, майонез або гірчиця. Ідеальний перекус перед обідом, швидке частування протягом дня або смачна альтернатива вечері.",
+            "en": "A soft bun, a tasty sausage, fresh lettuce, cucumber, Korean-style carrot and your choice of sauce: ketchup, mayonnaise or mustard. A perfect snack before lunch, a quick bite during the day or a tasty alternative to dinner."
           },
           "price": 129,
           "allergens": [
-            "gluten"
+            "gluten",
+            "eggs",
+            "mustard"
           ],
           "badge": "new",
           "available": true
